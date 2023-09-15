@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import cls from './Navbar.module.scss'
 
 export const Navbar = ({ className }: { className?: string }) => {
+	const { t } = useTranslation()
 	return (
 		<div className={cx(cls.navbar, {}, [className])}>
 			<div className={cls.links}>
@@ -11,10 +13,10 @@ export const Navbar = ({ className }: { className?: string }) => {
 					to={'/'}
 					className={cls.mainLink}
 				>
-					Main
+					{t('Main')}
 				</AppLink>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={'/about'}>
-					About
+					{t('About')}
 				</AppLink>
 			</div>
 		</div>
