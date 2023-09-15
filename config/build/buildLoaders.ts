@@ -17,6 +17,26 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		],
 	}
 
+	const babelLoader = {
+		test: /\.(js|ts|tsx|jsx)$/,
+		exclude: /node_modules/,
+		use: {
+			loader: "babel-loader",
+			options: {
+				presets: ["@babel/preset-env"],
+				plugins: [
+					[
+						"i18next-extract",
+						{
+							locales: ["en", "ru"],
+							keyAsDefaultValue: true,
+						},
+					],
+				],
+			},
+		},
+	}
+
 	const cssLoader = {
 		test: /\.s[ac]ss$/i,
 		use: [
@@ -41,5 +61,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	return [typescriptLoader, cssLoader, swgLoader, fileLoader]
+	return [babelLoader, typescriptLoader, cssLoader, swgLoader, fileLoader]
 }
