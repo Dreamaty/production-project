@@ -11,5 +11,5 @@ export function cx(
 		Object.entries(mods)
 			.filter(([_, value]) => Boolean(value))
 			.map(([cls]) => cls),
-	].join(" ")
+	].join(' ')
 }

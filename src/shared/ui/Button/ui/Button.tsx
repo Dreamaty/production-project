@@ -1,9 +1,9 @@
-import { ButtonHTMLAttributes, FC } from "react"
-import { cx } from "shared/lib/classNames/cx"
-import cls from "./Button.module.scss"
+import { ButtonHTMLAttributes, FC } from 'react'
+import { cx } from 'shared/lib/classNames/cx'
+import cls from './Button.module.scss'
 
 export enum ButtonTheme {
-	CLEAR = "clear",
+	CLEAR = 'clear',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,6 +19,7 @@ export const Button: FC<ButtonProps> = ({
 }) => {
 	return (
 		<button
+			type="button"
 			className={cx(cls.button, {}, [className, cls[theme]])}
 			{...otherProps}
 		>
