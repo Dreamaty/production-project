@@ -1,8 +1,11 @@
 {
   "About": "About",
+  "An unexpected error has accrued": "An unexpected error has accrued",
   "Language": "",
   "Main": "Main",
   "Page Not Found": "Page Not Found",
+  "Reload Page": "Reload Page",
+  "Throw Error": "Throw Error",
   "Toggle": "Toggle",
   "about site": ""
 }
