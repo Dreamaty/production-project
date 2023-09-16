@@ -13,7 +13,10 @@ describe('cx', () => {
 	test('with mods', () => {
 		const expected = 'someClass class1 class2 hovered scrollable'
 		expect(
-			cx('someClass', { hovered: true, scrollable: true }, ['class1', 'class2'])
+			cx('someClass', { hovered: true, scrollable: true }, [
+				'class1',
+				'class2',
+			]),
 		).toBe(expected)
 	})
 
@@ -22,8 +25,8 @@ describe('cx', () => {
 		expect(
 			cx('someClass', { hovered: true, scrollable: false }, [
 				'class1',
-				'class2'
-			])
+				'class2',
+			]),
 		).toBe(expected)
 	})
 
@@ -32,8 +35,8 @@ describe('cx', () => {
 		expect(
 			cx('someClass', { hovered: true, scrollable: undefined }, [
 				'class1',
-				'class2'
-			])
+				'class2',
+			]),
 		).toBe(expected)
 	})
 })

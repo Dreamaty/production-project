@@ -10,6 +10,7 @@ module.exports = {
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 		'plugin:i18next/recommended',
+		'prettier',
 	],
 	overrides: [
 		{
@@ -37,6 +38,7 @@ module.exports = {
 		'@typescript-eslint/no-unused-vars': 'warn',
 		'react/jsx-props-no-spreading': 'warn',
 		'no-undef': ['error'],
+		'max-len': ['error', { ignoreComments: true }],
 	},
 	globals: {
 		__IS_DEV__: true,
