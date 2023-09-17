@@ -11,6 +11,7 @@ module.exports = {
 		'plugin:react/jsx-runtime',
 		'plugin:i18next/recommended',
 		'prettier',
+		'plugin:jest-dom/recommended',
 	],
 	overrides: [
 		{
@@ -28,7 +29,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'react', 'i18next'],
+	plugins: ['@typescript-eslint', 'react', 'i18next', 'jest-dom'],
 	rules: {
 		indent: ['error', 'tab'],
 		'linebreak-style': ['error', 'unix'],
@@ -38,7 +39,7 @@ module.exports = {
 		'@typescript-eslint/no-unused-vars': 'warn',
 		'react/jsx-props-no-spreading': 'warn',
 		'no-undef': ['error'],
-		'max-len': ['error', { ignoreComments: true }],
+		'max-len': ['error', { ignoreComments: true, code: 100 }],
 	},
 	globals: {
 		__IS_DEV__: true,
