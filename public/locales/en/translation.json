@@ -1,9 +1,10 @@
 {
-  "Language": "English",
-  "Main": "Main",
-  "About site": "About site",
-  "Page Not Found": "Page Not Found",
-  "Toggle": "Toggle",
-  "About": "About",
-  "Throw Error": "Throw Error"
+	"Language": "English",
+	"Lang": "en",
+	"Main": "Main",
+	"About site": "About site",
+	"Page Not Found": "Page Not Found",
+	"Toggle": "Toggle",
+	"About": "About",
+	"Throw Error": "Throw Error"
 }

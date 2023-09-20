@@ -3,7 +3,13 @@ import { cx } from 'shared/lib/classNames/cx'
 import { Button } from '../Button'
 import { ButtonTheme } from '../Button/ui/Button'
 
-export const LangSwitcher = ({ className }: { className?: string }) => {
+export const LangSwitcher = ({
+	className,
+	short,
+}: {
+	className?: string
+	short?: boolean
+}) => {
 	const { t, i18n } = useTranslation()
 
 	return (
@@ -14,7 +20,7 @@ export const LangSwitcher = ({ className }: { className?: string }) => {
 				i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
 			}}
 		>
-			{t('Language')}
+			{t(short ? 'Lang' : 'Language')}
 		</Button>
 	)
 }
