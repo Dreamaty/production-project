@@ -11,9 +11,9 @@
 		"lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
 		"lint:scss": "npx stylelint \"**/*.scss\"",
 		"lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-		"unit": "npx jest --config ./config/jest/jest.config.ts",
+		"test:unit": "npx jest --config ./config/jest/jest.config.ts",
 		"storybook": "storybook dev -p 6006 -c ./config/storybook",
-		"build-storybook": "storybook build"
+		"storybook:build": "storybook build -c ./config/storybook"
 	},
 	"keywords": [],
 	"author": "Dreamatti",
