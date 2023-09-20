@@ -12,7 +12,7 @@ const App = () => {
 
 	return (
 		<Suspense fallback>
-			<div className={cx('app', {}, [theme])}>
+			<div className={cx('app app-settings', {}, [theme])}>
 				<Navbar />
 				<div className="content-page">
 					<Sidebar />

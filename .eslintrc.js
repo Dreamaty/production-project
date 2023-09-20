@@ -4,15 +4,7 @@ module.exports = {
 		es2021: true,
 		jest: true,
 	},
-	extends: [
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:react/recommended',
-		'plugin:react/jsx-runtime',
-		'plugin:i18next/recommended',
-		'prettier',
-		'plugin:jest-dom/recommended',
-	],
+	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:i18next/recommended', 'prettier', 'plugin:jest-dom/recommended', 'plugin:storybook/recommended'],
 	overrides: [
 		{
 			env: {
@@ -21,6 +13,12 @@ module.exports = {
 			files: ['.eslintrc.{js,cjs}'],
 			parserOptions: {
 				sourceType: 'script',
+			},
+		},
+		{
+			files: ['**/src/**/*.test.{ts,tsx'],
+			rules: {
+				'i18next/no-literal-string': 'off',
 			},
 		},
 	],
