@@ -37,7 +37,6 @@ export const Sidebar = ({ className }: { className?: string }) => {
 					theme={AppLinkTheme.SECONDARY}
 					to={RoutePath.main}
 					className={cls.link}
-					withoutText={collapsed}
 				>
 					<MainIcon className={cls.icon} />
 					<span>{t('Main')}</span>
@@ -46,7 +45,6 @@ export const Sidebar = ({ className }: { className?: string }) => {
 					theme={AppLinkTheme.SECONDARY}
 					to={RoutePath.about}
 					className={cls.link}
-					withoutText={collapsed}
 				>
 					<AboutIcon className={cls.icon} />
 					<span>{t('About')}</span>

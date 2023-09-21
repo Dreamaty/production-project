@@ -12,6 +12,18 @@
 	outline: none;
 }
 
+.clear,
+.clearInverted {
+	padding: 0;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+.clearInverted {
+	color: var(--inverted-primary-color);
+}
+
 .outline {
 	font-weight: 500;
 	padding: 10px 15px;
