@@ -4,7 +4,17 @@ module.exports = {
 		es2021: true,
 		jest: true,
 	},
-	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:i18next/recommended', 'prettier', 'plugin:jest-dom/recommended', 'plugin:storybook/recommended'],
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:react/jsx-runtime',
+		'plugin:i18next/recommended',
+		'prettier',
+		'plugin:jest-dom/recommended',
+		'plugin:storybook/recommended',
+	],
 	overrides: [
 		{
 			env: {
@@ -16,9 +26,10 @@ module.exports = {
 			},
 		},
 		{
-			files: ['**/src/**/*.test.{ts,tsx'],
+			files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
 			rules: {
 				'i18next/no-literal-string': 'off',
+				'max-len': 'off',
 			},
 		},
 	],
@@ -38,6 +49,7 @@ module.exports = {
 		'react/jsx-props-no-spreading': 'warn',
 		'no-undef': ['error'],
 		'max-len': ['error', { ignoreComments: true, code: 100 }],
+		'react-hooks/exhaustive-deps': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,

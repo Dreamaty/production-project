@@ -1,10 +1,11 @@
 {
-	"Language": "Русский",
-	"Lang": "ru",
-	"Main": "Главная",
-	"About site": "О сайте",
-	"Page Not Found": "Страница не найдена",
-	"Toggle": "Переключить",
-	"About": "О нас",
-	"Throw Error": "Выбросить ошибку"
+  "Language": "Русский",
+  "Lang": "ru",
+  "Main": "Главная",
+  "About site": "О сайте",
+  "Page Not Found": "Страница не найдена",
+  "Toggle": "Переключить",
+  "About": "О нас",
+  "Throw Error": "Выбросить ошибку",
+  "Sign In": "Войти"
 }
