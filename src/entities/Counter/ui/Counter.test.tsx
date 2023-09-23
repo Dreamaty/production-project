@@ -22,7 +22,7 @@ describe('Counter component', () => {
 			},
 		})
 		fireEvent.click(screen.getByTestId('decrement-button'))
-		expect(screen.getByTestId('value-title')).toHaveTextContent('11')
+		expect(screen.getByTestId('value-title')).toHaveTextContent('9')
 	})
 	test('should create Counter', () => {
 		componentRender(<Counter />, {
@@ -33,6 +33,6 @@ describe('Counter component', () => {
 			},
 		})
 		fireEvent.click(screen.getByTestId('increment-button'))
-		expect(screen.getByTestId('value-title')).toHaveTextContent('9')
+		expect(screen.getByTestId('value-title')).toHaveTextContent('11')
 	})
 })
