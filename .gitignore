@@ -1,3 +1,61 @@
 /build
 node_modules
+*.DS_Store
+storybook-static
 .idea
+
+# npm & yarn
+.npm
+npm-debug.log*
+package-lock.json
+
+.yarn-integrity
+yarn-debug.log*
+yarn-error.log*
+
+node_modules/
+
+# TypeScript
+typings/
+*.tsbuildinfo
+
+# Lint directories
+.eslintcache
+.stylelintcache
+
+# env & config
+*.env*
+config/local*
+*/config/local*
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Bundles
+_build/
+dist/
+.cache
+.parcel-cache
+
+# Temporary folders
+tmp/
+temp/
+
+# Container data
+data/
+minio/
+
+# Pubsweet
+uploads/
+
+# IDE
+.idea
+.vscode
+.vscode-test
+.devcontainer
+
+# Misc
+.cache/
+.DS_Store
