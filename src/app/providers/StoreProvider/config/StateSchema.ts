@@ -1,9 +1,7 @@
 import { CounterSchema } from 'entities/Counter'
-
-export interface CounterState {
-	value: number
-}
+import { UserSchema } from 'entities/User'
 
 export interface StateSchema {
 	counter: CounterSchema
+	user?: UserSchema
 }

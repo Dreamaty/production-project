@@ -1,0 +1,53 @@
+.inputWrapper {
+	display: flex;
+	row-gap: 10px;
+	padding-top: 10px;
+	gap: 5px;
+}
+
+.placeholder {
+	color: var(--secondary-color);
+}
+
+.input {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: transparent;
+	font-family: 'Courier New', Courier, monospace;
+	text-shadow: 0 0 0 var(--primary-color);
+	width: 100%;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.caretWrapper {
+	flex-grow: 1;
+	position: relative;
+}
+
+.caret {
+	position: absolute;
+	height: 3px;
+	width: 9px;
+	background: var(--primary-color);
+	bottom: 2px;
+	left: 0;
+	animation: blink 0.8s forwards infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.01;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

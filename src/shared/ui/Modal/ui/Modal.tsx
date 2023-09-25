@@ -17,13 +17,16 @@ export const Modal = ({
 	children,
 	isOpen,
 	onClose,
+	lazy,
 }: {
 	className?: string
 	children?: ReactNode
 	isOpen?: boolean
 	onClose?: () => void
+	lazy?: boolean
 }) => {
 	const [isClosing, setIsClosing] = useState(false)
+	const [isMounted, setIsMounted] = useState(false)
 	const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
 	const closeHandler = useCallback(() => {
@@ -48,6 +51,11 @@ export const Modal = ({
 		},
 		[closeHandler],
 	)
+	useEffect(() => {
+		if (isOpen) {
+			setIsMounted(true)
+		}
+	}, [isOpen])
 
 	useEffect(() => {
 		if (isOpen) {
@@ -63,6 +71,8 @@ export const Modal = ({
 		[cls.opened]: isOpen,
 		[cls.closing]: isClosing,
 	}
+	if (lazy && !isMounted) return null
+
 	return (
 		<Portal>
 			<div data-testid="modal" className={cx(cls.modal, mods, [className])}>

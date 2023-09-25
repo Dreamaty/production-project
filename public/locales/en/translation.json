@@ -1,11 +1,13 @@
 {
-  "Language": "English",
-  "Lang": "en",
-  "Main": "Main",
-  "About site": "About site",
-  "Page Not Found": "Page Not Found",
-  "Toggle": "Toggle",
-  "About": "About",
-  "Throw Error": "Throw Error",
-  "Sign In": "Sign In"
+	"Language": "English",
+	"Lang": "en",
+	"Main": "Main",
+	"About site": "About site",
+	"Page Not Found": "Page Not Found",
+	"Toggle": "Toggle",
+	"About": "About",
+	"Throw Error": "Throw Error",
+	"Sign In": "Sign In",
+	"Login": "Type Login",
+	"Password": "Type Password"
 }
