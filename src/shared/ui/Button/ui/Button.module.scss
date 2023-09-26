@@ -5,6 +5,11 @@
 	padding: 6px 15px;
 }
 
+.disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
 .clear {
 	padding: 0;
 	border: none;

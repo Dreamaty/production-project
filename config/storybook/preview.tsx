@@ -5,6 +5,8 @@ import '../../src/app/styles/index.scss'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator'
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator'
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+// eslint-disable-next-line max-len
+import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator'
 
 const preview: Preview = {
 	parameters: {
@@ -15,6 +17,9 @@ const preview: Preview = {
 				date: /Date$/,
 			},
 		},
+	},
+	globals: {
+		__IS_DEV__: false,
 	},
 
 	globalTypes: {
@@ -33,7 +38,12 @@ const preview: Preview = {
 		},
 	},
 
-	decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator],
+	decorators: [
+		StyleDecorator,
+		ThemeDecorator(Theme.LIGHT),
+		RouterDecorator,
+		TranslationDecorator,
+	],
 }
 
 export default preview

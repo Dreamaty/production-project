@@ -1,14 +1,17 @@
 {
-	"Language": "Русский",
-	"Lang": "ru",
-	"Main": "Главная",
-	"About site": "О сайте",
-	"Page Not Found": "Страница не найдена",
-	"Toggle": "Переключить",
-	"About": "О нас",
-	"Throw Error": "Выбросить ошибку",
-	"Sign In": "Войти",
-	"Login": "Введите Username",
-
-	"Password": "Введите пароль"
+  "Language": "Русский",
+  "Lang": "ru",
+  "Main": "Главная",
+  "About site": "О сайте",
+  "Page Not Found": "Страница не найдена",
+  "Toggle": "Переключить",
+  "About": "О нас",
+  "Throw Error": "Выбросить ошибку",
+  "Sign In": "Войти",
+  "Login": "Введите Username",
+  "Password": "Введите пароль",
+  "Authorization form": "Форма авторизации",
+  "Username or password is incorrect": "Вы ввели неверный имя пользователя или пароль",
+  "Sign Out": "Выйти",
+  "Log Out": "Выйти"
 }

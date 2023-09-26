@@ -87,3 +87,6 @@ export const OutlineSizeL: Story = {
 export const OutlineSizeXL: Story = {
 	args: { children: 'Text', theme: ButtonTheme.OUTLINE, size: ButtonSize.XL },
 }
+export const Disabled: Story = {
+	args: { children: 'Text', theme: ButtonTheme.OUTLINE, disabled: true },
+}

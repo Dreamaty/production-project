@@ -1,13 +1,17 @@
 {
-	"Language": "English",
-	"Lang": "en",
-	"Main": "Main",
-	"About site": "About site",
-	"Page Not Found": "Page Not Found",
-	"Toggle": "Toggle",
-	"About": "About",
-	"Throw Error": "Throw Error",
-	"Sign In": "Sign In",
-	"Login": "Type Login",
-	"Password": "Type Password"
+  "Language": "English",
+  "Lang": "en",
+  "Main": "Main",
+  "About site": "About site",
+  "Page Not Found": "Page Not Found",
+  "Toggle": "Toggle",
+  "About": "About",
+  "Throw Error": "Throw Error",
+  "Sign In": "Sign In",
+  "Login": "Type Login",
+  "Password": "Type Password",
+  "Authorization form": "Authoriztion form",
+  "Username or password is incorrect": "Username or password is incorrect",
+  "Sign Out": "Sign Out",
+  "Log Out": "Log Out"
 }

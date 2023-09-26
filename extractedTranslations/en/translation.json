@@ -1,14 +1,18 @@
 {
   "About": "About",
   "An unexpected error has accrued": "An unexpected error has accrued",
+  "Authorization form": "",
   "Language": "",
+  "Log Out": "",
   "Login": "Login",
   "Main": "Main",
   "Page Not Found": "Page Not Found",
   "Password": "Password",
   "Reload Page": "Reload Page",
   "Sign In": "Sign In",
+  "Sign Out": "",
   "Throw Error": "Throw Error",
   "Toggle": "Toggle",
+  "Username or password is incorrect": "",
   "about site": ""
 }

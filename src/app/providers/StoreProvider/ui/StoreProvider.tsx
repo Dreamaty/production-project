@@ -11,12 +11,15 @@ export const StoreProvider = ({
 	children?: ReactNode
 	initialState?: DeepPartial<StateSchema>
 }) => {
-	const store = createReduxStore(initialState as StateSchema)
-
-	return <Provider store={store}>{children}</Provider>
+	return (
+		<Provider serverState={initialState as StateSchema} store={store}>
+			{children}
+		</Provider>
+	)
 }
+const store = createReduxStore()
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-// export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-// export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch
