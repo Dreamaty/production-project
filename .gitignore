@@ -59,3 +59,4 @@ uploads/
 # Misc
 .cache/
 .DS_Store
+storybook-static/project.json
