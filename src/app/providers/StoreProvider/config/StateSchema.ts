@@ -1,9 +1,4 @@
-import {
-	AnyAction,
-	CombinedState,
-	Reducer,
-	ReducersMapObject,
-} from '@reduxjs/toolkit'
+import { AnyAction, CombinedState, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { CounterSchema } from 'entity/Counter'
 import { UserSchema } from 'entity/User'
