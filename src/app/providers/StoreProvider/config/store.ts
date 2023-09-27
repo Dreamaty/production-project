@@ -1,21 +1,28 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { ReducersMapObject, configureStore } from '@reduxjs/toolkit'
 
-import { loginReducer } from 'features/AuthByUsername'
 import { counterReducer } from '../../../../entity/Counter'
 import { userReducer } from '../../../../entity/User'
 import { StateSchema } from './StateSchema'
+import { createReducerManager } from './reducerManager'
 
-const rootReducers = combineReducers({
-	counter: counterReducer,
-	user: userReducer,
-	loginForm: loginReducer,
-})
 export function createReduxStore(initialState?: StateSchema) {
-	return configureStore<StateSchema>({
-		reducer: rootReducers,
+	const rootReducers: ReducersMapObject<StateSchema> = {
+		counter: counterReducer,
+		user: userReducer,
+	}
+
+	const reducerManager = createReducerManager(rootReducers)
+
+	const store = configureStore<StateSchema>({
+		reducer: reducerManager.reduce,
 		devTools: __IS_DEV__,
 		preloadedState: initialState,
 	})
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	store.reducerManager = reducerManager
+
+	return store
 }
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

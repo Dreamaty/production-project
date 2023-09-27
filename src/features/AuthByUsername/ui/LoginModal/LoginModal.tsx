@@ -1,6 +1,8 @@
+import { Suspense } from 'react'
 import { cx } from 'shared/lib/classNames/cx'
+import { Loader } from 'shared/ui/Loader/Loader'
 import { Modal } from 'shared/ui/Modal'
-import { LoginForm } from '../LoginForm/LoginForm'
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 import cls from './LoginModal.module.scss'
 
 export const LoginModal = ({
@@ -19,7 +21,9 @@ export const LoginModal = ({
 			onClose={onClose}
 			className={cx(cls.loginModal, {}, [className])}
 		>
-			<LoginForm />
+			<Suspense fallback={<Loader />}>
+				<LoginFormAsync />
+			</Suspense>
 		</Modal>
 	)
 }
