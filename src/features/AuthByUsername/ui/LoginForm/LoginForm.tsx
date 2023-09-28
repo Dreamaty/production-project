@@ -64,7 +64,7 @@ const LoginForm = memo(function LoginForm({
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
 			<div className={cx(cls.loginForm, {}, [className])}>
 				<Text title={t('Authorization form')} />
-				{error && <Text theme={TextTheme.ERROR} text={error} />}
+				{error && <Text theme={TextTheme.ERROR} text={t(error)} />}
 				<Input
 					type="text"
 					placeholder={t('Login')}

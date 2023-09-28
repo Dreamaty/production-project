@@ -1,7 +1,7 @@
 /build
 node_modules
 *.DS_Store
-storybook-static
+storybook-static/
 .idea
 
 # npm & yarn

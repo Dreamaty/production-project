@@ -1,3 +1,4 @@
+
 module.exports = {
 	env: {
 		browser: true,
@@ -20,13 +21,13 @@ module.exports = {
 			env: {
 				node: true,
 			},
-			files: ['.eslintrc.{js,cjs}'],
+			files: [ '.eslintrc.{js,cjs}' ],
 			parserOptions: {
 				sourceType: 'script',
 			},
 		},
 		{
-			files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+			files: [ '**/src/**/*.{test,stories}.{ts,tsx}' ],
 			rules: {
 				'i18next/no-literal-string': 'off',
 				'max-len': 'off',
@@ -38,17 +39,20 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'react', 'i18next', 'jest-dom'],
+	plugins: [ '@typescript-eslint', 'react', 'i18next', 'jest-dom' ],
 	rules: {
-		indent: ['error', 'tab'],
-		'linebreak-style': ['error', 'unix'],
-		quotes: ['error', 'single'],
-		semi: ['error', 'never'],
+		'object-curly-spacing': [ 'error', 'always' ],
+		
+		'computed-property-spacing': [ 'error', 'always' ],
+		indent: [ 'error', 'tab' ],
+		'linebreak-style': [ 'error', 'unix' ],
+		quotes: [ 'error', 'single' ],
+		semi: [ 'error', 'never' ],
 		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unused-vars': 'warn',
 		'react/jsx-props-no-spreading': 'warn',
-		'no-undef': ['error'],
-		'max-len': ['error', { ignoreComments: true, code: 100 }],
+		'no-undef': [ 'error' ],
+		'max-len': [ 'error', { ignoreComments: true, code: 100 } ],
 		'react-hooks/exhaustive-deps': 'error',
 	},
 	globals: {
