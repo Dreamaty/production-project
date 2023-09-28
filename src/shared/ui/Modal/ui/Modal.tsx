@@ -68,8 +68,8 @@ export const Modal = ({
 	}, [isOpen, onKeyDown])
 
 	const mods: Record<string, boolean> = {
-		[cls.opened]: isOpen,
-		[cls.closing]: isClosing,
+		[ cls.opened ]: isOpen,
+		[ cls.closing ]: isClosing,
 	}
 	if (lazy && !isMounted) return null
 

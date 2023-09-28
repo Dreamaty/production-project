@@ -22,7 +22,7 @@ export function createReducerManager(
 			if (keysToRemove.length > 0) {
 				state = { ...state }
 				for (const key of keysToRemove) {
-					delete state[key]
+					delete state[ key ]
 				}
 				keysToRemove = []
 			}
@@ -31,22 +31,22 @@ export function createReducerManager(
 		},
 
 		add: (key: StateSchemaKey, reducer: Reducer) => {
-			if (!key || reducers[key]) {
+			if (!key || reducers[ key ]) {
 				return
 			}
 
-			reducers[key] = reducer
+			reducers[ key ] = reducer
 
 			// Generate a new combined reducer
 			combinedReducer = combineReducers(reducers)
 		},
 
 		remove: (key: StateSchemaKey) => {
-			if (!key || !reducers[key]) {
+			if (!key || !reducers[ key ]) {
 				return
 			}
 
-			delete reducers[key]
+			delete reducers[ key ]
 
 			keysToRemove.push(key)
 

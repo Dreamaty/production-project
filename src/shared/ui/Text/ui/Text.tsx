@@ -18,7 +18,7 @@ export const Text = ({
 	theme?: TextTheme
 }) => {
 	return (
-		<div className={cx(cls.textWrapper, {}, [className, cls[theme]])}>
+		<div className={cx(cls.textWrapper, {}, [className, cls[ theme ]])}>
 			{title && <p className={cls.title}>{title}</p>}
 			{text && <p className={cls.text}>{text}</p>}
 		</div>

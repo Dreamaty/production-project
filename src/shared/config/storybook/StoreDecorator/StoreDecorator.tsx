@@ -20,7 +20,7 @@ export const StoreDecorator =
 			<Provider
 				store={createReduxStore(
 				initialState as StateSchema,
-				{...defaultAsyncReducers, ...asyncReducers} as ReducersMapObject<StateSchema>,
+				{ ...defaultAsyncReducers, ...asyncReducers } as ReducersMapObject<StateSchema>,
 				)}
 			>
 				<StoryComponent />

@@ -20,7 +20,7 @@ export const Sidebar = ({ className }: { className?: string }) => {
 	return (
 		<div
 			data-testid="sidebar"
-			className={cx(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
+			className={cx(cls.sidebar, { [ cls.collapsed ]: collapsed }, [className])}
 		>
 			<Button
 				data-testid="sidebar-toggle"

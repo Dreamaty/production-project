@@ -34,13 +34,13 @@ export const Button: FC<ButtonProps> = ({
 	...otherProps
 }) => {
 	const mods: Record<string, boolean> = {
-		[cls.square]: square,
-		[cls.disabled]: disabled,
+		[ cls.square ]: square,
+		[ cls.disabled ]: disabled,
 	}
 	return (
 		<button
 			type="button"
-			className={cx(cls.button, mods, [className, cls[theme], cls[size]])}
+			className={cx(cls.button, mods, [className, cls[ theme ], cls[ size ]])}
 			disabled={disabled}
 			{...otherProps}
 		>
