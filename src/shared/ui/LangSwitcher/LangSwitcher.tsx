@@ -1,9 +1,10 @@
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
 import { Button } from '../Button'
 import { ButtonTheme } from '../Button/ui/Button'
 
-export const LangSwitcher = ({
+export const LangSwitcher = memo(({
 	className,
 	short,
 }: {
@@ -23,4 +24,4 @@ export const LangSwitcher = ({
 			{t(short ? 'Lang' : 'Language')}
 		</Button>
 	)
-}
+})

@@ -1,17 +1,17 @@
 import { getUserAuthData, userActions } from 'entity/User'
 import { LoginModal } from 'features/AuthByUsername'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { cx } from 'shared/lib/classNames/cx'
 import {
 	useAppDispatch,
 	useAppSelector,
-} from 'shared/hooks/storeHooks/storeHooks'
-import { cx } from 'shared/lib/classNames/cx'
+} from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
 import cls from './Navbar.module.scss'
 
-export const Navbar = ({ className }: { className?: string }) => {
+export const Navbar = memo(({ className }: { className?: string }) => {
 	const { t } = useTranslation()
 	const authData = useAppSelector(getUserAuthData)
 	const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
@@ -57,4 +57,4 @@ export const Navbar = ({ className }: { className?: string }) => {
 			)}
 		</div>
 	)
-}
+})

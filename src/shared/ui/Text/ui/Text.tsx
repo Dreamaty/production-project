@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { cx } from 'shared/lib/classNames/cx'
 import cls from './Text.module.scss'
 
@@ -6,7 +7,7 @@ export enum TextTheme {
 	ERROR = 'error',
 }
 
-export const Text = ({
+export const Text = memo(({
 	className,
 	title,
 	text,
@@ -23,4 +24,4 @@ export const Text = ({
 			{text && <p className={cls.text}>{text}</p>}
 		</div>
 	)
-}
+})

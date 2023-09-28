@@ -51,6 +51,7 @@ module.exports = {
 		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unused-vars': 'warn',
 		'react/jsx-props-no-spreading': 'warn',
+		'react/display-name': 'off',
 		'no-undef': [ 'error' ],
 		'max-len': [ 'error', { ignoreComments: true, code: 100 } ],
 		'react-hooks/exhaustive-deps': 'error',

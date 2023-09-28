@@ -2,7 +2,7 @@ import { cx } from 'shared/lib/classNames/cx'
 
 import { userActions } from 'entity/User'
 import { Suspense, useEffect } from 'react'
-import { useAppDispatch } from 'shared/hooks/storeHooks/storeHooks'
+import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'

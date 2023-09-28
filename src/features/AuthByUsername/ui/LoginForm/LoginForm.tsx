@@ -1,12 +1,12 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'shared/hooks/storeHooks/storeHooks'
 import { cx } from 'shared/lib/classNames/cx'
 import {
 	DynamicModuleLoader,
 	ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { Input } from 'shared/ui/Input'
@@ -22,6 +22,7 @@ import cls from './LoginForm.module.scss'
 
 export interface LoginFormProps {
 	className?: string
+	onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -30,9 +31,8 @@ const initialReducers: ReducersList = {
 
 const LoginForm = memo(function LoginForm({
 	className,
-}: {
-	className?: string
-}) {
+	onSuccess
+}: LoginFormProps) {
 	const { t } = useTranslation()
 
 	const dispatch = useAppDispatch()
@@ -56,9 +56,12 @@ const LoginForm = memo(function LoginForm({
 		[dispatch],
 	)
 
-	const onLoginClick = useCallback(() => {
-		dispatch(loginByUsername({ username, password }))
-	}, [dispatch, username, password])
+	const onLoginClick = useCallback(async () => {
+		const result = await dispatch(loginByUsername({ username, password }))
+		if( result.meta.requestStatus === 'fulfilled') {
+			onSuccess()
+		}
+	}, [onSuccess,dispatch, username, password])
 
 	return (
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

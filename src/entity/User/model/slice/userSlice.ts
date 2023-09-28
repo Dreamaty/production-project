@@ -8,7 +8,7 @@ import { User, UserSchema } from '../types/user'
 // Define the initial state using that type
 const initialState: UserSchema = {}
 
-export const counterSlice = createSlice({
+export const UserSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
@@ -28,9 +28,9 @@ export const counterSlice = createSlice({
 	},
 })
 
-export const { actions: userActions } = counterSlice
+export const { actions: userActions } = UserSlice
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCount = (state: RootState) => state.counter.value
 
-export const { reducer: userReducer } = counterSlice
+export const { reducer: userReducer } = UserSlice
