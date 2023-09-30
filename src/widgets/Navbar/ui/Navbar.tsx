@@ -37,7 +37,7 @@ export const Navbar = memo(({ className }: { className?: string }) => {
 					className={cls.links}
 					onClick={onLogOut}
 				>
-					{t('Log Out')}
+					{t('Sign Out')}
 				</Button>
 			</div>
 		)
@@ -53,7 +53,10 @@ export const Navbar = memo(({ className }: { className?: string }) => {
 				{t('Sign In')}
 			</Button>
 			{isAuthModalOpen && (
-				<LoginModal isOpen={isAuthModalOpen} onClose={onCloseModal} />
+				<LoginModal 
+					isOpen={isAuthModalOpen} 
+					onClose={onCloseModal} 
+				/>
 			)}
 		</div>
 	)

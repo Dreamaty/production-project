@@ -6,7 +6,7 @@ import {
 	useRef,
 	useState,
 } from 'react'
-import { cx } from 'shared/lib/classNames/cx'
+import { Mods, cx } from 'shared/lib/classNames/cx'
 import { Portal } from 'shared/ui/Portal/Portal'
 import cls from './Modal.module.scss'
 
@@ -67,7 +67,7 @@ export const Modal = ({
 		}
 	}, [isOpen, onKeyDown])
 
-	const mods: Record<string, boolean> = {
+	const mods: Mods = {
 		[ cls.opened ]: isOpen,
 		[ cls.closing ]: isClosing,
 	}

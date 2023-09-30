@@ -30,7 +30,7 @@
     "lastName": "Dreamatty",
     "age": 24,
     "currency": "ILS",
-    "Country": "Israel",
+    "country": "Israel",
     "city": "Holon",
     "username": "admin",
     "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"

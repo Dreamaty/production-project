@@ -17,6 +17,4 @@ export const SidebarItem = ({ item, collapsed }: {item: SidebarItemType, collaps
 			<span>{t(item.text)}</span>
 		</AppLink>
 	)
-
-
 }

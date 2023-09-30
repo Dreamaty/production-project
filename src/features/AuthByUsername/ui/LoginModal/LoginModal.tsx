@@ -3,7 +3,6 @@ import { cx } from 'shared/lib/classNames/cx'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Modal } from 'shared/ui/Modal'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
-import cls from './LoginModal.module.scss'
 
 export const LoginModal = ({
 	className,
@@ -21,7 +20,7 @@ export const LoginModal = ({
 			lazy
 			isOpen={isOpen}
 			onClose={onClose}
-			className={cx(cls.loginModal, {}, [ className ])}
+			className={cx('', {}, [ className ])}
 		>
 			<Suspense fallback={<Loader />}>
 				<LoginFormAsync onSuccess={onClose} />
