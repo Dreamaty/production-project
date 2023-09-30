@@ -1,5 +1,3 @@
-
-
 import { StoryFn } from '@storybook/react'
 import { StateSchema, createReduxStore } from 'app/providers/StoreProvider'
 import { profileReducer } from 'entity/Profile'
@@ -22,8 +20,8 @@ export const StoreDecorator =
 		(StoryComponent: StoryFn) => (
 			<Provider
 				store={createReduxStore(
-				initialState as StateSchema,
-				{ ...defaultAsyncReducers, ...asyncReducers }
+					initialState as StateSchema,
+					{	...defaultAsyncReducers, ...asyncReducers }
 				)}
 			>
 				<StoryComponent />

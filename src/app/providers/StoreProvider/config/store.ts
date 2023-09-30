@@ -1,4 +1,9 @@
-import { CombinedState, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit'
+import {
+	CombinedState,
+	Reducer,
+	ReducersMapObject,
+	configureStore
+} from '@reduxjs/toolkit'
 
 import { NavigateOptions, To } from 'react-router'
 import { $api } from 'shared/api/api'

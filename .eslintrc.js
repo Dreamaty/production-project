@@ -11,9 +11,9 @@ module.exports = {
 		'plugin:react-hooks/recommended',
 		'plugin:react/jsx-runtime',
 		'plugin:i18next/recommended',
-		'prettier',
 		'plugin:jest-dom/recommended',
 		'plugin:storybook/recommended',
+		'prettier',
 	],
 	overrides: [
 		{
@@ -41,14 +41,15 @@ module.exports = {
 	plugins: ['@typescript-eslint', 'react', 'i18next', 'jest-dom'],
 	rules: {
 		'object-curly-spacing': ['error', 'always'],
-		'object-curly-newline': ['error', 'always', {
-      "ObjectExpression": { "consistent": true, "multiline": true },
-      "ObjectPattern": { "consistent": true, "multiline": true },
-      "ImportDeclaration": "never",
-      "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-    }],
+		'object-curly-newline': ['error', {
+			'ObjectExpression': { 'consistent': true, 'multiline': true },
+			'ObjectPattern': { 'consistent': true, 'multiline': true },
+			'ImportDeclaration': { 'consistent': true, 'multiline': true, minProperties: 4 },
+			'ExportDeclaration': { 'multiline': true, 'minProperties': 3 }
+		}],
 		'computed-property-spacing': ['error', 'always'],
-		indent: ['error', 'tab'],
+		'indent': ['error', 'tab'],
+		'no-tabs': 0,
 		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'never'],
@@ -56,9 +57,9 @@ module.exports = {
 		'@typescript-eslint/no-unused-vars': 'warn',
 		'react/jsx-props-no-spreading': 'warn',
 		'react/display-name': 'off',
-		'no-undef': ['error'],
+		'no-undef': 'off',
 		'max-len': ['error', {
-			ignoreComments: true, code: 100 
+			ignoreComments: true, code: 100, ignorePattern: '^import .*' 
 		}],
 		'react-hooks/exhaustive-deps': 'error',
 	},
