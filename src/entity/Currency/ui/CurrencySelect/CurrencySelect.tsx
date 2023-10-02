@@ -12,7 +12,7 @@ const options = [
 export const CurrencySelect = memo(({ className, value, onChange, readonly }: {
 	className?: string
 	value?: Currency
-	readonly: boolean
+	readonly?: boolean
 	onChange?: (value: Currency) => void
 
 }) => {
