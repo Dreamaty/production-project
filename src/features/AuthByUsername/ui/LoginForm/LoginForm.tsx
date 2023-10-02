@@ -9,9 +9,8 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
-import { Input } from 'shared/ui/Input'
-import { Text } from 'shared/ui/Text'
-import { TextTheme } from 'shared/ui/Text/ui/Text'
+import { UiInput } from 'shared/ui/Input'
+import { TextTheme, UiText } from 'shared/ui/Text/ui/UiText'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
@@ -66,9 +65,9 @@ const LoginForm = memo(function LoginForm({
 	return (
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
 			<div className={cx(cls.loginForm, {}, [className])}>
-				<Text title={t('Authorization form')} />
-				{error && <Text theme={TextTheme.ERROR} text={t(error)} />}
-				<Input
+				<UiText title={t('Authorization form')} />
+				{error && <UiText theme={TextTheme.ERROR} text={t(error)} />}
+				<UiInput
 					type="text"
 					placeholder={t('Login')}
 					value={username}
@@ -76,7 +75,7 @@ const LoginForm = memo(function LoginForm({
 					onChange={onChangeUsername}
 				/>
 
-				<Input
+				<UiInput
 					type="text"
 					placeholder={t('Password')}
 					value={password}

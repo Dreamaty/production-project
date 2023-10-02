@@ -1,20 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Text, TextTheme } from './Text'
+import { TextAlign, TextTheme, UiText } from './UiText'
 const meta = {
 	title: 'shared/Text',
-	component: Text,
+	component: UiText,
 	parameters: {
 		layout: 'fullscreen',
 	},
 	tags: ['autodocs'],
 	argTypes: {},
-} satisfies Meta<typeof Text>
+} satisfies Meta<typeof UiText>
 export default meta
 type Story = StoryObj<typeof meta>
 export const Light: Story = {
 	args: { title: 'Title lorem ipsum', text: 'TextTextTextTextTextTextText' },
+}
+export const AlignRight: Story = {
+	args: { 
+		title: 'Title lorem ipsum', 
+		text: 'TextTextTextTextTextTextText',
+		align: TextAlign.RIGHT
+	},
+}
+export const AlignCenter: Story = {
+	args: {
+		title: 'Title lorem ipsum', 
+		text: 'TextTextTextTextTextTextText',
+		align: TextAlign.CENTER 
+	},
 }
 export const Error: Story = {
 	args: {

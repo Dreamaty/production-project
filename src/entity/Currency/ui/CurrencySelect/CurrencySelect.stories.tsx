@@ -1,21 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Input } from './Input'
+import { CurrencySelect } from './CurrencySelect'
 const meta = {
-	title: 'shared/Input',
-	component: Input,
+	title: 'entity/CurrencySelect',
+	component: CurrencySelect,
 	parameters: {
 		layout: 'fullscreen',
 	},
 	tags: ['autodocs'],
-	args: {
-		placeholder: 'Type text',
-		value: '123456qwerty',
-		autoFocus: true,
-	},
 	argTypes: {},
-} satisfies Meta<typeof Input>
+} satisfies Meta<typeof CurrencySelect>
 export default meta
 type Story = StoryObj<typeof meta>
 export const Light: Story = {

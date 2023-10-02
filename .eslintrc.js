@@ -47,7 +47,6 @@ module.exports = {
 			'ImportDeclaration': { 'consistent': true, 'multiline': true, minProperties: 4 },
 			'ExportDeclaration': { 'multiline': true, 'minProperties': 3 }
 		}],
-		'computed-property-spacing': ['error', 'always'],
 		'indent': ['error', 'tab'],
 		'no-tabs': 0,
 		'linebreak-style': ['error', 'unix'],

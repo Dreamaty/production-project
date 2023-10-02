@@ -3,6 +3,14 @@
     "Profile": "Profile",
     "Edit": "Edit",
     "Your Name": "Your Name",
-    "Your Last Name": "Your Last Name"
+    "Your Last Name": "Your Last Name",
+    "Try to refresh the page": "Try to refresh the page",
+    "Did not succeed to load profile": "Did not succeed to load profile",
+    "Cancel": "Cancle",
+    "Save": "Save",
+    "Your Age": "Your Age",
+    "Your Country": "Your Country",
+    "Your City": "Your City",
+    "Your Currency": "Your Currency"
   }
 }

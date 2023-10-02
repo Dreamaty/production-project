@@ -3,6 +3,13 @@
     "Profile": "Профиль",
     "Edit": "Редактировать",
     "Your Name": "Ваше имя",
-    "Your Last Name": "Ваша фамилия"
+    "Your Last Name": "Ваша фамилия",
+    "Try to refresh the page": "Попробуйте обновить страницу",
+    "Did not succeed to load profile": "Не удалось загрузить профиль",
+    "Cancel": "Отменить",
+    "Save": "Сохранять",
+    "Your Country": "Твоя страна",
+    "Your City": "Ваш город",
+    "Your Currency": "Ваша валюта"
   }
 }

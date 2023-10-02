@@ -13,6 +13,10 @@
   "Authorization form": "Форма авторизации",
   "Username or password is incorrect": "Вы ввели неверный имя пользователя или пароль",
   "Sign Out": "Выйти",
-  "Profile": "Профиль"
-
+  "Profile": "Профиль",
+  "profile": {
+    "Your Age": "Ваш возраст"
+  },
+  "Your Currency": "Ваша валюта",
+  "Your Country": "Твоя страна"
 }
