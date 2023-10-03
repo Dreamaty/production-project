@@ -1,0 +1,14 @@
+set()
+
+import { cx } from 'shared/lib/classNames/cx'
+import cls  from './MyComponent.tsx.module.scss'
+
+export const MyComponent.tsx = ({ className }: {className?: string}) => {
+		
+	return (
+		<div className={cx(cls.#get${display.uncapitalize($name)}(), {},
+			[className])}>
+
+		</div>
+	)
+}

@@ -20,6 +20,7 @@ const preview: Preview = {
 	},
 	globals: {
 		__IS_DEV__: false,
+		__PROJECT__: 'storybook'
 	},
 
 	globalTypes: {
