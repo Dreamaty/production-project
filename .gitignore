@@ -60,3 +60,5 @@ uploads/
 .cache/
 .DS_Store
 storybook-static/project.json
+storybook-static/iframe.html
+storybook-static/project.json
