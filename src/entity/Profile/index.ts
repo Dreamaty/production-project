@@ -10,3 +10,7 @@ export { profileActions, profileReducer } from './model/slice/profileSlice'
 export { Profile, ProfileSchema } from './model/types/profile'
 
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly'
+
+// eslint-disable-next-line max-len
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+

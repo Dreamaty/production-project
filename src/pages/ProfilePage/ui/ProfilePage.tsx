@@ -12,6 +12,7 @@ import {
 	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
+import { TextTheme, UiText } from 'shared/ui/Text'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
@@ -22,7 +23,7 @@ const ProfilePage = () => {
 	const { t } = useTranslation('profile')
 	const dispatch = useAppDispatch()
 
-	const { data, error, isLoading, readonly } = useProfile()
+	const { data, error, isLoading, readonly, validateErrors } = useProfile()
 
 	const onChangeFirstName = useCallback((value?: string) => {
 		dispatch(profileActions.updateProfile({ 
@@ -64,13 +65,17 @@ const ProfilePage = () => {
 
 
 	useEffect(() => {
-		dispatch(fetchProfileData())
+		if(__PROJECT__ !== 'storybook'){
+			dispatch(fetchProfileData())
+		}
 	}, [dispatch])
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount >
 			<ProfilePageHeader  />
-			
+			{validateErrors?.length && validateErrors.map(error => (
+				<UiText key={error} theme={TextTheme.ERROR} text={t(error)}/>
+			))}
 			<ProfileCard 
 				data={data} 
 				error={error} 

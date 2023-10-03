@@ -41,7 +41,7 @@ export const UiSelect = memo(
 		, [options])
 
 		const mods: Mods = {
-		
+			[cls.readonly]: readonly
 		}
 		
 		return (
