@@ -6,14 +6,12 @@ import {
 } from '@reduxjs/toolkit'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { AxiosInstance } from 'axios'
-import { CounterSchema } from 'entity/Counter'
 import { ProfileSchema } from 'entity/Profile'
 import { UserSchema } from 'entity/User'
 import { LoginSchema } from 'features/AuthByUsername'
 import { NavigateOptions, To } from 'react-router'
 
 export interface StateSchema {
-	counter: CounterSchema
 	user: UserSchema
 
 	// Async Reducers

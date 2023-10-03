@@ -8,7 +8,6 @@ import {
 import { NavigateOptions, To } from 'react-router'
 import { $api } from 'shared/api/api'
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { counterReducer } from '../../../../entity/Counter'
 import { userReducer } from '../../../../entity/User'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
@@ -20,7 +19,6 @@ export function createReduxStore(
 ) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
-		counter: counterReducer,
 		user: userReducer,
 	}
 

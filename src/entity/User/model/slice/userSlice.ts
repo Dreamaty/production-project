@@ -6,7 +6,9 @@ import { User, UserSchema } from '../types/user'
 // Define a type for the slice state
 
 // Define the initial state using that type
-const initialState: UserSchema = {}
+const initialState: UserSchema = {
+	_inited: false,
+}
 
 export const UserSlice = createSlice({
 	name: 'user',
@@ -20,6 +22,7 @@ export const UserSlice = createSlice({
 			if (user) {
 				state.authData = JSON.parse(user)
 			}
+			state._inited = true
 		},
 		logout: (state) => {
 			state.authData = undefined

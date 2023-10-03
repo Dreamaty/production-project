@@ -1,14 +1,16 @@
 import { cx } from 'shared/lib/classNames/cx'
 
 import { userActions } from 'entity/User'
+import { getUserInited } from 'entity/User/model/selectors/getUserInited/getUserInited'
 import { Suspense, useEffect } from 'react'
-import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
+import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { AppRouter } from './providers/router'
 
 const App = () => {
 	const dispatch = useAppDispatch()
+	const inited = useAppSelector(getUserInited)
 
 	useEffect(() => {
 		dispatch(userActions.initAuthData())
@@ -17,16 +19,16 @@ const App = () => {
 	}, [])
 
 	return (
-		<Suspense fallback>
-			<div className={cx('app', {}, [])}>
+		<div className={cx('app', {}, [])}>
+			<Suspense fallback="">
 				<Navbar />
 
 				<div className="content-page">
 					<Sidebar />
-					<AppRouter />
+					{inited && <AppRouter />}
 				</div>
-			</div>
-		</Suspense>
+			</Suspense>
+		</div>
 	)
 }
 
