@@ -19,7 +19,7 @@ export function createReduxStore(
 ) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
-		user: userReducer,
+		user: userReducer
 	}
 
 	const extraArg: ThunkExtraArg = {

@@ -71,23 +71,26 @@ const ProfilePage = () => {
 	}, [dispatch])
 
 	return (
-		<DynamicModuleLoader reducers={reducers} removeAfterUnmount >
-			<ProfilePageHeader  />
-			{validateErrors?.length && validateErrors.map(error => (
-				<UiText key={error} theme={TextTheme.ERROR} text={t(error)}/>
-			))}
-			<ProfileCard 
-				data={data} 
-				error={error} 
-				isLoading={isLoading} 
-				readonly={readonly}
-				onChangeFirstName={onChangeFirstName}
-				onChangeLastName={onChangeLastName}
-				onChangeAge={onChangeAge}
-				onChangeCity={onChangeCity}
-				onChangeCountry={onChangeCountry}
-				onChangeCurrency={onChangeCurrency}
-			/>
+		<DynamicModuleLoader reducers={reducers} >
+			<div>
+				<ProfilePageHeader  />
+				{validateErrors?.length && validateErrors.map(error => (
+					<UiText key={error} theme={TextTheme.ERROR} text={t(error)}/>
+				))}
+				<ProfileCard 
+					data={data} 
+					error={error} 
+					isLoading={isLoading} 
+					readonly={readonly}
+					onChangeFirstName={onChangeFirstName}
+					onChangeLastName={onChangeLastName}
+					onChangeAge={onChangeAge}
+					onChangeCity={onChangeCity}
+					onChangeCountry={onChangeCountry}
+					onChangeCurrency={onChangeCurrency}
+				/>
+			</div>
+			
 		</DynamicModuleLoader>
 	)
 

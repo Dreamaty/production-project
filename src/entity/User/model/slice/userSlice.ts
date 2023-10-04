@@ -10,7 +10,7 @@ const initialState: UserSchema = {
 	_inited: false,
 }
 
-export const UserSlice = createSlice({
+export const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
@@ -31,9 +31,6 @@ export const UserSlice = createSlice({
 	},
 })
 
-export const { actions: userActions } = UserSlice
+export const { actions: userActions } = userSlice
 
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value
-
-export const { reducer: userReducer } = UserSlice
+export const { reducer: userReducer } = userSlice

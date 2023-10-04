@@ -1,5 +1,5 @@
 import { getUserAuthData } from 'entity/User'
-import { Navigate, useLocation } from 'react-router'
+import { Navigate, useLocation } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 

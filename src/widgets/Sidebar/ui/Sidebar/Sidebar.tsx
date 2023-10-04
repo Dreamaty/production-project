@@ -1,4 +1,6 @@
-import { memo, useMemo, useState } from 'react'
+import {
+	memo, useEffect, useMemo, useState
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
 import { Button } from 'shared/ui/Button'
@@ -15,6 +17,13 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 	const onToggle = () => {
 		setCollapsed((prev) => !prev)
 	}
+	useEffect(() => {
+		console.log('sidebar creating')
+		
+		return () => {
+			console.log('sidebar deleting')
+		}
+	}, [])
 	const itemsList = useMemo(() => SidebarItemsList.map((item) => (
 		<SidebarItem key={item.path} item={item} collapsed={collapsed}/>)
 	), [collapsed])
