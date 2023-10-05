@@ -16,21 +16,21 @@ export function buildPlugins({
 			template: paths.html,
 		}),
 		new webpack.ProgressPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].[contenthash:8].css',
+			chunkFilename: 'css/[name].[contenthash:8].css',
+		}),
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 			__API__: JSON.stringify(apiUrl),
 			__PROJECT__: JSON.stringify(project)
 		}),
-		new MiniCssExtractPlugin({
-			filename: 'css/[name].[contenthash:8].css',
-			chunkFilename: 'css/[name].[contenthash:8].css',
-		}),
 	]
-	if (isDev)
+	if (isDev){
+		plugins.push(new ReactRefreshPlugin())
 		plugins.push(
-			new webpack.HotModuleReplacementPlugin(),
-			new BundleAnalyzerPlugin({ openAnalyzer: false }),
-			new ReactRefreshPlugin()
-		)
+			new webpack.HotModuleReplacementPlugin())
+		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+	}
 	return plugins
 }

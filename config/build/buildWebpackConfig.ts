@@ -1,10 +1,11 @@
+import { Configuration } from 'webpack'
 import { buildDevServer } from './buildDevServer'
 import { buildLoaders } from './buildLoaders'
 import { buildPlugins } from './buildPlugins'
 import { buildResolvers } from './buildResolvers'
 import { BuildOptions } from './types/config'
 
-export function buildWebpackConfig(options: BuildOptions) {
+export function buildWebpackConfig(options: BuildOptions): Configuration {
 	const { mode, paths, isDev } = options
 
 	return {
@@ -14,6 +15,7 @@ export function buildWebpackConfig(options: BuildOptions) {
 			filename: '[name].[contenthash].js',
 			path: paths.build,
 			clean: true,
+			publicPath: '/'
 		},
 		plugins: buildPlugins(options),
 		module: {

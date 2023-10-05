@@ -6,7 +6,7 @@ import { BuildOptions } from './types/config'
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 	const { isDev } = options
 	
-	const swgLoader = {
+	const svgLoader = {
 		test: /\.svg$/,
 		use: ['@svgr/webpack'],
 	}
@@ -30,5 +30,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	return [babelLoader, typescriptLoader, cssLoader, swgLoader, fileLoader]
+	return [fileLoader,svgLoader, babelLoader, typescriptLoader, cssLoader,  ]
 }
