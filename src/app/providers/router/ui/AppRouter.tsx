@@ -27,15 +27,12 @@ const AppRouter = () => {
 		)}, [])
 	return (
 		
+
 		<Routes>
-			{Object.values(routeConfig).map((route: AppRoutesProps) => (
-				<Route
-					key={route.path}
-					path={route.path}
-					element={route.element}
-				/>
-			))}
+			{Object.values(routeConfig).map(
+				renderWithWrapper)}
 		</Routes>
+		
 		
 	)
 }

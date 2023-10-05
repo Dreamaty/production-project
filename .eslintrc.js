@@ -48,7 +48,6 @@ module.exports = {
 			'ExportDeclaration': { 'multiline': true, 'minProperties': 3 }
 		}],
 		'indent': ['error', 'tab'],
-		'no-tabs': 0,
 		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'never'],
