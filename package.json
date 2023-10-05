@@ -17,10 +17,6 @@
 		"storybook": "storybook dev -p 6006 -c ./config/storybook",
 		"storybook:build": "storybook build -c ./config/storybook"
 	},
-	"moduleDirectories": [
-		"node_modules",
-		"src"
-	],
 	"keywords": [],
 	"author": "Dreamatti",
 	"license": "ISC",
@@ -29,6 +25,7 @@
 		"@babel/preset-env": "^7.22.20",
 		"@babel/preset-react": "^7.22.15",
 		"@babel/preset-typescript": "^7.22.15",
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
 		"@storybook/addon-essentials": "^7.4.2",
 		"@storybook/addon-interactions": "^7.4.2",
 		"@storybook/addon-links": "^7.4.2",
@@ -93,7 +90,6 @@
 		"webpack-dev-server": "^4.7.4"
 	},
 	"dependencies": {
-		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
 		"@reduxjs/toolkit": "^1.9.6",
 		"@types/node": "^20.6.2",
 		"axios": "^1.5.0",
