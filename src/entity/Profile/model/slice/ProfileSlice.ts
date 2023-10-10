@@ -24,7 +24,8 @@ export const profileSlice = createSlice({
 		updateProfile: (state, action: PayloadAction<Profile>) => {
 			state.form = {
 				...state.form,
-				...action.payload
+				...action.payload,
+				
 			}
 		},
 		cancelChanging: (state) => {

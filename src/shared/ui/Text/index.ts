@@ -1,6 +1,5 @@
 export {
-	TextAlign,
-	TextTheme,
+	TextAlign, TextSize, TextTheme,
 	UiText
 } from './ui/UiText'
 

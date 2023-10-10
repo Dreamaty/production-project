@@ -1,7 +1,8 @@
+import { memo } from 'react'
 import { cx } from 'shared/lib/classNames/cx'
 import cls from './<FTName>.module.scss'
 
-export const <FTName> = ({ className }: {className?: string}) => {
+export const <FTName> = memo(({ className }: {className?: string}) => {
 		
 	return (
 		<div className={cx(cls.<FTName | lowercasefirstchar>, {},
@@ -9,4 +10,4 @@ export const <FTName> = ({ className }: {className?: string}) => {
 
 		</div>
 	)
-}
+})

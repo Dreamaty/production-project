@@ -4,7 +4,7 @@ import cls from './Avatar.module.scss'
 
 export const Avatar = ({ className, src, alt, size }: {
 	className?: string
-	src: string
+	src?: string
 	alt: string
 	size?: number 
 }) => {

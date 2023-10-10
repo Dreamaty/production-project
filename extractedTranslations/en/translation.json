@@ -1,6 +1,7 @@
 {
   "About": "About",
   "An unexpected error has accrued": "An unexpected error has accrued",
+  "Article is not found": "Article is not found",
   "Authorization form": "",
   "Cancel": "Cancel",
   "Did not succeed to load profile": "Did not succeed to load profile",
@@ -18,6 +19,7 @@
   "Sign In": "Sign In",
   "Sign Out": "",
   "The error has occured": "The error has occured",
+  "The error has occurred": "The error has occurred",
   "Throw Error": "Throw Error",
   "Toggle": "Toggle",
   "Try to refresh the page": "Try to refresh the page",

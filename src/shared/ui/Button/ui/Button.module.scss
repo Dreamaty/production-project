@@ -3,6 +3,10 @@
 	color: var(--primary-color);
 	border-radius: 25%;
 	padding: 6px 15px;
+
+	&:hover {
+		opacity: 0.7;
+	}
 }
 
 .disabled {
@@ -86,3 +90,4 @@
 .size_xl {
 	font: var(--font-xl);
 }
+

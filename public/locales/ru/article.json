@@ -1,1 +1,7 @@
-{}
+{
+  "article": {
+    "Article is not found": "Статья не найдена",
+    "The error has acquired": "Ошибка приобрела",
+    "The error has occurred": "Произошла ошибка"
+  }
+}
