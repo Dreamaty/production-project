@@ -1,10 +1,11 @@
-import { memo, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import { cx } from 'shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitalEffect'
 import { Avatar } from 'shared/ui/Avatar'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
@@ -59,13 +60,10 @@ export const ArticleDetails = memo(({ className, id }: {className?: string, id: 
 			throw new Error('Unknown article type')
 		}
 	}, [])
+	useInitialEffect(() => {
+		dispatch(fetchArticleById(id))
+	})
 	
-	useEffect(() => {
-		if(__PROJECT__ !== 'storybook') {
-			dispatch(fetchArticleById(id))
-		}
-	}, [dispatch, id])
-
 	let content
 
 	if(isLoading) {
