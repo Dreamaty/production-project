@@ -4,15 +4,17 @@ import { Profile, ValidateProfileError } from '../../types/profile'
 
 export const fetchProfileData = createAsyncThunk<
 	Profile, 
-	void, 
+	string | undefined, 
 	ThunkConfig<string>
 >(
 	'profile/fetchProfileData',
-	async (_, thunkApi) => {
+	async (profileId, thunkApi) => {
 		const { extra, rejectWithValue } = thunkApi
 
+		if(!profileId) return rejectWithValue(ValidateProfileError.NO_ID)
+
 		try {
-			const response = await extra.api.get<Profile>('/profile')
+			const response = await extra.api.get<Profile>(`/profile/${profileId}`)
 
 			if(!response.data) {
 				throw new Error()

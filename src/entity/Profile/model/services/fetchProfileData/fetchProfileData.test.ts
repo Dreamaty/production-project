@@ -22,7 +22,7 @@ describe('fetchProfileData',  () => {
 		const thunk = new TestAsyncThunk(fetchProfileData)
 		thunk.api.get.mockReturnValue(Promise.resolve({ data: profileValue }))
 
-		const result = await thunk.callThunk()
+		const result = await thunk.callThunk('1')
 
 		expect(thunk.api.get).toHaveBeenCalled()
 		expect(result.meta.requestStatus).toBe('fulfilled')
@@ -32,7 +32,7 @@ describe('fetchProfileData',  () => {
 	test('should return error', async () => {
 		const thunk = new TestAsyncThunk(fetchProfileData)
 		thunk.api.get.mockReturnValue(Promise.resolve({ stats: 404 }))
-		const result = await thunk.callThunk()
+		const result = await thunk.callThunk('1')
 
 		expect(result.meta.requestStatus).toBe('rejected')
 		expect(result.payload).toBe(ValidateProfileError.SERVER_ERROR)

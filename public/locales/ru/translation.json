@@ -19,5 +19,10 @@
   },
   "Your Currency": "Ваша валюта",
   "Your Country": "Твоя страна",
-  "There is no comments": "Нет комментариев"
+  "There is no comments": "Нет комментариев",
+  "Type your comment": "Введите комментарий",
+  "Send": "Отправить",
+	"Edit": "Редактировать",
+	"Cancel": "Отменить",
+	"Save": "Сохранять"
 }

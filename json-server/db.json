@@ -102,6 +102,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "this is great article",
+      "id": "ceb8n3U"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "popopopopo",
+      "id": "M-l4fLe"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "xSogiwK"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "dC1gNnE"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sdfa",
+      "id": "Hmy61cs"
     }
   ],
   "users": [
@@ -120,14 +150,28 @@
       "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
     }
   ],
-  "profile": {
-    "firstName": "Michael",
-    "lastName": "Dreamatty",
-    "age": 24,
-    "currency": "ILS",
-    "country": "Israel",
-    "city": "Holon",
-    "username": "admin",
-    "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Michael",
+      "lastName": "Dreamatty",
+      "age": 24,
+      "currency": "ILS",
+      "country": "Israel",
+      "city": "Holon",
+      "username": "admin",
+      "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
+    },
+    {
+      "id": "2",
+      "firstName": "Ido",
+      "lastName": "Palpatin",
+      "age": 99,
+      "currency": "RUB",
+      "country": "Ukraine",
+      "city": "Kiev",
+      "username": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPZKsahkuXnKI_yLXN7XvCZp2YRtvFwW-OQ&usqp=CAU"
+    }
+  ]
 }

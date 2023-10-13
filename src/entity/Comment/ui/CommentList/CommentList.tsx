@@ -12,6 +12,17 @@ export const CommentList = memo(({ className, comments, isLoading }: {
 	isLoading?: boolean
 }) => {
 	const { t } = useTranslation()
+
+	if (isLoading) {
+		return (
+			<div className={cx(cls.commentList, {},
+				[className])}>
+				<CommentCard isLoading/>
+				<CommentCard isLoading/>
+				<CommentCard isLoading/>
+			</div>
+		)
+	}
 		
 	return (
 		<div className={cx(cls.commentList, {},

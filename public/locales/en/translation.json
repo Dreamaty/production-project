@@ -10,11 +10,16 @@
   "Sign In": "Sign In",
   "Login": "Type Login",
   "Password": "Type Password",
-  "Authorization form": "Authoriztion form",
+  "Authorization form": "Authorization form",
   "Username or password is incorrect": "Username or password is incorrect",
   "Sign Out": "Sign Out",
   "Profile": "Profile",
   "Your Currency": "Your Currency",
   "Your Country": "Your Country",
-  "There is no comments": "There is no comments"
+  "There is no comments": "There is no comments",
+  "Type your comment": "Type your comment",
+  "Send": "Send",
+	"Edit": "Edit",
+	"Cancel": "Cancel",
+	"Save": "Save"	
 }

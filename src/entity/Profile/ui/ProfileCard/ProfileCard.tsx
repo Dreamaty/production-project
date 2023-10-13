@@ -24,17 +24,16 @@ export const ProfileCard = ({
 	onChangeCurrency
 } : { 
 		className?: string,
-		 data?: Profile, 
-		 error?: string, 
-		 isLoading?: boolean,
-		 readonly?: boolean,
-		 onChangeFirstName?: (value?: string) => void,
-		 onChangeLastName?: (value?: string) => void,
-		 onChangeAge?: (value?: string) => void,
-		 onChangeCountry?: (value?: Country) => void,
-		 onChangeCity?: (value?: string) => void,
-		 onChangeCurrency?: (currnecy?: Currency) => void,
-
+		data?: Profile, 
+		error?: string, 
+		isLoading?: boolean,
+		readonly?: boolean,
+		onChangeFirstName?: (value?: string) => void,
+		onChangeLastName?: (value?: string) => void,
+		onChangeAge?: (value?: string) => void,
+		onChangeCountry?: (value?: Country) => void,
+		onChangeCity?: (value?: string) => void,
+		onChangeCurrency?: (currnecy?: Currency) => void,
 }) => {
 	const { t } = useTranslation('profile')
 

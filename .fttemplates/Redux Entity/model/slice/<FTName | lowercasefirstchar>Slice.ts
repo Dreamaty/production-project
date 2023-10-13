@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import {  <FTName>Schema } from '../types/<FTName | lowercasefirstchar>'
+import {  <FTName>Schema } from '../types/<FTName>'
 
 const initialState: <FTName>Schema = {
 	
