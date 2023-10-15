@@ -72,7 +72,12 @@ const article: Article = {
 				'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.'
 			]
 		}
-	] 
+	],
+	user :{
+		id: '2',
+		username: 'user',
+		avatar: 'https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png'
+	}
 }
 
 const meta = {

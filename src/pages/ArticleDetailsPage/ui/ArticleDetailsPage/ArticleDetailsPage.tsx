@@ -11,11 +11,14 @@ import { addCommentForArticle } from 'features/ArticleDetailsComments/model/serv
 import { fetchCommentsByArticleId } from 'features/ArticleDetailsComments/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { cx } from 'shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Button } from 'shared/ui/Button'
+import { ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { UiText } from 'shared/ui/Text'
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -33,7 +36,13 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 
 	const commentsIsLoading = useAppSelector(getArticleCommentsIsLoading)
 	const commentsError = useAppSelector(getArticleCommentsError)
+	
+	const navigate = useNavigate()
 
+
+	const onBackToList = useCallback(() => {
+		navigate(RoutePath.articles)
+	}, [navigate])
 
 	const onSendComment = useCallback((text: string ) => {
 		dispatch(addCommentForArticle(text))
@@ -58,6 +67,9 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount >
 			<div className={cx(cls.articleDetailsPage, {},
 				[className])}>
+				<Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+					{t('Back to list')}
+				</Button>
 				<ArticleDetails id={ id }/>
 				<UiText title={t('Comments')}/>
 				<AddCommentForm onSendComment={onSendComment} />

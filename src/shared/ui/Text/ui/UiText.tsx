@@ -29,7 +29,7 @@ export const UiText = memo(({
 }: {
 	className?: string
 	title?: string
-	text?: string
+	text?: string | number
 	align?: TextAlign
 	theme?: TextTheme
 	size?: TextSize

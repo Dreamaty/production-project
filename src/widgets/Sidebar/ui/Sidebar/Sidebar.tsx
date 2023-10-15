@@ -3,17 +3,21 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
+import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
-import { SidebarItemsList } from '../../model/items'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import cls from './Sidebar.module.scss'
 
 export const Sidebar = memo(({ className }: { className?: string }) => {
 	const { t } = useTranslation()
 	const [collapsed, setCollapsed] = useState<boolean>(false)
+
+	const sidebarItemsList = useAppSelector(getSidebarItems)
+
 	const onToggle = () => {
 		setCollapsed((prev) => !prev)
 	}
@@ -24,9 +28,9 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 			console.log('sidebar deleting')
 		}
 	}, [])
-	const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+	const itemsList = useMemo(() => sidebarItemsList.map((item) => (
 		<SidebarItem key={item.path} item={item} collapsed={collapsed}/>)
-	), [collapsed])
+	), [collapsed, sidebarItemsList])
 	return (
 		<div
 			data-testid="sidebar"
