@@ -6,9 +6,9 @@ import {
 	getArticleComments,
 	getArticleCommentsError,
 	getArticleCommentsIsLoading
-} from 'features/ArticleDetailsComments'
-import { addCommentForArticle } from 'features/ArticleDetailsComments/model/services/addCommentForArticle/addCommentForArticle'
-import { fetchCommentsByArticleId } from 'features/ArticleDetailsComments/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from 'features/Article/ArticleDetailsComments'
+import { addCommentForArticle } from 'features/Article/ArticleDetailsComments/model/services/addCommentForArticle/addCommentForArticle'
+import { fetchCommentsByArticleId } from 'features/Article/ArticleDetailsComments/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router'

@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
 import { Article, ArticleView } from '../../model/types/article'
@@ -36,9 +36,9 @@ export const ArticleList = memo((
 	}
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const renderArticles = useCallback((article: Article) => (
+	const renderArticles = (article: Article) => (
 		<ArticleListItem key={article.id} article={article} view={view} className={cls.card} />
-	), [view])
+	)
 		
 	return (
 		<div className={cx(cls.articleList, {},

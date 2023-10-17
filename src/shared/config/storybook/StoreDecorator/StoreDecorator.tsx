@@ -3,8 +3,9 @@ import { StateSchema, createReduxStore } from 'app/providers/StoreProvider'
 import { articleDetailsReducer } from 'entity/Article/model/slice/articleDetailsSlice'
 import { profileReducer } from 'entity/Profile'
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice'
-import { articleDetailsCommentsReducer } from 'features/ArticleDetailsComments'
+import { articleDetailsCommentsReducer } from 'features/Article/ArticleDetailsComments'
 import { loginReducer } from 'features/AuthByUsername'
+import { articlesPageReducer } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
 import { Provider } from 'react-redux'
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
@@ -14,7 +15,8 @@ const defaultAsyncReducers: ReducersList = {
 	profile: profileReducer,
 	articleDetails: articleDetailsReducer,
 	addCommentForm: addCommentFormReducer,
-	articleDetailsComments: articleDetailsCommentsReducer
+	articleDetailsComments: articleDetailsCommentsReducer,
+	articlesPage: articlesPageReducer
 }
 
 export const StoreDecorator =
