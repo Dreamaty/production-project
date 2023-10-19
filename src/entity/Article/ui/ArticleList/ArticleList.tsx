@@ -9,7 +9,7 @@ import cls from './ArticleList.module.scss'
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.BLOCKS ? 9 : 3)
 	.fill(0)
 	.map((item, index) => (
-		<ArticleListItemSkeleton key={index} view={view} />
+		<ArticleListItemSkeleton key={index} view={view} className={cls.card}/>
 	))
 
 export const ArticleList = memo((
@@ -26,14 +26,6 @@ export const ArticleList = memo((
 }) => {
 	const { t } = useTranslation('article')
 
-	if(isLoading) {
-		return (
-			<div className={cx(cls.articleList, {},
-				[className, cls[view]])}>
-				{getSkeletons(view)})
-			</div>
-		)
-	}
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const renderArticles = (article: Article) => (
@@ -47,6 +39,7 @@ export const ArticleList = memo((
 				?	articles.map(renderArticles)
 				: null
 			}
+			{isLoading && getSkeletons(view)}
 		</div>
 	)
 })

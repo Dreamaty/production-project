@@ -14,6 +14,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Page } from 'shared/ui/Page/Page'
 import { TextTheme, UiText } from 'shared/ui/Text'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
@@ -76,7 +77,7 @@ const ProfilePage = () => {
 	
 	return (
 		<DynamicModuleLoader reducers={reducers} >
-			<div>
+			<Page>
 				<ProfilePageHeader  />
 				{validateErrors?.length && validateErrors.map(error => (
 	
@@ -94,7 +95,7 @@ const ProfilePage = () => {
 					onChangeCountry={onChangeCountry}
 					onChangeCurrency={onChangeCurrency}
 				/>
-			</div>
+			</Page>
 			
 		</DynamicModuleLoader>
 	)

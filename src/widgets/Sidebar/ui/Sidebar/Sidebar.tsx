@@ -32,7 +32,7 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 		<SidebarItem key={item.path} item={item} collapsed={collapsed}/>)
 	), [collapsed, sidebarItemsList])
 	return (
-		<div
+		<menu
 			data-testid="sidebar"
 			className={cx(cls.sidebar, { [ cls.collapsed ]: collapsed }, [className])}
 		>
@@ -53,6 +53,6 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 				<ThemeSwitcher />
 				<LangSwitcher short={collapsed} className={cls.lang} />
 			</div>
-		</div>
+		</menu>
 	)
 })

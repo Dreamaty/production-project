@@ -19,6 +19,7 @@ import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/stor
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
+import { Page } from 'shared/ui/Page/Page'
 import { UiText } from 'shared/ui/Text'
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -65,7 +66,7 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount >
-			<div className={cx(cls.articleDetailsPage, {},
+			<Page className={cx(cls.articleDetailsPage, {},
 				[className])}>
 				<Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
 					{t('Back to list')}
@@ -74,7 +75,7 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 				<UiText title={t('Comments')}/>
 				<AddCommentForm onSendComment={onSendComment} />
 				<CommentList comments={comments} isLoading={commentsIsLoading} />
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 		
 	)

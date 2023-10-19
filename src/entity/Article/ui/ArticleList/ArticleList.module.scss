@@ -1,9 +1,11 @@
-.list {
-	
-}
-
 .blocks {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
+}
+
+.list {
+	.card {
+		margin-bottom: 30px;
+	}
 }
