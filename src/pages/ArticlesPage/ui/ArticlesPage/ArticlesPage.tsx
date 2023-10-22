@@ -6,7 +6,7 @@ import { cx } from 'shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 import {
 	getArticlesIsLoading,
 	getArticlesView

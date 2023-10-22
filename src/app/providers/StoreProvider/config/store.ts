@@ -5,6 +5,7 @@ import {
 	configureStore
 } from '@reduxjs/toolkit'
 
+import { scrollSaveReducer } from 'features/ScrollSave'
 import { $api } from 'shared/api/api'
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { userReducer } from '../../../../entity/User'
@@ -17,7 +18,8 @@ export function createReduxStore(
 ) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
-		user: userReducer
+		user: userReducer,
+		saveScroll: scrollSaveReducer
 	}
 
 	const extraArg: ThunkExtraArg = {

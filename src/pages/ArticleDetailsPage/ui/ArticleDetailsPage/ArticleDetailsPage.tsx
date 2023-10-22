@@ -2,10 +2,10 @@ import { ArticleDetails } from 'entity/Article'
 import { CommentList } from 'entity/Comment'
 import { AddCommentForm } from 'features/AddCommentForm'
 import {
-	articleDetailsCommentsReducer,
-	getArticleComments,
-	getArticleCommentsError,
-	getArticleCommentsIsLoading
+    articleDetailsCommentsReducer,
+    getArticleComments,
+    getArticleCommentsError,
+    getArticleCommentsIsLoading
 } from 'features/Article/ArticleDetailsComments'
 import { addCommentForArticle } from 'features/Article/ArticleDetailsComments/model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from 'features/Article/ArticleDetailsComments/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
@@ -19,8 +19,8 @@ import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/stor
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
-import { Page } from 'shared/ui/Page/Page'
 import { UiText } from 'shared/ui/Text'
+import { Page } from 'widgets/Page/Page'
 import cls from './ArticleDetailsPage.module.scss'
 
 const reducers:ReducersList = {
