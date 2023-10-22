@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import { ArticleList, ArticleView } from 'entity/Article'
 import { ArticleViewSwitcher } from 'features/Article/ArticleViewSwitcher'
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { memo, useCallback } from 'react'
 import { cx } from 'shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
@@ -12,7 +11,8 @@ import {
 	getArticlesIsLoading,
 	getArticlesView
 } from '../../model/selectors/articles'
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice'
 import cls from './ArticlesPage.module.scss'
 
@@ -38,10 +38,7 @@ const ArticlesPage = ({ className }: {className?: string}) => {
 
 
 	useInitialEffect(() => {
-		dispatch(articlesPageActions.initState())
-		dispatch(fetchArticlesList({
-			page: 1
-		}))
+		dispatch(initArticlesPage())
 	})
 	//useEffect(() => {
 	//	if(__PROJECT__ !== 'storybook') {
@@ -51,7 +48,7 @@ const ArticlesPage = ({ className }: {className?: string}) => {
 
 
 	return (
-		<DynamicModuleLoader reducers={reducers} >
+		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false} >
 			<Page className={cx(cls.articlesPage, {},
 				[className])} onScrollEnd={onLoadNextPart} >
 				<ArticleViewSwitcher onViewClick={onChangeView} view={articlesView} className={cls.viewSwitcher}/>

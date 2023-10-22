@@ -12,6 +12,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.BLOCK
 		<ArticleListItemSkeleton key={index} view={view} className={cls.card}/>
 	))
 
+	
 export const ArticleList = memo((
 	{ 
 		className, 
@@ -27,6 +28,7 @@ export const ArticleList = memo((
 	const { t } = useTranslation('article')
 
 
+
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const renderArticles = (article: Article) => (
 		<ArticleListItem key={article.id} article={article} view={view} className={cls.card} />
@@ -36,7 +38,11 @@ export const ArticleList = memo((
 		<div className={cx(cls.articleList, {},
 			[className, cls[view]])}>
 			{articles.length > 0 
-				?	articles.map(renderArticles)
+				?(	
+					
+					articles.map(renderArticles)
+							
+				)
 				: null
 			}
 			{isLoading && getSkeletons(view)}

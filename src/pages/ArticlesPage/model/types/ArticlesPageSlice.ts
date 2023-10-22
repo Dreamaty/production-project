@@ -6,6 +6,9 @@ export interface ArticlesPageSliceSchema extends EntityState<Article>{
 	error?: string	
 
 	view: ArticleView;
+	
+	_inited: boolean
+	
 	//pagination
 	page: number;
 	limit: number;
