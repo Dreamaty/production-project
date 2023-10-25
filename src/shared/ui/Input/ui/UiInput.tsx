@@ -88,7 +88,7 @@ export const UiInput = memo(({
 				{isCaretVisible && (
 					<span
 						className={cls.caret}
-						style={{ left: `${caretPosition * 9.5}px` }}
+						style={{ left: `${caretPosition * 9.6}px` }}
 					/>
 				)}
 			</div>

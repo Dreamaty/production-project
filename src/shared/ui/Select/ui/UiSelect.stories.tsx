@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { UiSelect } from './UiSelect'
 const meta = {
-	title: 'widget/UiSelect',
+	title: 'shared/UiSelect',
 	component: UiSelect,
 	parameters: {
 		layout: 'fullscreen',

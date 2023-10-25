@@ -5,6 +5,19 @@
     "The error has occurred": "The error has occurred",
     "Comments": "Comments",
     "Read More": "Read More...",
-    "Back to list": "Back to list"
+    "Back to list": "Back to list",
+    "Search": "Search",
+    "Sort by": "Sort by",
+    "By": "By",
+    "increase": "ascending",
+    "descending": "descending",
+    "creating date": "creating date",
+    "title": "title",
+    "views": "views",
+    "All": "All",
+    "IT": "IT",
+    "Economics": "Economics",
+    "Science": "Science",
+    "Articles doesnt found": "Articles doesn't found"
   }
 }

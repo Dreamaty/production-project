@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
+import { UiText } from 'shared/ui/Text'
 import { Article, ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
@@ -33,6 +34,16 @@ export const ArticleList = memo((
 	const renderArticles = (article: Article) => (
 		<ArticleListItem key={article.id} article={article} view={view} className={cls.card} />
 	)
+
+
+	if(!isLoading && !articles.length) {
+		return (
+			<div className={cx(cls.articleList, {},
+				[className, cls[view]])}>
+				<UiText title={t('Articles doesnt found')} />
+			</div>
+		)
+	}
 		
 	return (
 		<div className={cx(cls.articleList, {},

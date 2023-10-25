@@ -1,10 +1,23 @@
 {
+  "Article is not found": "Статья не найдена",
+  "The error has acquired": "Ошибка приобрела",
+  "The error has occurred": "Произошла ошибка",
+  "Comments": "Комментарии",
+  "Read More": "Читать далее...",
+  "Back to list": "Обратно к списку",
+  "Search": "Поиск",
+  "Sort by": "Сортировать по",
+  "By": "По",
+  "increase": "возрастанию",
+  "descending": "убыванию",
+  "creating date": "дате создания",
+  "title": "заголовоку",
+  "views": "просмотрам",
   "article": {
-    "Article is not found": "Статья не найдена",
-    "The error has acquired": "Ошибка приобрела",
-    "The error has occurred": "Произошла ошибка",
-    "Comments": "Комментарии",
-    "Read More": "Читать далее...",
-    "Back to list": "Обратно к списку"
+    "All": "Все",
+    "IT": "IT",
+    "Economics": "Экономика",
+    "Science": "Наука",
+    "Articles doesnt found": "Статьи не найдены"
   }
 }

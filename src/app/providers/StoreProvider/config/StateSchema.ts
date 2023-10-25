@@ -11,7 +11,8 @@ import { ProfileSchema } from 'entity/Profile'
 import { UserSchema } from 'entity/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticleDetailsCommentsSchema } from 'features/Article/ArticleDetailsComments'
-
+import { ArticleSortSchema } from 'features/Article/ArticleSort'
+import { ArticleTypeTabsSchema } from 'features/Article/ArticleTypeTabs/model/types/ArticleTypeTabs'
 import { LoginSchema } from 'features/AuthByUsername'
 import { ScrollSaveSchema } from 'features/ScrollSave'
 import { ArticlesPageSliceSchema } from 'pages/ArticlesPage'
@@ -28,6 +29,8 @@ export interface StateSchema {
 	articleDetailsComments?: ArticleDetailsCommentsSchema
 	addCommentForm?: AddCommentFormSchema
 	articlesPage?: ArticlesPageSliceSchema
+	articleSort?: ArticleSortSchema
+	articleTabTypes?: ArticleTypeTabsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -4,7 +4,11 @@ export { getArticleDetailsData } from './model/selectors/articleDetails'
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 
-export { Article, ArticleView } from './model/types/article'
+export {
+	Article,
+	ArticleType,
+	ArticleView
+} from './model/types/article'
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 
 

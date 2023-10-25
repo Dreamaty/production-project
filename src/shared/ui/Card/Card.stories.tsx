@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Card } from './Card'
+import { Card, CardTheme } from './Card'
 const meta = {
 	title: 'widget/Card',
 	component: Card,
@@ -19,7 +19,21 @@ type Story = StoryObj<typeof meta>
 export const Light: Story = {
 	args: {},
 }
+
+export const LightOutlined: Story = {
+	args: {
+		theme: CardTheme.OUTLINED
+	},
+}
+
 export const Dark: Story = {
 	args: {},
+	decorators: [ThemeDecorator(Theme.DARK)],
+}
+
+export const DarkOutlined: Story = {
+	args: {
+		theme: CardTheme.OUTLINED
+	},
 	decorators: [ThemeDecorator(Theme.DARK)],
 }
