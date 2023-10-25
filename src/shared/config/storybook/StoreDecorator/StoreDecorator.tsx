@@ -1,3 +1,4 @@
+import { ReducersMapObject } from '@reduxjs/toolkit'
 import { StoryFn } from '@storybook/react'
 import { StateSchema, createReduxStore } from 'app/providers/StoreProvider'
 import { articleDetailsReducer } from 'entity/Article/model/slice/articleDetailsSlice'
@@ -29,7 +30,10 @@ export const StoreDecorator =
 			<Provider
 				store={createReduxStore(
 					initialState as StateSchema,
-					{	...defaultAsyncReducers, ...asyncReducers }
+					{	
+						...defaultAsyncReducers as ReducersMapObject, 
+						...asyncReducers as ReducersMapObject<StateSchema>
+					}
 				)}
 			>
 				<StoryComponent />

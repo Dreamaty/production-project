@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
 import { UiText } from 'shared/ui/Text'
@@ -19,12 +19,14 @@ export const ArticleList = memo((
 		className, 
 		articles,
 		view = ArticleView.BLOCKS,
-		isLoading
+		isLoading,
+		target
 	}: {
 	className?: string, 
 	articles: Article[]
 	isLoading?: boolean
 	view?: ArticleView
+	target?: HTMLAttributeAnchorTarget
 }) => {
 	const { t } = useTranslation('article')
 
@@ -32,7 +34,13 @@ export const ArticleList = memo((
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const renderArticles = (article: Article) => (
-		<ArticleListItem key={article.id} article={article} view={view} className={cls.card} />
+		<ArticleListItem 
+			key={article.id} 
+			article={article} 
+			view={view} 
+			className={cls.card} 
+			target={target}
+		/>
 	)
 
 

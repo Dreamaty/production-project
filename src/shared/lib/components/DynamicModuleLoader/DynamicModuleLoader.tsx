@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Reducer } from '@reduxjs/toolkit'
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider'
-import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema'
+import { StateSchema, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema'
 import { FC, ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 
 export type ReducersList = {
-	[reducerKey in StateSchemaKey]?: Reducer
+	[reducerKey in StateSchemaKey]?: Reducer<NonNullable<StateSchema[reducerKey]>>
 }
 
 

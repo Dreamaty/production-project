@@ -7,14 +7,13 @@ import {
 
 import { scrollSaveReducer } from 'features/ScrollSave'
 import { $api } from 'shared/api/api'
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { userReducer } from '../../../../entity/User'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
 export function createReduxStore(
 	initialState?: StateSchema,
-	asyncReducers?: ReducersList,
+	asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,

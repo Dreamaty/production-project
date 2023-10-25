@@ -15,6 +15,7 @@ import { ArticleSortSchema } from 'features/Article/ArticleSort'
 import { ArticleTypeTabsSchema } from 'features/Article/ArticleTypeTabs/model/types/ArticleTypeTabs'
 import { LoginSchema } from 'features/AuthByUsername'
 import { ScrollSaveSchema } from 'features/ScrollSave'
+import { ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage/ArticleDetailsRecommendations/model/types/ArticleDetailsRecommendations'
 import { ArticlesPageSliceSchema } from 'pages/ArticlesPage'
 import { NavigateOptions, To } from 'react-router'
 
@@ -31,6 +32,7 @@ export interface StateSchema {
 	articlesPage?: ArticlesPageSliceSchema
 	articleSort?: ArticleSortSchema
 	articleTabTypes?: ArticleTypeTabsSchema
+	articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
