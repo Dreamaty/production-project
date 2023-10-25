@@ -36,7 +36,7 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 		return (
 			<AppLink 
 				target={target}
-				to={RoutePath.articleDetails + article?.id} className={cx(cls.articleListItem, {},
+				to={RoutePath.article_details + article?.id} className={cx(cls.articleListItem, {},
 					[className, cls[view]])}>
 				<Card>
 					<div className={cls.imageWrapper}>
@@ -78,7 +78,7 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 					<ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
 				)}
 				<div className={cls.footer}>
-					<AppLink to={RoutePath.articleDetails + article?.id} target={target}>
+					<AppLink to={RoutePath.article_details + article?.id} target={target}>
 						<Button theme={ButtonTheme.OUTLINE}>
 							{t('Read More')}
 						</Button>

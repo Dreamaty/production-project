@@ -9,21 +9,19 @@ import {
 } from 'features/Article/ArticleDetailsComments'
 import { addCommentForArticle } from 'features/Article/ArticleDetailsComments/model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from 'features/Article/ArticleDetailsComments/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { getArticleDetailsRecommendationsError, getArticleDetailsRecommendationsIsLoading } from 'pages/ArticleDetailsPage/ArticleDetailsRecommendations/model/selectors/recomendations'
-import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/ArticleDetailsRecommendations/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
+import { getArticleDetailsRecommendationsError, getArticleDetailsRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recomendations'
+import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate, useParams } from 'react-router'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { useParams } from 'react-router'
 import { cx } from 'shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { Button } from 'shared/ui/Button'
-import { ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { TextSize, UiText } from 'shared/ui/Text'
 import { Page } from 'widgets/Page/Page'
-import { articleDetailsRecommendationsReducer, getArticleRecommendations } from '../../ArticleDetailsRecommendations/model/slice/articleDetailsRecommendationsSlice'
+import { articleDetailsRecommendationsReducer, getArticleRecommendations } from '../../model/slice/articleDetailsRecommendationsSlice'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import cls from './ArticleDetailsPage.module.scss'
 
 const reducers:ReducersList = {
@@ -45,13 +43,6 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 
 	const dispatch = useAppDispatch()
 	
-	const navigate = useNavigate()
-
-
-	const onBackToList = useCallback(() => {
-		navigate(RoutePath.articles)
-	}, [navigate])
-
 	const onSendComment = useCallback((text: string ) => {
 		dispatch(addCommentForArticle(text))
 	}, [dispatch])
@@ -76,9 +67,7 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount >
 			<Page className={cx(cls.articleDetailsPage, {},
 				[className])}>
-				<Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-					{t('Back to list')}
-				</Button>
+				<ArticleDetailsPageHeader />
 				<ArticleDetails id={ id }/>
 				<UiText 
 					size={TextSize.L} 

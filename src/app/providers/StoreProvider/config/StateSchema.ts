@@ -15,7 +15,7 @@ import { ArticleSortSchema } from 'features/Article/ArticleSort'
 import { ArticleTypeTabsSchema } from 'features/Article/ArticleTypeTabs/model/types/ArticleTypeTabs'
 import { LoginSchema } from 'features/AuthByUsername'
 import { ScrollSaveSchema } from 'features/ScrollSave'
-import { ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage/ArticleDetailsRecommendations/model/types/ArticleDetailsRecommendations'
+import { ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendations'
 import { ArticlesPageSliceSchema } from 'pages/ArticlesPage'
 import { NavigateOptions, To } from 'react-router'
 

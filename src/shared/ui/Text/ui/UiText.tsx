@@ -3,7 +3,8 @@ import { cx } from 'shared/lib/classNames/cx'
 import cls from './UiText.module.scss'
 
 export enum TextTheme {
-	PRIMARY = 'default',
+	PRIMARY = 'primary',
+	INVERTED = 'inverted',
 	ERROR = 'error',
 }
 
