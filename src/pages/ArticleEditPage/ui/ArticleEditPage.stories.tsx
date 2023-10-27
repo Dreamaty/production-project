@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { ArticleEditPage } from './ArticleEditPage'
+import ArticleEditPage from './ArticleEditPage'
 const meta = {
 	title: 'widget/ArticleEditPage',
 	component: ArticleEditPage,
