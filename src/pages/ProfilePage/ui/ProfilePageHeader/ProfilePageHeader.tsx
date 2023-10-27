@@ -1,5 +1,6 @@
-import { getProfileReadonly, profileActions, updateProfileData } from 'entity/Profile'
+import { getProfileReadonly, updateProfileData } from 'entity/Profile'
 import { getProfileData } from 'entity/Profile/model/selectors/getProfileData/getProfileData'
+import { profileActions } from 'entity/Profile/model/slice/profileSlice'
 import { getUserAuthData } from 'entity/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'

@@ -1,16 +1,15 @@
 import { Country } from 'entity/Country/model/types/country'
 import { Currency } from 'entity/Currency'
 import {
-    ProfileCard, fetchProfileData,
-    profileActions,
-    profileReducer, useProfile
+	ProfileCard, fetchProfileData, useProfile
 } from 'entity/Profile'
+import { profileActions, profileReducer } from 'entity/Profile/model/slice/profileSlice'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import {
-    DynamicModuleLoader,
-    ReducersList
+	DynamicModuleLoader,
+	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
