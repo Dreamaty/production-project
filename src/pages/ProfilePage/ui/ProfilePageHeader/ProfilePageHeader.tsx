@@ -1,6 +1,6 @@
 import { getProfileReadonly, updateProfileData } from 'entity/Profile'
 import { getProfileData } from 'entity/Profile/model/selectors/getProfileData/getProfileData'
-import { profileActions } from 'entity/Profile/model/slice/profileSlice'
+//import { profileActions } from 'entity/Profile/model/slice/profileSlice'
 import { getUserAuthData } from 'entity/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -23,12 +23,12 @@ export const ProfilePageHeader = memo(({ className }: {
 	const canEdit = authData?.id === profileData?.id
 
 	const onEdit = useCallback(() => {
-		dispatch(profileActions.changeReadonly(false))
-	}, [dispatch])
+		//dispatch(profileActions.changeReadonly(false))
+	}, [])
 
 	const onCancelEdit = useCallback(() => {
-		dispatch(profileActions.cancelChanging())
-	}, [dispatch])
+		//dispatch(profileActions.cancelChanging())
+	}, [])
 
 	const onSave = useCallback(() => {
 		dispatch(updateProfileData(profileData?.id))

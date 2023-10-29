@@ -2,7 +2,7 @@ import { ReducersMapObject } from '@reduxjs/toolkit'
 import { StoryFn } from '@storybook/react'
 import { StateSchema, createReduxStore } from 'app/providers/StoreProvider'
 import { articleDetailsReducer } from 'entity/Article/model/slice/articleDetailsSlice'
-import { profileReducer } from 'entity/Profile/model/slice/profileSlice'
+//import { profileReducer } from 'entity/Profile/model/slice/profileSlice'
 
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice'
 import { articleDetailsCommentsReducer } from 'features/Article/ArticleDetailsComments'
@@ -14,7 +14,7 @@ import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicM
 
 const defaultAsyncReducers: ReducersList = {
 	loginForm: loginReducer,
-	profile: profileReducer,
+	//profile: profileReducer,
 	articleDetails: articleDetailsReducer,
 	addCommentForm: addCommentFormReducer,
 	articleDetailsComments: articleDetailsCommentsReducer,
