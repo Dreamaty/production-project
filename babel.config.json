@@ -10,6 +10,9 @@
 		]
 	],
 	"plugins": [
-		"i18next-extract"
+		"i18next-extract",
+		"@babel/plugin-transform-class-properties",
+		"@babel/plugin-transform-nullish-coalescing-operator",
+		"@babel/plugin-transform-optional-chaining"
 	]
 }

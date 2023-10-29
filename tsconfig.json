@@ -12,7 +12,7 @@
 		"strict": true,
 		"jsx": "react-jsx",
 		"allowJs": true,
-		"moduleResolution": "node",
+		"moduleResolution": "Node",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 	},

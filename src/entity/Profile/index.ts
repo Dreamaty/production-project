@@ -1,4 +1,4 @@
-export { profileSlice } from './model/slice/profileSlice'
+//export { profileSlice } from './model/slice/profileSlice'
 
 export { useProfile } from './hooks/useProfile'
 
