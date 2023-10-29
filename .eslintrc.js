@@ -57,7 +57,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'no-undef': 'off',
 		'max-len': ['error', {
-			ignoreComments: true, code: 100, ignorePattern: '^import .*' 
+			ignoreComments: true, code: 120, ignorePattern: '^import .*' 
 		}],
 		'react-hooks/exhaustive-deps': 'error',
 	},

@@ -1,21 +1,18 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { Profile, ProfileSchema } from '../types/profile'
-// import type { RootState } from '../../app/store'
+import type { Profile, ProfileStateSchema } from '../types/ProfileState'
 
-// Define a type for the slice state
-
-// Define the initial state using that type
-const initialState: ProfileSchema = { 
+const initialState: ProfileStateSchema = {
 	readonly: true,
 	isLoading: false,
 	error: undefined,
 	data: undefined
 }
- 
-export const profileSlice = createSlice({
-	name: 'profile',
+
+export const profileStateSlice = createSlice({
+	name: 'profileState',
 	initialState,
 	reducers: {
 		changeReadonly: (state, action: PayloadAction<boolean>) => {
@@ -32,11 +29,7 @@ export const profileSlice = createSlice({
 			state.readonly = true
 			state.form = state.data
 			state.validateErrors = undefined
-		}
-		// setProfileData: (state, action: PayloadAction<Profile>) => {
-		// 	state.data = action.payload
-		// 	state.readonly = true
-		// },
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -70,7 +63,6 @@ export const profileSlice = createSlice({
 	},
 })
 
-export const { actions: profileActions } = profileSlice
+export const { actions: profileStateActions } = profileStateSlice
 
-
-export const { reducer: profileReducer } = profileSlice
+export const { reducer: profileStateReducer } = profileStateSlice

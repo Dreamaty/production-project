@@ -7,7 +7,7 @@ import {
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entity/Article'
-import { ProfileSchema } from 'entity/Profile'
+import { ProfileStateSchema } from 'entity/ProfileState'
 import { UserSchema } from 'entity/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticleDetailsCommentsSchema } from 'features/Article/ArticleDetailsComments'
@@ -25,7 +25,7 @@ export interface StateSchema {
 
 	// Async Reducers
 	loginForm?: LoginSchema
-	profile?: ProfileSchema
+	profile?: ProfileStateSchema
 	articleDetails?: ArticleDetailsSchema
 	articleDetailsComments?: ArticleDetailsCommentsSchema
 	addCommentForm?: AddCommentFormSchema

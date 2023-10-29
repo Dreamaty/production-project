@@ -1,7 +1,7 @@
-import {
-	ProfileCard, fetchProfileData, useProfile
-} from 'entity/Profile'
 
+
+import { ProfileCard, fetchProfileData, useProfile } from 'entity/ProfileState'
+import { profileStateReducer } from 'entity/ProfileState/model/slice/profileStateSlice'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import {
@@ -14,7 +14,7 @@ import { TextTheme, UiText } from 'shared/ui/Text'
 import { Page } from 'widgets/Page/Page'
 
 const reducers: ReducersList = {
-	//profile: profileReducer
+	profile: profileStateReducer
 }
 
 const ProfilePage = () => {
@@ -74,7 +74,7 @@ const ProfilePage = () => {
 		<DynamicModuleLoader reducers={reducers} >
 			<Page>
 				{/*<ProfilePageHeader  />*/}
-				{validateErrors?.length && validateErrors.map(error => (
+				{validateErrors?.length && validateErrors.map( error => (
 	
 					<UiText key={error} theme={TextTheme.ERROR} text={t(error)}/>
 				))}
