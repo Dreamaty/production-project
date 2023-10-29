@@ -6,7 +6,6 @@ import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/stor
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
 import { getArticleTypeTabsSelectedType } from '../model/selectors/articleTypeTabs'
 import { articleTypeTabsActions } from '../model/slice/articleTypeTabsSlice'
-import cls from './ArticleTypeTabs.module.scss'
 
 
 export const ArticleTypeTabs = memo(({ 
@@ -52,7 +51,7 @@ export const ArticleTypeTabs = memo(({
 			tabs={typeTabs} 
 			value={selectedType} 
 			onTabClick={onClickHandler} 
-			className={cx(cls.tabs,{}, [className, ]) }
+			className={cx('',{}, [className, ]) }
 		/>
 	)
 })

@@ -25,7 +25,7 @@ export const EditButton = memo(({
 				readonly ?
 					(<Button 
 						theme={ButtonTheme.OUTLINE} 
-						className={cls.editBtn} 
+						className={cls.editButton} 
 						onClick={onEdit}
 					>
 						{t('Edit')}
@@ -35,14 +35,14 @@ export const EditButton = memo(({
 						<>
 							<Button 
 								theme={ButtonTheme.OUTLINE} 
-								className={cls.editBtn} 
+								className={cls.editButton} 
 								onClick={onSave}
 							>
 								{t('Save')}
 							</Button>
 							<Button 
 								theme={ButtonTheme.OUTLINE_RED} 
-								className={cls.saveBtn} 
+								className={cls.saveButton} 
 								onClick={onCancelEdit}
 							>
 								{t('Cancel')}

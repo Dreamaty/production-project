@@ -1,3 +1,5 @@
+export { profileStateActions, profileStateReducer } from './model/slice/profileStateSlice'
+
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly'
 export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 

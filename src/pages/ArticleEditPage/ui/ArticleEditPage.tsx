@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import { cx } from 'shared/lib/classNames/cx'
 import { Page } from 'widgets/Page/Page'
-import cls from './ArticleEditPage.module.scss'
+
 
 export interface ArticleEditPageProps {
 	className?: string
@@ -17,7 +17,7 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 	const isEdit = Boolean(id)
 		
 	return (
-		<Page className={cx(cls.articleEditPage, {},
+		<Page className={cx('', {},
 			[className])}>
 			{isEdit ? t('Article Edit') : t('Article Creation')}
 		</Page>
