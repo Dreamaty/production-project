@@ -38,7 +38,13 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'react', 'i18next', 'jest-dom'],
+	plugins: [
+		'@typescript-eslint', 
+		'react', 
+		'i18next', 
+		'jest-dom',
+		'dreamatty-path-checker-plugin'
+	],
 	rules: {
 		'object-curly-spacing': ['error', 'always'],
 		'object-curly-newline': ['error', {
@@ -60,6 +66,7 @@ module.exports = {
 			ignoreComments: true, code: 120, ignorePattern: '^import .*' 
 		}],
 		'react-hooks/exhaustive-deps': 'error',
+		'dreamatty-path-checker-plugin/path-checker': 'error'
 	},
 	globals: {
 		__IS_DEV__: true,

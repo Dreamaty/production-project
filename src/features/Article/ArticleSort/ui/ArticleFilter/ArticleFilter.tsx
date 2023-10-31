@@ -1,8 +1,6 @@
 import { ArticleView } from 'entity/Article'
-import { ArticleViewSwitcher } from 'features/Article/ArticleViewSwitcher'
+import { ArticleViewSwitcher } from '../../../ArticleViewSwitcher'
 
-import { ArticleTypeTabs } from 'features/Article/ArticleTypeTabs'
-import { articleTypeTabsReducer } from 'features/Article/ArticleTypeTabs/model/slice/articleTypeTabsSlice'
 import { articlesPageActions, fetchArticlesList, getArticlesView } from 'pages/ArticlesPage'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -13,6 +11,8 @@ import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
 import { SortOrder } from 'shared/types'
 import { Card } from 'shared/ui/Card/Card'
 import { UiInput } from 'shared/ui/Input'
+import { ArticleTypeTabs } from '../../../ArticleTypeTabs'
+import { articleTypeTabsReducer } from '../../../ArticleTypeTabs/model/slice/articleTypeTabsSlice'
 import {
 	getArticleSortBy, getArticleSortOrder, getArticleSortSearch
 } from '../../model/selectors/articleSort'

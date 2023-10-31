@@ -6,10 +6,12 @@ import {
 import { useLocation } from 'react-router'
 import { cx } from 'shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScrolle'
+import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle'
 import cls from './Page.module.scss'
+
+export const PAGE_ID = 'page_id' 
 
 export const Page = memo(({ className, children, onScrollEnd }: {
 	className?: string, 
@@ -47,6 +49,7 @@ export const Page = memo(({ className, children, onScrollEnd }: {
 			className={cx(cls.page, {},
 				[className])}
 			onScroll={onScroll}
+			id={PAGE_ID}
 		>
 			{children}
 			<div className={cls.trigger} ref={triggerRef} />

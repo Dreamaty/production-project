@@ -1,7 +1,7 @@
-import { Currency } from 'entity/Currency/model/types/currency'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { UiSelect } from 'shared/ui/Select'
+import { Currency } from '../../model/types/currency'
 
 const options = [
 	{ value: Currency.ILS, content: Currency.ILS },

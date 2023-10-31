@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
 import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { SidebarItemType } from 'widgets/Sidebar'
+
+import { SidebarItemType } from '../../model/types/sidebar'
 import cls from './SidebarItem.module.scss'
 
 export const SidebarItem = memo(({ item, collapsed }: {

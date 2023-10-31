@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import {
 	memo, useEffect, useMemo, useState
 } from 'react'
@@ -7,7 +8,6 @@ import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import cls from './Sidebar.module.scss'

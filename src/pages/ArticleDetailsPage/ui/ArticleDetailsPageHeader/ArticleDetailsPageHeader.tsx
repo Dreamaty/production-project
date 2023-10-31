@@ -1,5 +1,4 @@
 import { getArticleDetailsData } from 'entity/Article'
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
@@ -8,6 +7,7 @@ import { cx } from 'shared/lib/classNames/cx'
 import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
+import { getCanEditArticle } from '../../model/selectors/article'
 import cls from './ArticleDetailsPageHeader.module.scss'
 
 export const ArticleDetailsPageHeader = memo(({ className }: {className?: string}) => {
