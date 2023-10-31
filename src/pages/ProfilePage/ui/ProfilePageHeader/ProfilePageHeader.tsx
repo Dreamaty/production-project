@@ -5,11 +5,10 @@ import { getProfileReadonly, profileStateActions, updateProfileData } from 'enti
 import { getUserAuthData } from 'entity/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from 'shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { EditButton } from 'shared/ui/Button/ui/EditButton/EditButton'
+import { HStack } from 'shared/ui/Stack/HStack/HStack'
 import { UiText } from 'shared/ui/Text'
-import cls from './ProfilePageHeader.module.scss'
 
 export const ProfilePageHeader = memo(({ className }: {
 		className?: string,
@@ -36,19 +35,17 @@ export const ProfilePageHeader = memo(({ className }: {
 	}, [dispatch, profileData?.id])
 
 	return (
-		<div className={cx(cls.profilePageHeader, {},
-			[className])}>
+		<HStack justify='between' align='start' max>
 			<UiText title={t('Profile')}/>
 			{canEdit && (
-				<div className={cls.editBtn}>
-					<EditButton 
-						readonly={readonly} 
-						onCancelEdit={onCancelEdit}
-						onEdit={onEdit}
-						onSave={onSave}
-					/>
-				</div>
+				<EditButton 
+					readonly={readonly} 
+					onCancelEdit={onCancelEdit}
+					onEdit={onEdit}
+					onSave={onSave}
+				/>
+				
 			)}
-		</div>
+		</HStack>
 	)
 })

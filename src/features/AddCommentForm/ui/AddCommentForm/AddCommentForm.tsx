@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/stor
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { UiInput } from 'shared/ui/Input'
+import { HStack } from 'shared/ui/Stack'
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 import cls from './AddCommentForm.module.scss'
@@ -40,7 +41,7 @@ const AddCommentForm = memo(({ className, onSendComment }:AddCommentFormProps) =
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-			<div className={cx(cls.addCommentForm, {},
+			<HStack max className={cx(cls.addCommentForm, {},
 				[className])}>
 				<UiInput 
 					className={cls.input}
@@ -52,7 +53,7 @@ const AddCommentForm = memo(({ className, onSendComment }:AddCommentFormProps) =
 				<Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
 					{t('Send')}
 				</Button>
-			</div>
+			</HStack>
 		</DynamicModuleLoader>
 		
 	)

@@ -17,6 +17,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { VStack } from 'shared/ui/Stack/VStack/VStack'
 import { TextTheme, UiText } from 'shared/ui/Text'
 import { Page } from 'widgets/Page/Page'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
@@ -81,23 +82,25 @@ const ProfilePage = () => {
 	return (
 		<DynamicModuleLoader reducers={reducers} >
 			<Page>
-				<ProfilePageHeader  />
-				{validateErrors?.length && validateErrors.map( error => (
+				<VStack gap='16' max>
+					<ProfilePageHeader  />
+					{validateErrors?.length && validateErrors.map( error => (
 	
-					<UiText key={error} theme={TextTheme.ERROR} text={t(error)}/>
-				))}
-				<ProfileCard 
-					data={data} 
-					error={error} 
-					isLoading={isLoading} 
-					readonly={readonly}
-					onChangeFirstName={onChangeFirstName}
-					onChangeLastName={onChangeLastName}
-					onChangeAge={onChangeAge}
-					onChangeCity={onChangeCity}
-					onChangeCountry={onChangeCountry}
-					onChangeCurrency={onChangeCurrency}
-				/>
+						<UiText key={error} theme={TextTheme.ERROR} text={t(error)}/>
+					))}
+					<ProfileCard 
+						data={data} 
+						error={error} 
+						isLoading={isLoading} 
+						readonly={readonly}
+						onChangeFirstName={onChangeFirstName}
+						onChangeLastName={onChangeLastName}
+						onChangeAge={onChangeAge}
+						onChangeCity={onChangeCity}
+						onChangeCountry={onChangeCountry}
+						onChangeCurrency={onChangeCurrency}
+					/>
+				</VStack>
 			</Page>
 			
 		</DynamicModuleLoader>

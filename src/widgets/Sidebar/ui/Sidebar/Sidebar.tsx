@@ -8,6 +8,7 @@ import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
+import { VStack } from 'shared/ui/Stack/VStack/VStack'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import cls from './Sidebar.module.scss'
@@ -46,9 +47,9 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 			>
 				{collapsed ? '>' : '<'}
 			</Button>
-			<div className={cls.items}>
+			<VStack className={cls.items} gap='8'>
 				{itemsList}
-			</div>
+			</VStack>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
 				<LangSwitcher short={collapsed} className={cls.lang} />

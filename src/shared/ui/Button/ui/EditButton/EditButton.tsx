@@ -1,8 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from 'shared/lib/classNames/cx'
+import { HStack } from '../../../Stack/HStack/HStack'
 import { Button, ButtonTheme } from '../Button'
-import cls from './EditButton.module.scss'
 
 export const EditButton = memo(({ 
 	className, 
@@ -19,13 +18,11 @@ export const EditButton = memo(({
 }) => {
 	const { t } = useTranslation()
 	return (
-		<div className={cx(cls.editButton, {},
-			[className])}>
+		<HStack gap='8'>
 			{
 				readonly ?
 					(<Button 
 						theme={ButtonTheme.OUTLINE} 
-						className={cls.editButton} 
 						onClick={onEdit}
 					>
 						{t('Edit')}
@@ -35,14 +32,12 @@ export const EditButton = memo(({
 						<>
 							<Button 
 								theme={ButtonTheme.OUTLINE} 
-								className={cls.editButton} 
 								onClick={onSave}
 							>
 								{t('Save')}
 							</Button>
 							<Button 
 								theme={ButtonTheme.OUTLINE_RED} 
-								className={cls.saveButton} 
 								onClick={onCancelEdit}
 							>
 								{t('Cancel')}
@@ -51,6 +46,6 @@ export const EditButton = memo(({
 						</>
 					)
 			}
-		</div>
+		</HStack>
 	)
 })

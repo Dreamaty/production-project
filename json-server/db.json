@@ -11,7 +11,7 @@
       "userId": "2"
     }
   ],
-	"articles": [
+  "articles": [
     {
       "id": "1",
       "title": "Javascript news СВЕЖАЯ",
@@ -565,6 +565,18 @@
       "userId": "1",
       "text": "sdfa",
       "id": "Hmy61cs"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123",
+      "id": "gY4adC4"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "12312312",
+      "id": "ncAPbog"
     }
   ],
   "users": [
@@ -608,4 +620,3 @@
     }
   ]
 }
-	

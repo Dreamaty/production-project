@@ -9,6 +9,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Avatar } from 'shared/ui/Avatar'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
+import { HStack, VStack } from 'shared/ui/Stack'
 import {
 	TextAlign,
 	TextSize,
@@ -87,28 +88,30 @@ export const ArticleDetails = memo(({ className, id }: {className?: string, id: 
 	}else {
 		content = (
 			<>
-				<div className={cls.avatarWrapper}>
+				<HStack justify='center' max>
 					<Avatar 
 						size={200} 
 						src={article?.img} 
 						alt='Article avatar' 
 						className={cls.avatar}/>
-				</div>
-				<UiText
-					className={cls.titleDetails}
-					title={article?.title}
-					text={article?.subtitle}
-					size={TextSize.L}
+				</HStack>
+				<VStack gap='4' max>
+					<UiText
+						title={article?.title}
+						text={article?.subtitle}
+						size={TextSize.L}
 					
-				/>
-				<div className={cls.articleInfo}>
-					<Icon Svg={EyeIcon} className={cls.icon}/>
-					<UiText text={String(article?.views)} />
-				</div>
-				<div className={cls.articleInfo}>
-					<Icon Svg={CalendarIcon} className={cls.icon} />
-					<UiText text={article?.createdAt}/>
-				</div>
+					/>
+				
+					<HStack gap='8'>
+						<Icon Svg={EyeIcon} />
+						<UiText text={String(article?.views)} />
+					</HStack>
+					<HStack gap='8'>
+						<Icon Svg={CalendarIcon} />
+						<UiText text={article?.createdAt}/>
+					</HStack>
+				</VStack>
 				{article?.blocks.map(renderBlock)}
 			</>
 		)
@@ -118,10 +121,10 @@ export const ArticleDetails = memo(({ className, id }: {className?: string, id: 
 		
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-			<div className={cx(cls.articleDetails, {},
+			<VStack gap='16' className={cx(cls.articleDetails, {},
 				[className])}>
 				{content}
-			</div>
+			</VStack>
 			
 		</DynamicModuleLoader>
 	)

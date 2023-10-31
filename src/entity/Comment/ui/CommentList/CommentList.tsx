@@ -1,10 +1,10 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
+import { VStack } from 'shared/ui/Stack'
 import { TextAlign, TextSize, UiText } from 'shared/ui/Text'
 import { Comment } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
-import cls from './CommentList.module.scss'
 
 export const CommentList = memo(({ className, comments, isLoading }: {
 	className?: string,
@@ -15,23 +15,22 @@ export const CommentList = memo(({ className, comments, isLoading }: {
 
 	if (isLoading) {
 		return (
-			<div className={cx(cls.commentList, {},
+			<VStack gap='16' max className={cx('', {},
 				[className])}>
 				<CommentCard isLoading/>
 				<CommentCard isLoading/>
 				<CommentCard isLoading/>
-			</div>
+			</VStack>
 		)
 	}
 		
 	return (
-		<div className={cx(cls.commentList, {},
+		<VStack gap='16' max className={cx('', {},
 			[className])}>
 			{comments?.length
 				? comments.map(comment => (
 					<CommentCard
 					 key={comment.id} 
-					 className={cls.comment} 
 					 comment={comment} 
 					 isLoading={isLoading}
 					 /> 
@@ -44,6 +43,6 @@ export const CommentList = memo(({ className, comments, isLoading }: {
 					/>	
 				)
 			}
-		</div>
+		</VStack>
 	)
 })

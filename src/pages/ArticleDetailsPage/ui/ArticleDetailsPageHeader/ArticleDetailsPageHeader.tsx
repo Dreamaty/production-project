@@ -7,8 +7,8 @@ import { cx } from 'shared/lib/classNames/cx'
 import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
+import { HStack } from 'shared/ui/Stack'
 import { getCanEditArticle } from '../../model/selectors/article'
-import cls from './ArticleDetailsPageHeader.module.scss'
 
 export const ArticleDetailsPageHeader = memo(({ className }: {className?: string}) => {
 	const { t } = useTranslation('article')
@@ -27,21 +27,20 @@ export const ArticleDetailsPageHeader = memo(({ className }: {className?: string
 	}, [article?.id, navigate])
 		
 	return (
-		<div className={cx(cls.articleDetailsPageHeader, {},
-			[className])}>
+		<HStack justify='between' max className={cx('', {}, [className])} >
 			<Button 
 				theme={ButtonTheme.OUTLINE} 
 				onClick={onBackToList}
 			>
 				{t('Back to list')}
 			</Button>
+
 			{canEdit && <Button 
-				className={cls.editBtn}
 				theme={ButtonTheme.OUTLINE} 
 				onClick={onEditArticle}
 			>
 				{t('Edit')}
 			</Button>}
-		</div>
+		</HStack>
 	)
 })
