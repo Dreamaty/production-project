@@ -18,6 +18,7 @@ type Story = StoryObj<typeof meta>
 export const Light: Story = {
 	args: { title: 'Title lorem ipsum', text: 'TextTextTextTextTextTextText' },
 }
+// Alignment
 export const AlignRight: Story = {
 	args: { 
 		title: 'Title lorem ipsum', 
@@ -30,6 +31,14 @@ export const AlignCenter: Story = {
 		title: 'Title lorem ipsum', 
 		text: 'TextTextTextTextTextTextText',
 		align: TextAlign.CENTER 
+	},
+}
+// Sizes
+export const SizeS: Story = {
+	args: {
+		title: 'Title lorem ipsum', 
+		text: 'TextTextTextTextTextTextText',
+		size: TextSize.S
 	},
 }
 export const SizeL: Story = {
@@ -46,6 +55,7 @@ export const SizeXL: Story = {
 		size: TextSize.XL
 	},
 }
+
 export const Error: Story = {
 	args: {
 		title: 'Title lorem ipsum',

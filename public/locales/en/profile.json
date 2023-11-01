@@ -13,5 +13,6 @@
     "SERVER_ERROR_LOADING_PROFILE": "Did not succeed to load profile",
     "NO_DATA": "No Data!",
     "Did not succeed to load profile": "Did not succeed to load profile"
-  }
+  },
+  "Choose a Country": "Choose Country"
 }

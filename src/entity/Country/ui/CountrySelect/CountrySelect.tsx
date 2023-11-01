@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cx } from 'shared/lib/classNames/cx'
-import { UiSelect } from 'shared/ui/Select'
+import { Listbox } from 'shared/ui/Listbox/Lisbox'
 import { Country } from '../../model/types/country'
 
 const options = [
@@ -24,13 +24,15 @@ export const CountrySelect = memo(({ className, value, onChange, readonly }: {
 	}, [onChange])
 
 	return (
-		<UiSelect 
+		<Listbox 
 			className={cx('',{}, [className])}
-			label={t('Your Country')}
-			options={options}
+			items={options}
+			defaultValue={t('Choose a Country')}
 			value={value}
 			onChange={onChangeHandler}
 			readonly={readonly}
+			direction='top'
+			label={t('Your Country')}
 		/>
 	)
 })

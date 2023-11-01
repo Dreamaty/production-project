@@ -33,7 +33,7 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 		<SidebarItem key={item.path} item={item} collapsed={collapsed}/>)
 	), [collapsed, sidebarItemsList])
 	return (
-		<menu
+		<aside
 			data-testid="sidebar"
 			className={cx(cls.sidebar, { [ cls.collapsed ]: collapsed }, [className])}
 		>
@@ -47,13 +47,13 @@ export const Sidebar = memo(({ className }: { className?: string }) => {
 			>
 				{collapsed ? '>' : '<'}
 			</Button>
-			<VStack className={cls.items} gap='8'>
+			<VStack role='navigation' className={cls.items} gap='8'>
 				{itemsList}
 			</VStack>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
 				<LangSwitcher short={collapsed} className={cls.lang} />
 			</div>
-		</menu>
+		</aside>
 	)
 })

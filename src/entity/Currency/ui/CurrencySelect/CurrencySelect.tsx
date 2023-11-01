@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { UiSelect } from 'shared/ui/Select'
+import { cx } from 'shared/lib/classNames/cx'
+import { Listbox } from 'shared/ui/Listbox/Lisbox'
 import { Currency } from '../../model/types/currency'
 
 const options = [
@@ -23,12 +24,15 @@ export const CurrencySelect = memo(({ className, value, onChange, readonly }: {
 	}, [onChange])
 
 	return (
-		<UiSelect 
-			label={t('Your Currency')}
-			options={options}
+		<Listbox 
+			className={cx('', {}, [className])}
+			items={options}
+			defaultValue={t('Choose Currency')}
 			value={value}
 			onChange={onChangeHandler}
 			readonly={readonly}
+			direction='top'
+			label={t('Your Currency')}
 		/>
 	)
 })

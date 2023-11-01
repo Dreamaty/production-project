@@ -15,9 +15,19 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+	S = 'size_s',
 	M = 'size_m',
 	L = 'size_l',
 	XL = 'size_xl'
+}
+
+type HeaderTagType = 'h1' | 'h2' | 'h3' | 'h4'
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+	[TextSize.S]: 'h4',
+	[TextSize.M]: 'h3',
+	[TextSize.L]: 'h2',
+	[TextSize.XL]: 'h1'
 }
 
 export const UiText = memo(({
@@ -35,12 +45,16 @@ export const UiText = memo(({
 	theme?: TextTheme
 	size?: TextSize
 }) => {
+
+	const HeaderTag = mapSizeToHeaderTag[size]
+
+	const classes = [
+		className, cls[theme], cls[align], cls[size] 
+	]
+
 	return (
-		<div className={cx(cls.textWrapper, {}, 
-			[ 
-				className, cls[theme], cls[align], cls[size] 
-			])}>
-			{title && <p className={cls.title}>{title}</p>}
+		<div className={cx(cls.textWrapper, {}, classes)}>
+			{title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
 			{text && <p className={cls.text}>{text}</p>}
 		</div>
 	)
