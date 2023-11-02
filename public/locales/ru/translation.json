@@ -28,5 +28,7 @@
   "Dream Project": "Dream Project",
   "Create article": "Создать статью",
   "Choose a Country": "Выберите страну",
-  "Choose Currency": "Выберите Валюту"
+  "Choose Currency": "Выберите Валюту",
+  "Administration": "Админка",
+  "You dont have permission to access this page": "У вас нет разрешения на доступ к этой странице"
 }

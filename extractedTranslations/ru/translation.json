@@ -1,6 +1,7 @@
 {
   "": "",
   "About": "About",
+  "Administration": "Administration",
   "All": "All",
   "An error ocured after tring to load articles": "An error ocured after tring to load articles",
   "An error ocured after try to load articles": "An error ocured after try to load articles",
@@ -50,6 +51,7 @@
   "Try to refresh the page": "Try to refresh the page",
   "Type your comment": "Type your comment",
   "Username or password is incorrect": "Username or password is incorrect",
+  "You dont have permission to access this page": "You dont have permission to access this page",
   "Your Age": "Your Age",
   "Your City": "Your City",
   "Your Country": "Your Country",
