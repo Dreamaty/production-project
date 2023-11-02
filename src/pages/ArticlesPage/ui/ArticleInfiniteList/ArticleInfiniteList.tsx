@@ -9,7 +9,6 @@ import { UiText } from 'shared/ui/Text'
 import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { getArticles } from '../../model/slice/articlesPageSlice'
-import cls from './ArticleInfiniteList.module.scss'
 
 export const ArticleInfiniteList = memo(({ className }: {
 	className?: string, 
@@ -35,7 +34,7 @@ export const ArticleInfiniteList = memo(({ className }: {
 	}	
 
 	return (
-		<div className={cx(cls.articleInfiniteList, {},
+		<div className={cx('', {},
 			[className])}>
 			<ArticleList 
 				articles={articles} 
