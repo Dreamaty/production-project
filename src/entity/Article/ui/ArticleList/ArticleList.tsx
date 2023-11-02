@@ -30,7 +30,7 @@ export const ArticleList = memo((
 		target
 	}: {
 	className?: string, 
-	articles: Article[]
+	articles?: Article[]
 	isLoading?: boolean
 	view?: ArticleView
 	target?: HTMLAttributeAnchorTarget
@@ -40,7 +40,7 @@ export const ArticleList = memo((
 	const isList = view === ArticleView.LIST
 
 	const itemsPerRow = isList ? 1 : 3
-	const rowCount =  Math.ceil(articles.length / itemsPerRow)
+	
 
 
 	//// eslint-disable-next-line react-hooks/rules-of-hooks
@@ -76,7 +76,7 @@ export const ArticleList = memo((
 		)}
 
 
-	if(!isLoading && !articles.length) {
+	if(!isLoading && !articles?.length) {
 		return (
 			<div className={cx(cls.articleList, {},
 				[className, cls[view]])}>
@@ -91,7 +91,7 @@ export const ArticleList = memo((
 
 		<VirtuosoGrid
 			style={{ height: '100%' }}
-			totalCount={articles.length}
+			totalCount={articles?.length || 0}
 			data={articles}
 			customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
 			itemContent={renderArticlesVirtualized}

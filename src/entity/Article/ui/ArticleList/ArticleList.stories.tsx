@@ -75,7 +75,7 @@ const articles = [{
 	]
 }as Article]
 const meta = {
-	title: 'entities/Article/ArticleList',
+	title: 'entity/Article/ArticleList',
 	component: ArticleList,
 	parameters: {
 		layout: 'fullscreen',

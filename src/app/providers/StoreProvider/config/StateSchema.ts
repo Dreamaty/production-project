@@ -7,21 +7,24 @@ import {
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entity/Article'
-import { ProfileStateSchema } from 'entity/ProfileState'
+
 import { UserSchema } from 'entity/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticleDetailsCommentsSchema } from 'features/Article/ArticleDetailsComments'
 import { ArticleSortSchema } from 'features/Article/ArticleSort'
 import { ArticleTypeTabsSchema } from 'features/Article/ArticleTypeTabs/model/types/ArticleTypeTabs'
 import { LoginSchema } from 'features/AuthByUsername'
+import { ProfileStateSchema } from 'features/EditableProfileCard'
 import { ScrollSaveSchema } from 'features/ScrollSave'
 import { ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendations'
 import { ArticlesPageSliceSchema } from 'pages/ArticlesPage'
 import { NavigateOptions, To } from 'react-router'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export interface StateSchema {
 	user: UserSchema
 	saveScroll: ScrollSaveSchema
+	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
 	// Async Reducers
 	loginForm?: LoginSchema

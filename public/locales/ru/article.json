@@ -22,6 +22,7 @@
     "Recomend": "Рекомендуем",
     "Edit": "Редактировать",
     "Article Edit": "Редактировать статью",
-    "Article Creation": "Создание статьи"
+    "Article Creation": "Создание статьи",
+    "An error ocured after tring to load articles": "Произошла ошибка после попытки загрузки статей."
   }
 }

@@ -1,3 +1,5 @@
+export { addCommentForArticle } from './model/services/addCommentForArticle/addCommentForArticle'
+
 // eslint-disable-next-line max-len
 export { fetchCommentsByArticleId } from './model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 

@@ -39,7 +39,7 @@ export function Listbox(props: ListboxProps) {
 	} = props
 
 	const optionsClasses = [cls.options, cls[direction]]
-
+	// TODO: floating https://floating-ui.com/docs/react
 	return (
 		<HStack gap='4'>
 			{label && <span className={cx(cls.label,{ [cls.unavailable]: readonly },[])}>{`${label}>`}</span>}
