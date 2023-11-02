@@ -42,6 +42,7 @@ dist/
 # Temporary folders
 tmp/
 temp/
+reports/
 
 # Container data
 data/
