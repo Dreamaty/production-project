@@ -16,9 +16,9 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 	const { className } = props
 	const { t } = useTranslation()
 
-	const { isLoading, error, data } = useArticleRecommendationsList(3)
+	const { isLoading, error, data: articles } = useArticleRecommendationsList(3)
 
-	if(isLoading || error) return null
+	if(isLoading || error || !articles) return null
     
 	return (
 		<VStack gap='8' className={cx('', {}, [className])}>
@@ -27,7 +27,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 				title={t('Recomend')}
 			/>
 			<ArticleList 
-				articles={data} 
+				articles={articles} 
 				isLoading={isLoading} 
 				view={ArticleView.BLOCKS}
 				target='_blank'

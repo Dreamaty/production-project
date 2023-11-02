@@ -1,6 +1,7 @@
 import { Listbox as HListbox } from '@headlessui/react'
 import { Fragment, ReactNode } from 'react'
 import { cx } from 'shared/lib/classNames/cx'
+import { DropdownDirection } from 'shared/types/ui'
 import { Button } from '../Button'
 import { HStack } from '../Stack'
 import cls from './Listbox.module.scss'
@@ -23,7 +24,12 @@ interface ListboxProps {
 	label?: string
 }
 
-type DropdownDirection = 'top' | 'bottom' 
+const mapDirectionClass: Record<DropdownDirection, string> = {
+	'bottom left': cls.optionsBottomLeft,
+	'bottom right': cls.optionsBottomRight,
+	'top left': cls.optionsTopLeft,
+	'top right': cls.optionsTopRight
+}
 
 export function Listbox(props: ListboxProps) {
 
@@ -34,11 +40,11 @@ export function Listbox(props: ListboxProps) {
 		defaultValue, 
 		onChange,
 		readonly,
-		direction = 'bottom',
+		direction = 'bottom left',
 		label
 	} = props
 
-	const optionsClasses = [cls.options, cls[direction]]
+	const optionsClasses = [cls.options,  mapDirectionClass[direction]]
 	// TODO: floating https://floating-ui.com/docs/react
 	return (
 		<HStack gap='4'>

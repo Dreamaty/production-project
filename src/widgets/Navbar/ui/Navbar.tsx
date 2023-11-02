@@ -9,8 +9,10 @@ import {
 	useAppSelector,
 } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { Avatar } from 'shared/ui/Avatar'
 import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
 import { TextSize, TextTheme, UiText } from 'shared/ui/Text'
 import cls from './Navbar.module.scss'
 
@@ -44,13 +46,26 @@ export const Navbar = memo(({ className }: { className?: string }) => {
 				<AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
 					{t('Create article')}
 				</AppLink>
-				<Button
-					theme={ButtonTheme.CLEAR_INVERTED}
+				<Dropdown 
 					className={cls.links}
-					onClick={onLogOut}
-				>
-					{t('Sign Out')}
-				</Button>
+					items={[
+						{
+							content: t('Profile'),
+							href: RoutePath.profile + authData.id
+						},
+						{
+							content: t('Sign Out'),
+							onClick: onLogOut
+						}
+					]} 
+					trigger={
+						<Avatar 
+							src={authData.avatar} 
+							size={30} 
+							alt={'user avatar'}
+						/>
+					} 
+				/>
 			</header>
 		)
 	}

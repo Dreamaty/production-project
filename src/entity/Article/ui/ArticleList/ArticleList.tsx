@@ -27,13 +27,15 @@ export const ArticleList = memo((
 		articles,
 		view = ArticleView.BLOCKS,
 		isLoading,
-		target
+		target,
+		virtualized = false
 	}: {
 	className?: string, 
 	articles?: Article[]
 	isLoading?: boolean
 	view?: ArticleView
 	target?: HTMLAttributeAnchorTarget
+	virtualized?: boolean 
 }) => {
 	const { t } = useTranslation('article')
 
@@ -86,19 +88,35 @@ export const ArticleList = memo((
 	}
 		
 	return (
-
-	// TODO: List virtualization
-
-		<VirtuosoGrid
-			style={{ height: '100%' }}
-			totalCount={articles?.length || 0}
-			data={articles}
-			customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
-			itemContent={renderArticlesVirtualized}
+		<div className={cx('', {}, [cls[view]])}>
+			{virtualized ? (
+				<VirtuosoGrid
+					style={{ height: '100%' }}
+					totalCount={articles?.length || 0}
+					data={articles}
+					customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
+					itemContent={renderArticlesVirtualized}
 			
-		>
+				>
 		
-		</VirtuosoGrid>
+				</VirtuosoGrid>
+			) : (
+				articles?.map(item => (
+					<ArticleListItem 
+						className={cls.card}
+						target={target}
+						article={item}
+						key={item.id}
+						view={view}				
+					/>
+				))
+			)}
+		</div>
+
+	// TODO: List virtualization with virtuoza
+
+		
+		
 
 	//<div style={{ display: 'flex', flexGrow: 1, height: '100%', width: '100%' }}>
 	//	<AutoSizer>

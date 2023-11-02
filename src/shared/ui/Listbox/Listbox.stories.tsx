@@ -31,7 +31,7 @@ export const Dark: Story = {
 }
 export const DirectionTop: Story = {
 	args: {
-		direction: 'top'
+		direction: 'top left'
 	},
 	decorators: [ThemeDecorator(Theme.GREEN)],
 }

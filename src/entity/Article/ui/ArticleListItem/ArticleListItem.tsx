@@ -9,6 +9,7 @@ import { Button } from 'shared/ui/Button'
 import { ButtonTheme } from 'shared/ui/Button/ui/Button'
 import { Card } from 'shared/ui/Card/Card'
 import { Icon } from 'shared/ui/Icon/Icon'
+import { VStack } from 'shared/ui/Stack'
 import { UiText } from 'shared/ui/Text'
 import {
 	Article, ArticleBlockType, ArticleTextBlock, ArticleView
@@ -39,15 +40,18 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 				to={RoutePath.article_details + article?.id} className={cx(cls.articleListItem, {},
 					[className, cls[view]])}>
 				<Card>
-					<div className={cls.imageWrapper}>
-						<img src={article?.img} className={cls.img} alt={article?.title} />
-						<UiText text={article?.createdAt} className={cls.date} />
-					</div>
-					<div className={cls.infoWrapper} >
-						{types}
-						{views}
-					</div>
-					<UiText text={article?.title} className={cls.title} />
+					<VStack gap='8'>
+						<div className={cls.imageWrapper}>
+							<img src={article?.img} className={cls.img} alt={article?.title} />
+							<UiText text={article?.createdAt} className={cls.date} />
+						</div>
+						<div className={cls.infoWrapper} >
+							{types}
+							{views}
+						</div>
+						<UiText text={article?.title} className={cls.title} />
+					</VStack>
+					
 				</Card>
 			
 			</AppLink>
@@ -65,10 +69,10 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 				<div className={cls.header}>
 					<Avatar 
 						size={30} 
-						src={article?.user.avatar} 
-						alt={article?.user.username || ''} 
+						src={article?.user?.avatar} 
+						alt={article?.user?.username || ''} 
 					/>
-					<UiText text={article?.user.username} className={cls.username} />
+					<UiText text={article?.user?.username} className={cls.username} />
 					<UiText text={article?.createdAt} className={cls.date} />
 				</div>
 				<UiText title={article?.title} className={cls.title} />
