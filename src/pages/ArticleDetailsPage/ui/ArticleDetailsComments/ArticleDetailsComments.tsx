@@ -8,14 +8,14 @@ import {
 } from 'features/Article/ArticleDetailsComments'
 
 import { t } from 'i18next'
-import { memo, useCallback } from 'react'
+import { Suspense, memo, useCallback } from 'react'
 import { cx } from 'shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { VStack } from 'shared/ui/Stack'
 import { TextSize, UiText } from 'shared/ui/Text'
 
-export const ArticleDetailsComments = memo(({ className, articleId }: {className?: string, articleId: string}) => {
+export const ArticleDetailsComments = memo(({ className, articleId }: {className?: string, articleId?: string}) => {
 
 
 	const comments = useAppSelector(getArticleComments.selectAll)
@@ -38,7 +38,9 @@ export const ArticleDetailsComments = memo(({ className, articleId }: {className
 				size={TextSize.L} 
 				title={t('Comments')}
 			/>
-			<AddCommentForm onSendComment={onSendComment} />
+			<Suspense fallback={<div>...</div>}>
+				<AddCommentForm onSendComment={onSendComment} />
+			</Suspense>
 			<CommentList comments={comments} isLoading={commentsIsLoading} />
 		</VStack>
 	)

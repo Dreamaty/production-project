@@ -8,6 +8,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-styling',
 		'@storybook/addon-onboarding',
 		'@storybook/addon-interactions',
+		'storybook-addon-mock',
 	],
 	framework: {
 		name: '@storybook/react-webpack5',

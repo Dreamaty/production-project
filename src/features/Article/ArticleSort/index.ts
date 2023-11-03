@@ -1,6 +1,8 @@
 export { ArticleFilter } from './ui/ArticleFilter/ArticleFilter'
 
-export { ArticleSortField, ArticleSortSchema } from './model/types/ArticleSort'
+export type { ArticleSortSchema } from './model/types/ArticleSort'
+
+export { ArticleSortField } from './model/consts/consts'
 
 export {
 	getArticleSortBy, getArticleSortOrder, getArticleSortSearch

@@ -1,5 +1,5 @@
-import { getUserAuthData, getUserRoles } from 'entity/User'
-import { UserRole } from 'entity/User/model/types/user'
+import { UserRole, getUserAuthData, getUserRoles } from 'entity/User'
+
 import { useMemo } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'

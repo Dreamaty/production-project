@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { ArticleSortField } from '../../model/types/ArticleSort'
+import { ArticleSortField } from '../../model/consts/consts'
 import { ArticleSortSelector } from './ArticleSortSelector'
 const meta = {
 	title: 'feature/article/ArticleSortSelector',

@@ -1,4 +1,5 @@
-import { UserRole } from 'entity/User/model/types/user'
+
+import { UserRole } from 'entity/User'
 import { AboutPage } from 'pages/AboutPage'
 import { AdminPanelPage } from 'pages/AdminPanelPage'
 

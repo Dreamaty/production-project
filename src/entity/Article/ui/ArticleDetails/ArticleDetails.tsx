@@ -1,11 +1,10 @@
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import { cx } from 'shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { Avatar } from 'shared/ui/Avatar'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
@@ -15,10 +14,11 @@ import {
 	TextSize,
 	TextTheme, UiText
 } from 'shared/ui/Text'
+import { ArticleBlockType } from '../../model/consts/consts'
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
+import { ArticleBlock } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
@@ -28,7 +28,7 @@ const reducers: ReducersList = {
 	articleDetails: articleDetailsReducer
 }
 
-export const ArticleDetails = memo(({ className, id }: {className?: string, id: string}) => {
+export const ArticleDetails = memo(({ className, id }: {className?: string, id?: string}) => {
 
 	const { t } = useTranslation('article')
 	const dispatch = useAppDispatch()
@@ -61,9 +61,11 @@ export const ArticleDetails = memo(({ className, id }: {className?: string, id: 
 			throw new Error('Unknown article type')
 		}
 	}, [])
-	useInitialEffect(() => {
+
+	useEffect(() => {
 		dispatch(fetchArticleById(id))
-	})
+	}, [dispatch, id])
+
 	
 	let content
 

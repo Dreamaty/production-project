@@ -1,5 +1,5 @@
 import { Profile } from 'entity/ProfileState'
-import { ValidateProfileError } from '../../types/EditableProfileCard'
+import { ValidateProfileError } from '../../consts/consts'
 
 
 

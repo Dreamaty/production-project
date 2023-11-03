@@ -4,7 +4,7 @@ import { cx } from 'shared/lib/classNames/cx'
 import { SortOrder } from 'shared/types'
 import { UiSelect } from 'shared/ui/Select'
 import { SelectOption } from 'shared/ui/Select/ui/UiSelect'
-import { ArticleSortField } from '../../model/types/ArticleSort'
+import { ArticleSortField } from '../../model/consts/consts'
 import cls from './ArticleSortSelector.module.scss'
 
 export const ArticleSortSelector = memo(({ 

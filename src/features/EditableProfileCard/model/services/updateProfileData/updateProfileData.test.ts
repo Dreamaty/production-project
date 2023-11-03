@@ -3,7 +3,7 @@ import { Currency } from 'entity/Currency'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 
 
-import { ValidateProfileError } from '../../types/EditableProfileCard'
+import { ValidateProfileError } from '../../consts/consts'
 import { updateProfileData } from './updateProfileData'
 
 

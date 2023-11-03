@@ -11,5 +11,5 @@ export {
 	getArticleComments
 } from './model/slice/articleDetailsCommentsSlice'
 
-export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsComments'
+export type { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsComments'
 

@@ -15,6 +15,7 @@
 		"moduleResolution": "Node",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true
 	},
 	"ts-node": {
 		"compilerOptions": {

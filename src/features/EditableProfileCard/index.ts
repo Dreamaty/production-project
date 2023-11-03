@@ -1,3 +1,5 @@
-export { ProfileStateSchema } from './model/types/EditableProfileCard'
+export type { ProfileStateSchema } from './model/types/EditableProfileCard'
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard'
+
+export { ValidateProfileError } from './model/consts/consts'
 

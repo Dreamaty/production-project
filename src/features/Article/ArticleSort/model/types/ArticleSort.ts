@@ -1,11 +1,6 @@
 
 import { SortOrder } from 'shared/types'
-
-export enum ArticleSortField {
-	VIEWS = 'views',
-	TITLE = 'title',
-	CREATED = 'createdAt',
-}
+import { ArticleSortField } from '../consts/consts'
 
 export interface ArticleSortSchema {
 	sort: ArticleSortField

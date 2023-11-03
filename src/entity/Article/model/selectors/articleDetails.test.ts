@@ -1,5 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider'
-import { Article, ArticleBlockType, ArticleType } from '../types/article'
+import { ArticleBlockType, ArticleType } from '../consts/consts'
+import { Article } from '../types/article'
 import { getArticleDetailsData } from './articleDetails'
 
 const article: Article = {
