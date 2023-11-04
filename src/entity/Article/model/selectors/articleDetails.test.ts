@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider'
+import { StateSchema } from '@/app/providers/StoreProvider'
 import { ArticleBlockType, ArticleType } from '../consts/consts'
 import { Article } from '../types/article'
 import { getArticleDetailsData } from './articleDetails'

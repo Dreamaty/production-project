@@ -1,4 +1,4 @@
-import { useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
+import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { getProfileError } from '../model/selectors/getProfileError/getProfileError'
 import { getProfileForm } from '../model/selectors/getProfileForm/getProfileForm'
 import { getProfileIsLoading } from '../model/selectors/getProfileIsLoading/getProfileIsLoading'

@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-import { ArticleView } from 'entity/Article'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { ArticleView } from '@/entity/Article'
 
 export const getArticlesView = (state : StateSchema) => 
 	state.articlesPage?.view || ArticleView.BLOCKS

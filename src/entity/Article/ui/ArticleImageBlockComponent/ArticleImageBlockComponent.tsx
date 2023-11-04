@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { cx } from 'shared/lib/classNames/cx'
-import { TextAlign, UiText } from 'shared/ui/Text'
+import { cx } from '@/shared/lib/classNames/cx'
+import { TextAlign, UiText } from '@/shared/ui/Text'
 import { ArticleImageBlock } from '../../model/types/article'
 import cls from './ArticleImageBlockComponent.module.scss'
 

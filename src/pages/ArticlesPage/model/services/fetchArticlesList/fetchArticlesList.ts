@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfig } from 'app/providers/StoreProvider'
-import { Article, ArticleType } from 'entity/Article'
+import { ThunkConfig } from '@/app/providers/StoreProvider'
+import { Article, ArticleType } from '@/entity/Article'
 import {
 	getArticleSortBy, getArticleSortOrder, getArticleSortSearch
-} from 'features/Article/ArticleSort'
-import { getArticleTypeTabsSelectedType } from 'features/Article/ArticleTypeTabs/model/selectors/articleTypeTabs'
-import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
+} from '@/features/Article/ArticleSort'
+import { getArticleTypeTabsSelectedType } from '@/features/Article/ArticleTypeTabs/model/selectors/articleTypeTabs'
+import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
 import { getArticlesLimit, getArticlesPage } from '../../selectors/articles'
 
 interface FetchArticlesListProperties {

@@ -5,7 +5,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react'
-import { Mods, cx } from 'shared/lib/classNames/cx'
+import { Mods, cx } from '@/shared/lib/classNames/cx'
 import cls from './UiInput.module.scss'
 
 type HTMLInputProps = Omit<

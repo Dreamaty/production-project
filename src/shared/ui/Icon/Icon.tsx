@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { cx } from 'shared/lib/classNames/cx'
+import { cx } from '@/shared/lib/classNames/cx'
 import cls from './Icon.module.scss'
 
 export enum BackgroundType {

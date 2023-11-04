@@ -1,9 +1,9 @@
-import { ArticleType } from 'entity/Article'
+import { ArticleType } from '@/entity/Article'
 import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from 'shared/lib/classNames/cx'
-import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
+import { cx } from '@/shared/lib/classNames/cx'
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
 import { getArticleTypeTabsSelectedType } from '../model/selectors/articleTypeTabs'
 import { articleTypeTabsActions } from '../model/slice/articleTypeTabsSlice'
 

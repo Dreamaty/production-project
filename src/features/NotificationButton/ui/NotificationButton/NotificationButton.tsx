@@ -1,15 +1,15 @@
 
-import { NotificationList } from 'entity/Notification'
+import { NotificationList } from '@/entity/Notification'
 import { memo, useCallback, useState } from 'react'
-import NotificationIcon from 'shared/assets/icons/notification-20-20.svg'
-import { Button, ButtonTheme } from 'shared/ui/Button'
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 
 import { BrowserView, MobileView } from 'react-device-detect'
-import { cx } from 'shared/lib/classNames/cx'
-import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
-import { Drawer } from 'shared/ui/Drawer/Drawer'
-import { BackgroundColor, Icon } from 'shared/ui/Icon/Icon'
-import { Popover } from 'shared/ui/Popups'
+import { cx } from '@/shared/lib/classNames/cx'
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
+import { Drawer } from '@/shared/ui/Drawer/Drawer'
+import { BackgroundColor, Icon } from '@/shared/ui/Icon/Icon'
+import { Popover } from '@/shared/ui/Popups'
 import cls from './NotificationButton.module.scss'
 
 export const NotificationButton = memo(({ className }: {className?: string}) => {

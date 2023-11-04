@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from 'shared/lib/classNames/cx'
-import { Listbox } from 'shared/ui/Popups/ui/Listbox/Lisbox'
+import { cx } from '@/shared/lib/classNames/cx'
+import { Listbox } from '@/shared/ui/Popups/ui/Listbox/Lisbox'
 import { Currency } from '../../model/types/currency'
 
 const options = [

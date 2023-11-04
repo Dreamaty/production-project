@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider'
+import { StateSchema } from '@/app/providers/StoreProvider'
 import { ArticleSortField } from '../consts/consts'
 
 export const getArticleSortOrder = (state: StateSchema) => state.articleSort?.order || 'asc'

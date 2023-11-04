@@ -1,5 +1,5 @@
-import type { Country } from 'entity/Country'
-import type { Currency } from 'entity/Currency'
+import type { Country } from '@/entity/Country'
+import type { Currency } from '@/entity/Currency'
 
 export interface Profile {
 	id?: string

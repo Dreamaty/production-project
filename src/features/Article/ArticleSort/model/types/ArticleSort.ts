@@ -1,5 +1,5 @@
 
-import { SortOrder } from 'shared/types'
+import { SortOrder } from '@/shared/types'
 import { ArticleSortField } from '../consts/consts'
 
 export interface ArticleSortSchema {

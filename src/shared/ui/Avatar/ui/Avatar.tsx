@@ -1,5 +1,5 @@
 import { CSSProperties, memo, useMemo } from 'react'
-import { cx } from 'shared/lib/classNames/cx'
+import { cx } from '@/shared/lib/classNames/cx'
 import cls from './Avatar.module.scss'
 
 export const Avatar = memo(({ className, src, alt, size }: {

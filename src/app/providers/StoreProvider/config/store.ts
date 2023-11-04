@@ -5,9 +5,9 @@ import {
 	configureStore
 } from '@reduxjs/toolkit'
 
-import { scrollSaveReducer } from 'features/ScrollSave'
-import { $api } from 'shared/api/api'
-import { rtkApi } from 'shared/api/rtkApi'
+import { scrollSaveReducer } from '@/features/ScrollSave'
+import { $api } from '@/shared/api/api'
+import { rtkApi } from '@/shared/api/rtkApi'
 import { userReducer } from '../../../../entity/User'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'

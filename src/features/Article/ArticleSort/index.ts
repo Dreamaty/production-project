@@ -6,4 +6,4 @@ export { ArticleSortField } from './model/consts/consts'
 
 export {
 	getArticleSortBy, getArticleSortOrder, getArticleSortSearch
-} from 'features/Article/ArticleSort/model/selectors/articleSort'
+} from '@/features/Article/ArticleSort/model/selectors/articleSort'

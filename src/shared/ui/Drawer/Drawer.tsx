@@ -5,8 +5,8 @@ import {
 	useCallback, useEffect
 } from 'react'
 
-import { cx } from 'shared/lib/classNames/cx'
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider'
+import { cx } from '@/shared/lib/classNames/cx'
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'
 import cls from './Drawer.module.scss'

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from 'shared/lib/classNames/cx'
+import { cx } from '@/shared/lib/classNames/cx'
 import { Button } from '../Button'
 import { ButtonTheme } from '../Button/ui/Button'
 

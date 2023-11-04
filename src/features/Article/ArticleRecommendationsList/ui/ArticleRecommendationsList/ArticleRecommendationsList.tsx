@@ -1,9 +1,9 @@
-import { ArticleList, ArticleView } from 'entity/Article'
+import { ArticleList, ArticleView } from '@/entity/Article'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from 'shared/lib/classNames/cx'
-import { VStack } from 'shared/ui/Stack'
-import { TextSize, UiText } from 'shared/ui/Text'
+import { cx } from '@/shared/lib/classNames/cx'
+import { VStack } from '@/shared/ui/Stack'
+import { TextSize, UiText } from '@/shared/ui/Text'
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi'
 
 

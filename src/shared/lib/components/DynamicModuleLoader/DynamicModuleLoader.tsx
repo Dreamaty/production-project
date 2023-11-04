@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Reducer } from '@reduxjs/toolkit'
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider'
-import { StateSchema, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema'
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider'
+import { StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema'
 import { FC, ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
 import { useAppDispatch } from '../../../lib/hooks/storeHooks/storeHooks'

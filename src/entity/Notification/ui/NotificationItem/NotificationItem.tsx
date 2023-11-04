@@ -1,7 +1,7 @@
 import { memo } from 'react'
-import { cx } from 'shared/lib/classNames/cx'
-import { Card, CardTheme } from 'shared/ui/Card/Card'
-import { UiText } from 'shared/ui/Text'
+import { cx } from '@/shared/lib/classNames/cx'
+import { Card, CardTheme } from '@/shared/ui/Card/Card'
+import { UiText } from '@/shared/ui/Text'
 import { Notification } from '../../model/types/notification'
 import cls from './NotificationItem.module.scss'
 

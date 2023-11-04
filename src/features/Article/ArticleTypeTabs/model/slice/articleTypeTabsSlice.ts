@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { ArticleType } from 'entity/Article'
+import { ArticleType } from '@/entity/Article'
 import { ArticleTypeTabsSchema } from '../types/ArticleTypeTabs'
 
 const initialState: ArticleTypeTabsSchema = {

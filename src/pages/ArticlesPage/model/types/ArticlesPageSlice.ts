@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit'
-import { Article, ArticleView } from 'entity/Article'
+import { Article, ArticleView } from '@/entity/Article'
 
 
 export interface ArticlesPageSliceSchema extends EntityState<Article>{

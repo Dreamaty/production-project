@@ -1,5 +1,5 @@
 import { ChangeEvent, useMemo } from 'react'
-import { Mods, cx } from 'shared/lib/classNames/cx'
+import { Mods, cx } from '@/shared/lib/classNames/cx'
 import cls from './UiSelect.module.scss'
 
 export interface SelectOption<T extends string> {

@@ -1,21 +1,21 @@
 import {
 	getUserAuthData
-} from 'entity/User'
-import { LoginModal } from 'features/AuthByUsername'
-import { AvatarDropdown } from 'features/AvatarDropdown'
-import { NotificationButton } from 'features/NotificationButton'
+} from '@/entity/User'
+import { LoginModal } from '@/features/AuthByUsername'
+import { AvatarDropdown } from '@/features/AvatarDropdown'
+import { NotificationButton } from '@/features/NotificationButton'
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { cx } from 'shared/lib/classNames/cx'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { cx } from '@/shared/lib/classNames/cx'
 import {
 	useAppSelector
-} from 'shared/lib/hooks/storeHooks/storeHooks'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { Button } from 'shared/ui/Button'
-import { ButtonTheme } from 'shared/ui/Button/ui/Button'
-import { HStack } from 'shared/ui/Stack'
-import { TextSize, TextTheme, UiText } from 'shared/ui/Text'
+} from '@/shared/lib/hooks/storeHooks/storeHooks'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
+import { Button } from '@/shared/ui/Button'
+import { ButtonTheme } from '@/shared/ui/Button/ui/Button'
+import { HStack } from '@/shared/ui/Stack'
+import { TextSize, TextTheme, UiText } from '@/shared/ui/Text'
 import cls from './Navbar.module.scss'
 
 export const Navbar = memo(({ className }: { className?: string }) => {

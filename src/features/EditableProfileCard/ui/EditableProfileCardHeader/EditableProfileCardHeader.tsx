@@ -1,11 +1,11 @@
-import { getUserAuthData } from 'entity/User'
+import { getUserAuthData } from '@/entity/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
-import { EditButton } from 'shared/ui/Button/ui/EditButton/EditButton'
-import { HStack } from 'shared/ui/Stack'
-import { UiText } from 'shared/ui/Text'
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
+import { EditButton } from '@/shared/ui/Button/ui/EditButton/EditButton'
+import { HStack } from '@/shared/ui/Stack'
+import { UiText } from '@/shared/ui/Text'
 
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'

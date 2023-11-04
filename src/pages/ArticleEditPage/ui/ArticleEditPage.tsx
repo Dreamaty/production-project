@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
-import { cx } from 'shared/lib/classNames/cx'
-import { Page } from 'widgets/Page/Page'
+import { cx } from '@/shared/lib/classNames/cx'
+import { Page } from '@/widgets/Page/Page'
 
 
 export interface ArticleEditPageProps {

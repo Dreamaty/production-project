@@ -1,7 +1,7 @@
 import {
 	DetailedHTMLProps, HTMLAttributes, ReactNode, memo
 } from 'react'
-import { Mods, cx } from 'shared/lib/classNames/cx'
+import { Mods, cx } from '@/shared/lib/classNames/cx'
 import cls from './Flex.module.scss'
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between'

@@ -1,4 +1,4 @@
-import { cx } from 'shared/lib/classNames/cx'
+import { cx } from '@/shared/lib/classNames/cx'
 import cls  from './Test.module.scss'
 
 export const Test = ({ className }: {className?: string}) => {

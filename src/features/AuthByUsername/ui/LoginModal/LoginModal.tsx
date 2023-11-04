@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
-import { cx } from 'shared/lib/classNames/cx'
-import { Loader } from 'shared/ui/Loader/Loader'
-import { Modal } from 'shared/ui/Modal'
+import { cx } from '@/shared/lib/classNames/cx'
+import { Loader } from '@/shared/ui/Loader/Loader'
+import { Modal } from '@/shared/ui/Modal'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
 export const LoginModal = ({

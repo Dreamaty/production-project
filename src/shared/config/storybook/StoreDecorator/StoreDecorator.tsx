@@ -1,14 +1,14 @@
 import { ReducersMapObject } from '@reduxjs/toolkit'
 import { StoryFn } from '@storybook/react'
-import { StateSchema, createReduxStore } from 'app/providers/StoreProvider'
-import { articleDetailsReducer } from 'entity/Article/model/slice/articleDetailsSlice'
-import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice'
-import { articleDetailsCommentsReducer } from 'features/Article/ArticleDetailsComments'
-import { loginReducer } from 'features/AuthByUsername'
-import { profileStateReducer } from 'features/EditableProfileCard/model/slice/profileStateSlice'
-import { articlesPageReducer } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
+import { StateSchema, createReduxStore } from '@/app/providers/StoreProvider'
+import { articleDetailsReducer } from '@/entity/Article/model/slice/articleDetailsSlice'
+import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice'
+import { articleDetailsCommentsReducer } from '@/features/Article/ArticleDetailsComments'
+import { loginReducer } from '@/features/AuthByUsername'
+import { profileStateReducer } from '@/features/EditableProfileCard/model/slice/profileStateSlice'
+import { articlesPageReducer } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
 import { Provider } from 'react-redux'
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 
 const defaultAsyncReducers: ReducersList = {
