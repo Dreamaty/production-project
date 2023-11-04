@@ -6,6 +6,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button'
 
 import { BrowserView, MobileView } from 'react-device-detect'
 import { cx } from 'shared/lib/classNames/cx'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 import { Drawer } from 'shared/ui/Drawer/Drawer'
 import { BackgroundColor, Icon } from 'shared/ui/Icon/Icon'
 import { Popover } from 'shared/ui/Popups'
@@ -36,9 +37,11 @@ export const NotificationButton = memo(({ className }: {className?: string}) => 
 			</BrowserView>
 			<MobileView>
 				{trigger}
-				<Drawer isOpen={isOpen} onClose={onCloseDrawer} >
-					<NotificationList/>
-				</Drawer>
+				<AnimationProvider>
+					<Drawer isOpen={isOpen} onClose={onCloseDrawer} >
+						<NotificationList/>
+					</Drawer>
+				</AnimationProvider>
 			</MobileView>
 		</div>
 	) 

@@ -7,6 +7,7 @@ import { Overlay } from '../../Overlay/Overlay'
 import { Portal } from '../../Portal/Portal'
 import cls from './Modal.module.scss'
 
+
 const ANIMATION_DELAY = 300
 
 export const Modal = ({
