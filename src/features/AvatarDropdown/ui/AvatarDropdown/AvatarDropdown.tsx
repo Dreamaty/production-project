@@ -4,6 +4,7 @@ import {
 import { t } from 'i18next'
 import { memo, useCallback } from 'react'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { cx } from 'shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/storeHooks/storeHooks'
 import { Avatar } from 'shared/ui/Avatar'
 import { Dropdown } from 'shared/ui/Popups'
@@ -27,8 +28,8 @@ export const AvatarDropdown = memo(({ className }: {className?: string}) => {
 		
 	return (
 		<Dropdown 
-			//className={cx(cls.avatarDropdown, {},
-			//	[className])}
+			className={cx('', {},
+				[className])}
 			items={[
 						 ...(isAdminPanelAvailable ? [{
 					content: t('Administration'),

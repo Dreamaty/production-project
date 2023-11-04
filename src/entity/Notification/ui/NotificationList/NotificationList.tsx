@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { cx } from 'shared/lib/classNames/cx'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import { VStack } from 'shared/ui/Stack'
 import { useNotifications } from '../../api/notificationApi'
@@ -17,8 +18,8 @@ export const NotificationList = memo(({ className }: {className?: string}) => {
 			<VStack
 				gap='16'
 				max
-				//className={cx(cls.notificationList, {},
-				//	[className])}
+				className={cx('', {},
+					[className])}
 			>
 				<Skeleton width={'100%'} border='8px' height={80}/>
 				<Skeleton width={'100%'} border='8px' height={80}/>
@@ -31,8 +32,8 @@ export const NotificationList = memo(({ className }: {className?: string}) => {
 		<VStack
 			gap='16'
 			max
-			//className={cx(cls.notificationList, {},
-			//	[className])}
+			className={cx('', {},
+				[className])}
 		>
 			{data?.map(item => (
 				<NotificationItem key={item.id} notification={item} />

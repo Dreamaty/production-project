@@ -1,23 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { NotificationItem } from './NotificationItem'
+import { Drawer } from './Drawer'
 const meta = {
-	title: 'widget/NotificationItem',
-	component: NotificationItem,
+	title: 'shared/Drawer',
+	component: Drawer,
 	parameters: {
 		layout: 'fullscreen',
 	},
 	tags: ['autodocs'],
 	argTypes: {},
 	args: {
-		notification: {
-			description: 'This is very interesting notification',
-			id: '1',
-			title: 'You need to look at it'
-		}
+		children: (<div>Hello. This is some text to check how it looks
+			You can write another story to check it precisely
+		</div>)
 	}
-} satisfies Meta<typeof NotificationItem>
+} satisfies Meta<typeof Drawer>
 export default meta
 type Story = StoryObj<typeof meta>
 export const Light: Story = {
