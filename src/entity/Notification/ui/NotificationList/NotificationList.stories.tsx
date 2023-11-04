@@ -1,31 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Button } from '../Button'
-import { Dropdown } from './Dropdown'
+import { NotificationList } from './NotificationList'
 const meta = {
-	title: 'shared/Dropdown',
-	component: Dropdown,
+	title: 'widget/NotificationList',
+	component: NotificationList,
 	parameters: {
 		layout: 'fullscreen',
 	},
 	tags: ['autodocs'],
 	argTypes: {},
-	args: {
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: 'first',
-			},
-			{
-				content: 'second',
-			},
-			{
-				content: 'third',
-			},
-		]
-	}
-} satisfies Meta<typeof Dropdown>
+} satisfies Meta<typeof NotificationList>
 export default meta
 type Story = StoryObj<typeof meta>
 export const Light: Story = {

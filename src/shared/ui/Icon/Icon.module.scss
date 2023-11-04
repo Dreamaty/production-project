@@ -1,7 +1,17 @@
-.fill {
+.fillPrimary {
 	fill: var(--primary-color);
 }
 
-.stroke path {
+.fillSecondary {
+	fill: var(--secondary-color);
+}
+
+
+.strokePrimary path {
 	stroke: var(--primary-color);
 }
+
+.strokeSecondary {
+	stroke: var(--secondary-color);
+}
+

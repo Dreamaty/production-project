@@ -1,4 +1,4 @@
-.listbox {
+.popup {
 	position: relative;
 }
 
@@ -11,12 +11,10 @@
 	gap: 8px;
 }
 
-.options {
-	background: var(--listbox-bg);
-	position: absolute;
-	z-index: 10000;
+.active {
+	background-color: var(--primary-color);
 	border-radius: 12px;
-	box-shadow: 4px 4px 8px var(--listbox-bg);
+	cursor: pointer;
 }
 
 .optionsTopLeft {
@@ -40,22 +38,6 @@
 	left: 0;
 }
 
-.option {
-	padding: 10px 20px;
-}
-
-.active {
-	background-color: var(--inverted-primary-color);
-	border-radius: 12px;
-	cursor: pointer;
-}
-
 .unavailable {
 	opacity: 0.7;
 }
-
-.label {
-	color: var(--secondary-color);
-}
-
-
