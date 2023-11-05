@@ -1,15 +1,14 @@
 
 import { NotificationList } from '@/entity/Notification'
-import { memo, useCallback, useState } from 'react'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { memo, useCallback, useState } from 'react'
 
-import { BrowserView, MobileView } from 'react-device-detect'
 import { cx } from '@/shared/lib/classNames/cx'
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
 import { BackgroundColor, Icon } from '@/shared/ui/Icon/Icon'
 import { Popover } from '@/shared/ui/Popups'
+import { BrowserView, MobileView } from 'react-device-detect'
 import cls from './NotificationButton.module.scss'
 
 export const NotificationButton = memo(({ className }: {className?: string}) => {
@@ -37,11 +36,9 @@ export const NotificationButton = memo(({ className }: {className?: string}) => 
 			</BrowserView>
 			<MobileView>
 				{trigger}
-				<AnimationProvider>
-					<Drawer isOpen={isOpen} onClose={onCloseDrawer} >
-						<NotificationList/>
-					</Drawer>
-				</AnimationProvider>
+				<Drawer isOpen={isOpen} onClose={onCloseDrawer} >
+					<NotificationList/>
+				</Drawer>
 			</MobileView>
 		</div>
 	) 
