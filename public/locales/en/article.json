@@ -23,6 +23,8 @@
   "Article Edit": "Article edit",
   "Article Creation": "Article creation",
   "article": {
-    "An error ocured after tring to load articles": "An error ocured after tring to load articles"
+    "An error ocured after tring to load articles": "An error ocured after tring to load articles",
+    "Feedback this article": "Feedback this article",
+    "Feedback this article This can help upgrade quality": "Feedback this article. This can help upgrade quality"
   }
 }

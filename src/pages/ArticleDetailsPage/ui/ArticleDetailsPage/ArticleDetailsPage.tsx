@@ -1,7 +1,8 @@
 import { ArticleDetails } from '@/entities/Article'
 import {
-    articleDetailsCommentsReducer
+	articleDetailsCommentsReducer
 } from '@/features/Article/ArticleDetailsComments'
+import { ArticleRating } from '@/features/Article/ArticleRating'
 import { ArticleRecommendationsList } from '@/features/Article/ArticleRecommendationsList'
 import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
@@ -32,6 +33,7 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 				<VStack gap='16' max>
 					<ArticleDetailsPageHeader />
 					<ArticleDetails id={ id }/>
+					<ArticleRating articleId={id} />
 					<ArticleRecommendationsList />
 					<ArticleDetailsComments articleId={id}  />
 				</VStack>

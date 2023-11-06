@@ -23,6 +23,8 @@
     "Edit": "Редактировать",
     "Article Edit": "Редактировать статью",
     "Article Creation": "Создание статьи",
-    "An error ocured after tring to load articles": "Произошла ошибка после попытки загрузки статей."
+    "An error ocured after tring to load articles": "Произошла ошибка после попытки загрузки статей.",
+    "Feedback this article": "Напишите отзыв об этой статье",
+    "Feedback this article This can help upgrade quality": "Оставьте отзыв об этой статье. \nЭто может помочь улучшить качество"
   }
 }

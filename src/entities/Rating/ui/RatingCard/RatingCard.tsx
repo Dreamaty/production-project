@@ -1,4 +1,3 @@
-import { cx } from '@/shared/lib/classNames/cx'
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card/Card'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
@@ -10,7 +9,7 @@ import { UiText } from '@/shared/ui/Text'
 import { memo, useCallback, useState } from 'react'
 import { BrowserView, MobileView } from 'react-device-detect'
 import { useTranslation } from 'react-i18next'
-import cls from './RatingCard.module.scss'
+
 
 export const RatingCard = memo(({ 
 	className,
@@ -18,18 +17,20 @@ export const RatingCard = memo(({
 	hasFeedback,
 	title,
 	onAccept,
-	onCancel
+	onCancel,
+	rate = 0
 }: {
 	className?: string, 
 	title?: string, 
 	feedbackTitle?: string
 	hasFeedback?: boolean
+	rate?: number
 	onCancel?: (starsCount: number) => void
 	onAccept?: (starsCount: number, feedback?: string) => void
 }) => {
 	const { t } = useTranslation()
 	const [isModalOpen, setIsModalOpen] = useState(false)
-	const [starsCount, setStarsCount] = useState(0)
+	const [starsCount, setStarsCount] = useState(rate)
 	const [feedback, setFeedback] = useState('')
 	const onSelectStars = useCallback((selectedStarsCount: number) => {
 		setStarsCount(selectedStarsCount)
@@ -65,11 +66,10 @@ export const RatingCard = memo(({
 	)
 		
 	return (
-		<Card className={cx(cls.ratingCard, {},
-			[className])}>
+		<Card className={className} max>
 			<VStack align='center' gap='8'>
-				<UiText title={title}/>
-				<StarRating size={40} onSelect={onSelectStars}/>
+				<UiText title={starsCount ? t('Thanks for your rating') : title}/>
+				<StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount}/>
 			</VStack>
 			<BrowserView>
 				<Modal isOpen={isModalOpen} lazy>
