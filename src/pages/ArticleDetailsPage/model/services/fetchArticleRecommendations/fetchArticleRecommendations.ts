@@ -1,6 +1,6 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/StoreProvider'
-import { Article } from '@/entity/Article'
+import { Article } from '@/entities/Article'
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
 
 

@@ -1,4 +1,4 @@
-import { ArticleType } from '@/entity/Article'
+import { ArticleType } from '@/entities/Article';
 
 export interface ArticleTypeTabsSchema {
 	selectedType: ArticleType,

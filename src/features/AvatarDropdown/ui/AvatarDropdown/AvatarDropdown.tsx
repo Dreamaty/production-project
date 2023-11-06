@@ -1,13 +1,13 @@
 import {
 	getUserAuthData, isUserAdmin, isUserManager, userActions
-} from '@/entity/User'
-import { t } from 'i18next'
-import { memo, useCallback } from 'react'
+} from '@/entities/User'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown } from '@/shared/ui/Popups'
+import { t } from 'i18next'
+import { memo, useCallback } from 'react'
 
 export const AvatarDropdown = memo(({ className }: {className?: string}) => {
 

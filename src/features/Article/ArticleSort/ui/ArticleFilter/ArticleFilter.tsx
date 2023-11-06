@@ -1,9 +1,7 @@
-import { ArticleView } from '@/entity/Article'
+import { ArticleView } from '@/entities/Article'
 import { ArticleViewSwitcher } from '../../../ArticleViewSwitcher'
 
 import { articlesPageActions, fetchArticlesList, getArticlesView } from '@/pages/ArticlesPage'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
@@ -11,11 +9,13 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { SortOrder } from '@/shared/types'
 import { Card } from '@/shared/ui/Card/Card'
 import { UiInput } from '@/shared/ui/Input'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ArticleTypeTabs } from '../../../ArticleTypeTabs'
 import { articleTypeTabsReducer } from '../../../ArticleTypeTabs/model/slice/articleTypeTabsSlice'
 import { ArticleSortField } from '../../model/consts/consts'
 import {
-	getArticleSortBy, getArticleSortOrder, getArticleSortSearch
+    getArticleSortBy, getArticleSortOrder, getArticleSortSearch
 } from '../../model/selectors/articleSort'
 import { articleSortActions, articleSortReducer } from '../../model/slice/articleSortSlice'
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector'

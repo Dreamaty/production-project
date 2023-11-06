@@ -1,4 +1,4 @@
-import { getUserAuthData } from '@/entity/User'
+import { getUserAuthData } from '@/entities/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 

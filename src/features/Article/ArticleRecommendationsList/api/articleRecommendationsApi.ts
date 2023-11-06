@@ -1,4 +1,4 @@
-import { Article } from '@/entity/Article'
+import { Article } from '@/entities/Article'
 import { rtkApi } from '@/shared/api/rtkApi'
 
 

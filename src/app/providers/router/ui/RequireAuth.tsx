@@ -1,9 +1,9 @@
-import { UserRole, getUserAuthData, getUserRoles } from '@/entity/User'
+import { UserRole, getUserAuthData, getUserRoles } from '@/entities/User'
 
-import { useMemo } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
+import { useMemo } from 'react'
+import { Navigate, useLocation } from 'react-router-dom'
 
 export function RequireAuth({ children, roles }: {
 	children: JSX.Element, roles?: UserRole[] 

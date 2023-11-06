@@ -1,13 +1,13 @@
-import { getArticleDetailsData } from '@/entity/Article'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router'
+import { getArticleDetailsData } from '@/entities/Article'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from '@/shared/ui/Button'
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router'
 import { getCanEditArticle } from '../../model/selectors/article'
 
 export const ArticleDetailsPageHeader = memo(({ className }: {className?: string}) => {

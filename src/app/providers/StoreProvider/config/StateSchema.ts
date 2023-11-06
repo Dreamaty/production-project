@@ -1,14 +1,14 @@
+import { ArticleDetailsSchema } from '@/entities/Article'
 import {
-	AnyAction,
-	CombinedState,
-	Reducer,
-	ReducersMapObject
+    AnyAction,
+    CombinedState,
+    Reducer,
+    ReducersMapObject
 } from '@reduxjs/toolkit'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { AxiosInstance } from 'axios'
-import { ArticleDetailsSchema } from '@/entity/Article'
 
-import { UserSchema } from '@/entity/User'
+import { UserSchema } from '@/entities/User'
 import { AddCommentFormSchema } from '@/features/AddCommentForm'
 import { ArticleDetailsCommentsSchema } from '@/features/Article/ArticleDetailsComments'
 import { ArticleSortSchema } from '@/features/Article/ArticleSort'
@@ -18,8 +18,8 @@ import { ProfileStateSchema } from '@/features/EditableProfileCard'
 import { ScrollSaveSchema } from '@/features/ScrollSave'
 import { ArticleDetailsRecommendationsSchema } from '@/pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendations'
 import { ArticlesPageSliceSchema } from '@/pages/ArticlesPage'
-import { NavigateOptions, To } from 'react-router'
 import { rtkApi } from '@/shared/api/rtkApi'
+import { NavigateOptions, To } from 'react-router'
 
 export interface StateSchema {
 	user: UserSchema

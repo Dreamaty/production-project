@@ -1,5 +1,5 @@
 
-import { NotificationList } from '@/entity/Notification'
+import { NotificationList } from '@/entities/Notification'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { memo, useCallback, useState } from 'react'

@@ -1,11 +1,11 @@
-import { ArticleView } from '@/entity/Article'
-import { memo } from 'react'
+import { ArticleView } from '@/entities/Article'
 import ListIcon from '@/shared/assets/icons/list-24-24.svg'
 import TileIcon from '@/shared/assets/icons/tiled-24-24.svg'
 import { cx } from '@/shared/lib/classNames/cx'
 import { Button } from '@/shared/ui/Button'
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button'
 import { Icon } from '@/shared/ui/Icon/Icon'
+import { memo } from 'react'
 import cls from './ArticleViewSwitcher.module.scss'
 
 const viewTypes = [

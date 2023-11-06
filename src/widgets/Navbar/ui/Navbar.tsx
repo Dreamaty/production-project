@@ -1,11 +1,9 @@
 import {
 	getUserAuthData
-} from '@/entity/User'
+} from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { NotificationButton } from '@/features/NotificationButton'
-import { memo, useCallback, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { cx } from '@/shared/lib/classNames/cx'
 import {
@@ -16,6 +14,8 @@ import { Button } from '@/shared/ui/Button'
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { TextSize, TextTheme, UiText } from '@/shared/ui/Text'
+import { memo, useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import cls from './Navbar.module.scss'
 
 export const Navbar = memo(({ className }: { className?: string }) => {

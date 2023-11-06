@@ -1,19 +1,19 @@
-import { CommentList } from '@/entity/Comment'
+import { CommentList } from '@/entities/Comment'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import {
-	addCommentForArticle,
-	fetchCommentsByArticleId,
-	getArticleComments,
-	getArticleCommentsIsLoading
+    addCommentForArticle,
+    fetchCommentsByArticleId,
+    getArticleComments,
+    getArticleCommentsIsLoading
 } from '@/features/Article/ArticleDetailsComments'
 
-import { t } from 'i18next'
-import { Suspense, memo, useCallback } from 'react'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { VStack } from '@/shared/ui/Stack'
 import { TextSize, UiText } from '@/shared/ui/Text'
+import { t } from 'i18next'
+import { Suspense, memo, useCallback } from 'react'
 
 export const ArticleDetailsComments = memo(({ className, articleId }: {className?: string, articleId?: string}) => {
 

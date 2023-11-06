@@ -1,8 +1,8 @@
 
-import { Menu } from '@headlessui/react'
-import { Fragment, ReactNode } from 'react'
 import { cx } from '@/shared/lib/classNames/cx'
 import { DropdownDirection } from '@/shared/types/ui'
+import { Menu } from '@headlessui/react'
+import { Fragment, ReactNode } from 'react'
 import { AppLink } from '../../../AppLink/AppLink'
 import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/popup.module.scss'
@@ -38,11 +38,11 @@ export function Dropdown(props: DropdownProps) {
 		<Menu as='div' className={cx('', {}, [className, popupCls.popup])}>
 			<Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
 			<Menu.Items className={cx(cls.items, {}, [mapDirectionClass[direction]])} >
-				{items.map((item) => {
+				{items.map((item, index) => {
 					const content = ({ active }: {active: boolean}) => (
 						<button
-							key={item.value}
 							type='button'
+							key={'dropdown-key-'+ index} 
 							disabled={item.disabled}
 							onClick={item.onClick}
 							className={cx(cls.item, {
@@ -54,14 +54,23 @@ export function Dropdown(props: DropdownProps) {
 					)
 					if(item.href) {
 						return (
-							<Menu.Item disabled={item.disabled} key={item.value} as={AppLink} to={item.href}>
+							<Menu.Item 
+								disabled={item.disabled}
+								key={'dropdown-key-'+ index} 
+								as={AppLink} 
+								to={item.href}
+							>
 								{content}
 							</Menu.Item>
 						)
 					}
 
 					return (
-						<Menu.Item disabled={item.disabled} key={item.value} as={Fragment} >
+						<Menu.Item 
+							disabled={item.disabled} 								
+							key={'dropdown-key-'+ index} 
+							as={Fragment} 
+						>
 							{content}
 						</Menu.Item>
 					)

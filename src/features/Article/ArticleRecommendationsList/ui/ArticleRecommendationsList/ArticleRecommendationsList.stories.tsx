@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
-import { Article } from '@/entity/Article'
+import { Article } from '@/entities/Article'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 
