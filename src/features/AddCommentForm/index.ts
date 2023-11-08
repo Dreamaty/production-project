@@ -1,5 +1,3 @@
-export { addCommentFormReducer } from './model/slice/addCommentFormSlice'
-
 export { getAddCommentFormText } from './model/selectors/addCommentFormSelectors'
 
 export { addCommentFormActions } from './model/slice/addCommentFormSlice'

@@ -67,7 +67,10 @@ module.exports = {
 		}],
 		'react-hooks/exhaustive-deps': 'error',
 		'dreamatty-path-checker-plugin/path-checker': ['error', { alias: '@' }],
-		'dreamatty-path-checker-plugin/public-api-imports': ['error', { alias: '@' }]
+		'dreamatty-path-checker-plugin/public-api-imports': ['error', { 
+			alias: '@',
+			testFilesPatterns: ['**/*.test.*','**/*.stories.*' , '**/StoreDecorator.tsx'] 
+		}]
 	},
 	globals: {
 		__IS_DEV__: true,

@@ -17,7 +17,6 @@ export { articleTypeTabsActions } from './ArticleTypeTabs/model/slice/articleTyp
 
 export { ArticleFilter } from './ArticleSort'
 
-export { articleDetailsCommentsReducer } from './ArticleDetailsComments'
 export { ArticleRating } from './ArticleRating'
 export { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
