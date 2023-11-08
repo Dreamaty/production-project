@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
 import { CurrencySelect } from './CurrencySelect'
 const meta = {
-	title: 'entity/CurrencySelect',
+	title: 'entities/CurrencySelect',
 	component: CurrencySelect,
 	parameters: {
 		layout: 'fullscreen',

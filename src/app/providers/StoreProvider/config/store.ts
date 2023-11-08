@@ -1,8 +1,8 @@
 import {
-    CombinedState,
-    Reducer,
-    ReducersMapObject,
-    configureStore
+	CombinedState,
+	Reducer,
+	ReducersMapObject,
+	configureStore
 } from '@reduxjs/toolkit'
 
 import { scrollSaveReducer } from '@/features/ScrollSave'

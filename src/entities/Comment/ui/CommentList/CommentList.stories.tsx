@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
 import { CommentList } from './CommentList'
 const meta = {
-	title: 'widget/CommentList',
+	title: 'entities/CommentList',
 	component: CommentList,
 	parameters: {
 		layout: 'fullscreen',

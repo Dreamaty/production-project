@@ -1,8 +1,10 @@
 import { ThunkConfig } from '@/app/providers/StoreProvider'
 import { ArticleType } from '@/entities/Article'
-import { ArticleSortField } from '@/features/Article/ArticleSort'
-import { articleSortActions } from '@/features/Article/ArticleSort/model/slice/articleSortSlice'
-import { articleTypeTabsActions } from '@/features/Article/ArticleTypeTabs/model/slice/articleTypeTabsSlice'
+import {
+	ArticleSortField,
+	articleSortActions,
+	articleTypeTabsActions
+} from '@/features/Article'
 import { SortOrder } from '@/shared/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { getArticlesInited } from '../../selectors/articles'

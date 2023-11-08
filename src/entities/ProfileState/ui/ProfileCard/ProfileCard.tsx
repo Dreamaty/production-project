@@ -1,5 +1,4 @@
-import { CountrySelect } from '@/entities/Country'
-import { Country } from '@/entities/Country/model/types/country'
+import { Country, CountrySelect } from '@/entities/Country'
 import { Currency, CurrencySelect } from '@/entities/Currency'
 
 import { Mods, cx } from '@/shared/lib/classNames/cx'

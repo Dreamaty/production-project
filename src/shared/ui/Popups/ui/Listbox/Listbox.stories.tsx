@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Listbox } from './Lisbox'
 const meta = {
-	title: 'widget/ListBox',
+	title: 'shared/ListBox',
 	component: Listbox,
 	parameters: {
 		layout: 'fullscreen',

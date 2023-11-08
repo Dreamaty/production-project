@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { PageError } from './PageError'
 const meta = {
-	title: 'widget/PageError',
+	title: 'widgets/PageError',
 	component: PageError,
 	parameters: {
 		layout: 'fullscreen',

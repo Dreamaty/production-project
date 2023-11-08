@@ -671,5 +671,20 @@
       "username": "user",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPZKsahkuXnKI_yLXN7XvCZp2YRtvFwW-OQ&usqp=CAU"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "rate": 3,
+      "id": "lpaMRY3"
+    }
   ]
 }

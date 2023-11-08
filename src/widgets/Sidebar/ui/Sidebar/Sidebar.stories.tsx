@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Sidebar } from './Sidebar'
 
 const meta = {
-	title: 'widget/Sidebar',
+	title: 'widgets/Sidebar',
 	component: Sidebar,
 	parameters: {
 		layout: 'fullscreen',

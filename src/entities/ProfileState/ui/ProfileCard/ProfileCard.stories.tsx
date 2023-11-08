@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import type { Meta, StoryObj } from '@storybook/react'
 import { ProfileCard } from './ProfileCard'
 const meta = {
-	title: 'entity/ProfileCard',
+	title: 'entities/ProfileCard',
 	component: ProfileCard,
 	parameters: {
 		layout: 'fullscreen',

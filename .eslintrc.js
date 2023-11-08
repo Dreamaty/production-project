@@ -66,7 +66,8 @@ module.exports = {
 			ignoreComments: true, code: 120, ignorePattern: '^import .*' 
 		}],
 		'react-hooks/exhaustive-deps': 'error',
-		'dreamatty-path-checker-plugin/path-checker': 'error'
+		'dreamatty-path-checker-plugin/path-checker': ['error', { alias: '@' }],
+		'dreamatty-path-checker-plugin/public-api-imports': ['error', { alias: '@' }]
 	},
 	globals: {
 		__IS_DEV__: true,

@@ -1,13 +1,13 @@
 import { ArticleDetails } from '@/entities/Article'
 import {
+	ArticleRating,
+	ArticleRecommendationsList,
 	articleDetailsCommentsReducer
-} from '@/features/Article/ArticleDetailsComments'
-import { ArticleRating } from '@/features/Article/ArticleRating'
-import { ArticleRecommendationsList } from '@/features/Article/ArticleRecommendationsList'
+} from '@/features/Article'
 import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { VStack } from '@/shared/ui/Stack'
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'

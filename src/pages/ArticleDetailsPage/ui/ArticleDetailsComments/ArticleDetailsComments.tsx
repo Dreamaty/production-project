@@ -1,11 +1,11 @@
 import { CommentList } from '@/entities/Comment'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import {
-    addCommentForArticle,
-    fetchCommentsByArticleId,
-    getArticleComments,
-    getArticleCommentsIsLoading
-} from '@/features/Article/ArticleDetailsComments'
+	addCommentForArticle,
+	fetchCommentsByArticleId,
+	getArticleComments,
+	getArticleCommentsIsLoading
+} from '@/features/Article'
 
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'

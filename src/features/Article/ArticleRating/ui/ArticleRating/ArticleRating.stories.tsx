@@ -3,7 +3,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import type { Meta, StoryObj } from '@storybook/react'
 import ArticleRating from './ArticleRating'
 const meta = {
-	title: 'widget/ArticleRating',
+	title: 'features/ArticleRating',
 	component: ArticleRating,
 	parameters: {
 		layout: 'fullscreen',

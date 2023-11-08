@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { StarRating } from './StarRating'
 const meta = {
-	title: 'widget/StarRating',
+	title: 'shared/StarRating',
 	component: StarRating,
 	parameters: {
 		layout: 'fullscreen',

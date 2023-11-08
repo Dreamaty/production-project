@@ -1,4 +1,4 @@
-import { Profile } from '@/entities/ProfileState/model/types/ProfileState'
+import { Profile } from '@/entities/ProfileState'
 import { ValidateProfileError } from '../consts/consts'
 
 

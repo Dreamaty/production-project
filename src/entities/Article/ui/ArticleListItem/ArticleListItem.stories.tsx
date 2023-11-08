@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleView } from '../../model/consts/consts'
 import { Article } from '../../model/types/article'
 import { ArticleListItem } from './ArticleListItem'
@@ -77,7 +77,7 @@ const article = {
 } as Article
 
 const meta = {
-	title: 'entity/Article/ArticleListItem',
+	title: 'entities/Article/ArticleListItem',
 	component: ArticleListItem,
 	parameters: {
 		layout: 'fullscreen',

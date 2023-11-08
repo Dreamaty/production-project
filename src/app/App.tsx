@@ -1,7 +1,6 @@
 import { cx } from '@/shared/lib/classNames/cx'
 
-import { userActions } from '@/entities/User'
-import { getUserInited } from '@/entities/User/model/selectors/getUserInited/getUserInited'
+import { getUserInited, userActions } from '@/entities/User'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'

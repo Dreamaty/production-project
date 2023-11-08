@@ -15,7 +15,7 @@ import { ArticleTypeTabs } from '../../../ArticleTypeTabs'
 import { articleTypeTabsReducer } from '../../../ArticleTypeTabs/model/slice/articleTypeTabsSlice'
 import { ArticleSortField } from '../../model/consts/consts'
 import {
-    getArticleSortBy, getArticleSortOrder, getArticleSortSearch
+	getArticleSortBy, getArticleSortOrder, getArticleSortSearch
 } from '../../model/selectors/articleSort'
 import { articleSortActions, articleSortReducer } from '../../model/slice/articleSortSlice'
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector'

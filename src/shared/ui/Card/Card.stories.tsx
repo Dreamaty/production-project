@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Card, CardTheme } from './Card'
 const meta = {
-	title: 'widget/Card',
+	title: 'shared/Card',
 	component: Card,
 	parameters: {
 		layout: 'fullscreen',

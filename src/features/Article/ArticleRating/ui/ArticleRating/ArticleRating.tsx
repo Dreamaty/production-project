@@ -30,10 +30,10 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
 				rate: starsCount 
 			})
 		} catch (error) {
-			console.log(e)
+			console.log(error)
 			
 		}
-	}, [])
+	}, [articleId, authData?.id, rateArticleMutation])
 
 	const onAccept = useCallback((starsCount: number, feedback?: string) => {
 		handleRateArticle(starsCount,feedback)
@@ -52,7 +52,7 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
 	return (
 		<RatingCard 
 			title={t('Feedback this article')}
-			rate={data?.[0].rate}
+			rate={data?.[0]?.rate}
 			onAccept={onAccept}
 			onCancel={onCancel}
 			className={className}

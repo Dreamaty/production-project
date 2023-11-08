@@ -1,9 +1,9 @@
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { RatingCard } from './RatingCard'
 const meta = {
-	title: 'widget/RatingCard',
+	title: 'entities/RatingCard',
 	component: RatingCard,
 	parameters: {
 		layout: 'fullscreen',
