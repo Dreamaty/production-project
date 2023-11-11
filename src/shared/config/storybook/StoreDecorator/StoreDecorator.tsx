@@ -22,7 +22,7 @@ const defaultAsyncReducers: ReducersList = {
 
 export const StoreDecorator =
 	(
-		initialState?: DeepPartial<StateSchema>,
+		initialState?: DeepPartial<StateSchema>, 
 		asyncReducers?: ReducersList
 	) =>
 		// eslint-disable-next-line react/display-name

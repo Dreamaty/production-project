@@ -1,3 +1,4 @@
+export { articleDetailsCommentsReducer } from './ArticleDetailsComments'
 
 export type { ArticleDetailsCommentsSchema } from './ArticleDetailsComments'
 export type { ArticleSortSchema } from './ArticleSort'
@@ -21,3 +22,9 @@ export { ArticleRating } from './ArticleRating'
 export { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 export type { ArticleTypeTabsSchema } from './ArticleTypeTabs/model/types/ArticleTypeTabs'
+
+export {
+	ArticleInfiniteList, articleInfinityListReducer, fetchNextArticlesPage
+} from './ArticleInfinityList'
+export type { ArticleInfinityListSchema } from './ArticleInfinityList'
+

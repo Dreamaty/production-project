@@ -1,8 +1,8 @@
+import { cx } from '@/shared/lib/classNames/cx'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { cx } from '@/shared/lib/classNames/cx'
-import { Button } from '../Button'
-import { ButtonTheme } from '../Button/ui/Button'
+import { Button } from '../../../shared/ui/Button'
+import { ButtonTheme } from '../../../shared/ui/Button/ui/Button'
 
 export const LangSwitcher = memo(({
 	className,

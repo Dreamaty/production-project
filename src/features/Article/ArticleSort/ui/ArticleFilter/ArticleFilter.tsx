@@ -1,7 +1,7 @@
 import { ArticleView } from '@/entities/Article'
 import { ArticleViewSwitcher } from '../../../ArticleViewSwitcher'
 
-import { articlesPageActions, fetchArticlesList, getArticlesView } from '@/pages/ArticlesPage'
+
 import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
@@ -11,6 +11,7 @@ import { Card } from '@/shared/ui/Card/Card'
 import { UiInput } from '@/shared/ui/Input'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { articleInfinityListActions, fetchArticlesList, getArticlesView } from '../../../ArticleInfinityList'
 import { ArticleTypeTabs } from '../../../ArticleTypeTabs'
 import { articleTypeTabsReducer } from '../../../ArticleTypeTabs/model/slice/articleTypeTabsSlice'
 import { ArticleSortField } from '../../model/consts/consts'
@@ -20,6 +21,7 @@ import {
 import { articleSortActions, articleSortReducer } from '../../model/slice/articleSortSlice'
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector'
 import cls from './ArticleFilter.module.scss'
+
 
 const reducers: ReducersList = {
 	articleSort: articleSortReducer,
@@ -43,13 +45,13 @@ export const ArticleFilter = memo(({ className }: {className?: string}) => {
 	const debouncedFetchData = useDebounce(fetchData, 500)
 
 	const updateList = useCallback(() => {
-		dispatch(articlesPageActions.setPage(1))
+		dispatch(articleInfinityListActions.setPage(1))
 		fetchData()
 	}, [dispatch, fetchData])
 	
 	const onChangeView = useCallback(
 		(newView: ArticleView) => 
-			dispatch(articlesPageActions.setView(newView))
+			dispatch(articleInfinityListActions.setView(newView))
 		, [dispatch])
 
 	const onChangeSort = useCallback(
@@ -67,7 +69,7 @@ export const ArticleFilter = memo(({ className }: {className?: string}) => {
 	const onChangeSearch = useCallback(
 		(value: string) => {
 			dispatch(articleSortActions.setSearch(value))
-			dispatch(articlesPageActions.setPage(1))
+			dispatch(articleInfinityListActions.setPage(1))
 			debouncedFetchData()
 		}, [debouncedFetchData, dispatch])
 

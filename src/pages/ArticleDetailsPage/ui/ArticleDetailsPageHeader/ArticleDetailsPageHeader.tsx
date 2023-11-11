@@ -1,5 +1,5 @@
 import { getArticleDetailsData } from '@/entities/Article'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePath } from '@/shared/const/router'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from '@/shared/ui/Button'

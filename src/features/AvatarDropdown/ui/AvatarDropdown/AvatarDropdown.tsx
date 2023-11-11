@@ -1,7 +1,7 @@
 import {
 	getUserAuthData, isUserAdmin, isUserManager, userActions
 } from '@/entities/User'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePath } from '@/shared/const/router'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Avatar } from '@/shared/ui/Avatar'

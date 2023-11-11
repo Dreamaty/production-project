@@ -70,6 +70,10 @@ module.exports = {
 		'dreamatty-path-checker-plugin/public-api-imports': ['error', { 
 			alias: '@',
 			testFilesPatterns: ['**/*.test.*','**/*.stories.*' , '**/StoreDecorator.tsx'] 
+		}],
+		'dreamatty-path-checker-plugin/layer-imports': ['error', { 
+			alias: '@',
+			ignoreImportPatterns: ['**/StoreProvider', '**/testing'] 
 		}]
 	},
 	globals: {

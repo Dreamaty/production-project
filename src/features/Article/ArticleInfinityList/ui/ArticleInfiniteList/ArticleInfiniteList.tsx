@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
 import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { getArticles } from '../../model/slice/articlesPageSlice'
+import { getArticles } from '../../model/slice/articleInfinityListSlice'
 
 export const ArticleInfiniteList = memo(({ className }: {
 	className?: string, 

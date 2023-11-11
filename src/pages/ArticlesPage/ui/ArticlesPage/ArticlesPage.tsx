@@ -1,17 +1,15 @@
 /* eslint-disable max-len */
-import { ArticleFilter } from '@/features/Article'
+import { ArticleFilter, articleInfinityListReducer, fetchNextArticlesPage } from '@/features/Article'
 import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Page } from '@/widgets/Page'
 import { memo, useCallback } from 'react'
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
-import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
+import { ArticleInfiniteList } from '../../../../features/Article/ArticleInfinityList/ui/ArticleInfiniteList/ArticleInfiniteList'
 import cls from './ArticlesPage.module.scss'
 
 const reducers: ReducersList = {
-	articlesPage: articlesPageReducer
+	articleInfiniteList: articleInfinityListReducer
 }
 
 

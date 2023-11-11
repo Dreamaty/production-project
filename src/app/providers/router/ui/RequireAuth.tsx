@@ -1,6 +1,6 @@
 import { UserRole, getUserAuthData, getUserRoles } from '@/entities/User'
 
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePath } from '@/shared/const/router'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { useMemo } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'

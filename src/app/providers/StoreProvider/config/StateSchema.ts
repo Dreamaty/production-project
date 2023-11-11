@@ -12,11 +12,11 @@ import { UserSchema } from '@/entities/User'
 import { AddCommentFormSchema } from '@/features/AddCommentForm'
 import { ArticleDetailsCommentsSchema, ArticleSortSchema, ArticleTypeTabsSchema } from '@/features/Article'
 
+import { ArticleInfinityListSchema } from '@/features/Article'
 import { LoginSchema } from '@/features/AuthByUsername'
 import { ProfileStateSchema } from '@/features/EditableProfileCard'
 import { ScrollSaveSchema } from '@/features/ScrollSave'
 import { ArticleDetailsRecommendationsSchema } from '@/pages/ArticleDetailsPage'
-import { ArticlesPageSliceSchema } from '@/pages/ArticlesPage'
 import { rtkApi } from '@/shared/api/rtkApi'
 import { NavigateOptions, To } from 'react-router'
 
@@ -31,7 +31,7 @@ export interface StateSchema {
 	articleDetails?: ArticleDetailsSchema
 	articleDetailsComments?: ArticleDetailsCommentsSchema
 	addCommentForm?: AddCommentFormSchema
-	articlesPage?: ArticlesPageSliceSchema
+	articleInfiniteList?: ArticleInfinityListSchema
 	articleSort?: ArticleSortSchema
 	articleTabTypes?: ArticleTypeTabsSchema
 	articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema

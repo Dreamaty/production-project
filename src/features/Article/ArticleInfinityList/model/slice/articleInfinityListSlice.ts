@@ -4,21 +4,20 @@ import { StateSchema } from '@/app/providers/StoreProvider'
 import { Article, ArticleView } from '@/entities/Article'
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
-import { ArticlesPageSliceSchema } from '../types/ArticlesPageSlice'
+import { ArticleInfinityListSchema } from '../types/ArticleInfinityList'
 
 const articlesAdapter = createEntityAdapter<Article>({
 	selectId: (article) => article.id
 })
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-	(state ) => state.articlesPage || articlesAdapter.getInitialState()
+	(state ) => state.articleInfiniteList || articlesAdapter.getInitialState()
 )
 
 
-
-export const articlesPageSlice = createSlice({
-	name: 'articlesPageSlice',
-	initialState: articlesAdapter.getInitialState<ArticlesPageSliceSchema>({
+export const articleInfinityListSlice = createSlice({
+	name: 'articleInfinityList',
+	initialState: articlesAdapter.getInitialState<ArticleInfinityListSchema>({
 		view: ArticleView.BLOCKS,
 		ids: [],
 		entities: {},
@@ -72,7 +71,6 @@ export const articlesPageSlice = createSlice({
 })
 
 
+export const { actions: articleInfinityListActions } = articleInfinityListSlice
 
-export const { actions: articlesPageActions } = articlesPageSlice
-
-export const { reducer: articlesPageReducer } = articlesPageSlice
+export const { reducer: articleInfinityListReducer } = articleInfinityListSlice

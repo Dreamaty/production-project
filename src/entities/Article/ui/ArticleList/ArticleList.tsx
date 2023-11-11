@@ -1,5 +1,6 @@
 import { cx } from '@/shared/lib/classNames/cx'
 import { UiText } from '@/shared/ui/Text'
+// eslint-disable-next-line dreamatty-path-checker-plugin/layer-imports
 import { PAGE_ID } from '@/widgets/Page'
 import {
 	HTMLAttributeAnchorTarget,
