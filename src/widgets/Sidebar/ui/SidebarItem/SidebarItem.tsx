@@ -1,7 +1,7 @@
 import { getUserAuthData } from '@/entities/User'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 

@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { EditButton } from '@/shared/ui/Button/ui/EditButton/EditButton'
+import { EditButton } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { UiText } from '@/shared/ui/Text'
 

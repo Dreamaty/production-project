@@ -7,7 +7,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { SortOrder } from '@/shared/types'
-import { Card } from '@/shared/ui/Card/Card'
+import { Card } from '@/shared/ui/Card'
 import { UiInput } from '@/shared/ui/Input'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'

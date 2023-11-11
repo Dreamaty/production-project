@@ -6,8 +6,8 @@ import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Avatar } from '@/shared/ui/Avatar'
-import { Icon } from '@/shared/ui/Icon/Icon'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Icon } from '@/shared/ui/Icon'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import {
 	TextAlign,

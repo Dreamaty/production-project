@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { cx } from '@/shared/lib/classNames/cx'
-import { Loader } from '@/shared/ui/Loader/Loader'
+import { Loader } from '@/shared/ui/Loader'
 import { Modal } from '@/shared/ui/Modal'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 

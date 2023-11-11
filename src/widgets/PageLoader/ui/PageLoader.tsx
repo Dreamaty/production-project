@@ -1,5 +1,5 @@
 import { cx } from '@/shared/lib/classNames/cx'
-import { Loader } from '@/shared/ui/Loader/Loader'
+import { Loader } from '@/shared/ui/Loader'
 import cls from './PageLoader.module.scss'
 
 export const PageLoader = ({ className }: { className?: string }) => {

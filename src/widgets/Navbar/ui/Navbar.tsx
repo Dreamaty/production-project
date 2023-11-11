@@ -9,9 +9,9 @@ import { cx } from '@/shared/lib/classNames/cx'
 import {
 	useAppSelector
 } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Button } from '@/shared/ui/Button'
-import { ButtonTheme } from '@/shared/ui/Button/ui/Button'
+import { ButtonTheme } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { TextSize, TextTheme, UiText } from '@/shared/ui/Text'
 import { memo, useCallback, useState } from 'react'

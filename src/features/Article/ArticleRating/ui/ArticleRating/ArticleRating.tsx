@@ -1,7 +1,7 @@
 import { RatingCard } from '@/entities/Rating'
 import { getUserAuthData } from '@/entities/User'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useArticleRating, useRateArticle } from '../../api/articleRatingApi'

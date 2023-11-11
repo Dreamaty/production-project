@@ -3,8 +3,8 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Button } from '@/shared/ui/Button'
-import { ButtonSize, ButtonTheme } from '@/shared/ui/Button/ui/Button'
-import { VStack } from '@/shared/ui/Stack/VStack/VStack'
+import { ButtonSize, ButtonTheme } from '@/shared/ui/Button'
+import { VStack } from '@/shared/ui/Stack'
 import {
 	memo, useEffect, useMemo, useState
 } from 'react'

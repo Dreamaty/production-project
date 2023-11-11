@@ -7,7 +7,7 @@ import LightIcon from '@/shared/assets/icons/theme-light.svg'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
 import { Button } from '@/shared/ui/Button'
-import { ButtonTheme } from '@/shared/ui/Button/ui/Button'
+import { ButtonTheme } from '@/shared/ui/Button'
 
 export const ThemeSwitcher = memo(({ className }: { className?: string }) => {
 	const { theme, toggleTheme } = useTheme()
