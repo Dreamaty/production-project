@@ -43,7 +43,8 @@ module.exports = {
 		'react', 
 		'i18next', 
 		'jest-dom',
-		'dreamatty-path-checker-plugin'
+		'dreamatty-path-checker-plugin',
+		'unused-imports',
 	],
 	rules: {
 		'object-curly-spacing': ['error', 'always'],
@@ -74,7 +75,9 @@ module.exports = {
 		'dreamatty-path-checker-plugin/layer-imports': ['error', { 
 			alias: '@',
 			ignoreImportPatterns: ['**/StoreProvider', '**/testing'] 
-		}]
+		}],
+		// unused-imports-plugin
+		'unused-imports/no-unused-imports': 'error'
 	},
 	globals: {
 		__IS_DEV__: true,

@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+/* eslint-disable */
 import React from 'react'
 
 const jestEmptyComponent = function () {

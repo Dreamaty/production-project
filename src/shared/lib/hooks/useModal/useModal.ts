@@ -10,6 +10,12 @@ interface UseModalProps {
 	animationDelay?: number
 }
 
+/**
+ * Reusable hook for Modal Components (drawer/modal)
+ * @param animationDelay
+ * @param isOpen
+ * @param onClose
+ */
 export function useModal({ isOpen, onClose, animationDelay = 300 }: UseModalProps) {
 	const [isClosing, setIsClosing] = useState(false)
 	const [isMounted, setIsMounted] = useState(false)
