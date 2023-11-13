@@ -22,6 +22,11 @@
 		"generate:slice": "node ./scripts/createSlice/index.js",
 		"postinstall": "rm -rf node_modules/.cache"
 	},
+
+	"lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
+  },
+
 	"keywords": [],
 	"author": "Dreamatti",
 	"license": "ISC",
@@ -88,6 +93,7 @@
 		"jest": "^29.7.0",
 		"jest-environment-jsdom": "^29.7.0",
 		"jest-html-reporters": "^3.1.4",
+		"lint-staged": "^15.1.0",
 		"mini-css-extract-plugin": "^2.5.3",
 		"prettier": "3.0.3",
 		"react-dom": "^18.2.0",
