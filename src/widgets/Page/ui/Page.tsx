@@ -1,23 +1,34 @@
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { getSavedScrollByPath, scrollSaveActions } from '@/features/ScrollSave'
-import {
-	MutableRefObject, ReactNode, UIEvent, memo, useRef
-} from 'react'
-import { useLocation } from 'react-router'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
+import { TestProps } from '@/shared/types/tests'
+import {
+	MutableRefObject,
+	ReactNode,
+	UIEvent, memo, useRef
+} from 'react'
+import { useLocation } from 'react-router'
 import cls from './Page.module.scss'
 
 export const PAGE_ID = 'page_id' 
 
-export const Page = memo(({ className, children, onScrollEnd }: {
+interface PageProps extends TestProps {
 	className?: string, 
 	children: ReactNode
 	onScrollEnd?: () => void
-}) => {
+}
+export const Page = memo((props : PageProps) => {
+
+	const { 
+		className, 
+		children, 
+		onScrollEnd 
+	} = props
+
 	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
 	const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
 	const dispatch = useAppDispatch()
@@ -44,15 +55,16 @@ export const Page = memo(({ className, children, onScrollEnd }: {
 	})
 
 	return (
-		<section 
+		<main 
 			ref={wrapperRef} 
 			className={cx(cls.page, {},
 				[className])}
 			onScroll={onScroll}
 			id={PAGE_ID}
+			data-testid={props['data-testid'] ?? 'Page'}
 		>
 			{children}
 			<div className={cls.trigger} ref={triggerRef} />
-		</section>
+		</main>
 	)
 })

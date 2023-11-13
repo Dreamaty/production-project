@@ -5,7 +5,7 @@ import { memo } from 'react'
 const AdminPanelPage = memo(({ className }: {className?: string}) => {
 		
 	return (
-		<Page>
+		<Page data-testid='AdminPanelPage' >
 
 		</Page>
 	)

@@ -1,5 +1,5 @@
 import { cx } from '@/shared/lib/classNames/cx'
-import { SortOrder } from '@/shared/types'
+import { SortOrder } from '@/shared/types/sort'
 import { SelectOption, UiSelect } from '@/shared/ui/Select'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
