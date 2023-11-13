@@ -1,12 +1,23 @@
-import { CSSProperties, memo, useMemo } from 'react'
 import { cx } from '@/shared/lib/classNames/cx'
+import UserIcon from '@/src/shared/assets/icons/user-filled.svg'
+import { CSSProperties, memo, useMemo } from 'react'
+import { AppImage } from '../../AppImage'
+import { BackgroundColor, Icon } from '../../Icon'
+import { Skeleton } from '../../Skeleton'
 import cls from './Avatar.module.scss'
 
-export const Avatar = memo(({ className, src, alt, size }: {
+export const Avatar = memo(({ 
+	className, 
+	src, 
+	alt, 
+	size = 100, 
+	fallbackBackground = BackgroundColor.PRIMARY_COLOR
+}: {
 	className?: string
 	src?: string
 	alt: string
-	size?: number 
+	size?: number
+	fallbackBackground?: BackgroundColor
 }) => {
 
 	const styles = useMemo<CSSProperties>(() => {
@@ -15,8 +26,23 @@ export const Avatar = memo(({ className, src, alt, size }: {
 			height: size || 100
 		}
 	}, [size])
+
+	const fallback = <Skeleton 
+		border='50%' 
+		width={size} 
+		height={size} 
+	/>
+
+	const errorFallback = <Icon Svg={UserIcon} width={size} height={size} backgroundColor={fallbackBackground} />
 		
 	return (
-		<img src={src} alt={alt} className={cx(cls.avatar, {}, [className])} style={styles}/>
+		<AppImage 
+			fallback={fallback}
+			src={src} 
+			alt={alt} 
+			className={cx(cls.avatar, {}, [className])} 
+			style={styles}
+			errorFallback={errorFallback}
+		/>
 	)
 })

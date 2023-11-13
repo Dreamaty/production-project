@@ -1,11 +1,13 @@
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
 import { getRouteArticleDetails } from '@/shared/const/router'
 import { cx } from '@/shared/lib/classNames/cx'
+import { AppImage } from '@/shared/ui/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { VStack } from '@/shared/ui/Stack'
 import { UiText } from '@/shared/ui/Text'
 import { HTMLAttributeAnchorTarget, memo } from 'react'
@@ -37,13 +39,25 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 		return (
 			<AppLink 
 				target={target}
-				to={getRouteArticleDetails(article.id)} className={cx(cls.articleListItem, {},
-					[className, cls[view]])}>
+				to={getRouteArticleDetails(article.id)} 
+				className={cx(cls.articleListItem, {},
+					[className, cls[view]])}
+			>
 				<Card>
 					<VStack gap='8'>
 						<div className={cls.imageWrapper}>
-							<img src={article?.img} className={cls.img} alt={article?.title} />
-							<UiText text={article?.createdAt} className={cls.date} />
+
+							<AppImage 
+								fallback={<Skeleton width={200} height={200} />}
+								src={article?.img} 
+								className={cls.img} 
+								alt={article?.title} 
+							/>
+
+							<UiText 
+								text={article?.createdAt} 
+								className={cls.date} 
+							/>
 						</div>
 						<div className={cls.infoWrapper} >
 							{types}
@@ -72,12 +86,26 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 						src={article?.user?.avatar} 
 						alt={article?.user?.username || ''} 
 					/>
-					<UiText text={article.user?.username} className={cls.username} />
-					<UiText text={article.createdAt} className={cls.date} />
+					<UiText text={article.user?.username} 
+						className={cls.username} 
+					/>
+					<UiText text={article.createdAt} 
+						className={cls.date} 
+					/>
+
 				</div>
+
 				<UiText title={article.title} className={cls.title} />
+
 				{types}
-				<img src={article.img} className={cls.img} alt={article.title}/>
+
+				<AppImage 
+					fallback={<Skeleton width={'100%'} height={250} />}
+					src={article.img} 
+					className={cls.img} 
+					alt={article.title}
+				/>
+
 				{textBlock && (
 					<ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
 				)}

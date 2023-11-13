@@ -5,6 +5,7 @@ import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 import { cx } from '@/shared/lib/classNames/cx'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { Avatar } from '@/shared/ui/Avatar'
+import { BackgroundColor } from '@/shared/ui/Icon'
 import { Dropdown } from '@/shared/ui/Popups'
 import { t } from 'i18next'
 import { memo, useCallback } from 'react'
@@ -46,6 +47,7 @@ export const AvatarDropdown = memo(({ className }: {className?: string}) => {
 			]} 
 			trigger={
 				<Avatar 
+					fallbackBackground={BackgroundColor.SECONDARY_COLOR}
 					src={authData.avatar} 
 					size={30} 
 					alt={'user avatar'}
