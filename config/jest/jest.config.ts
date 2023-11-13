@@ -38,9 +38,7 @@ const config: Config = {
 		'#(.*)': '<rootDir>/node_modules/$1',
 		'\\.(s?css)$': 'identity-obj-proxy',
 		'\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-		'src/(.*)$': '<rootDir>/src/$1',
-		'^Shared(.*)$': '<rootDir>/src/shared/$1',
-		'^Entities(.*)$': '<rootDir>/src/entities/$1',
+		'^@/(.*)$': '<rootDir>/src/$1',
 	},
 	// A set of global variables that need to be available in all test environments
 	globals: { __IS_DEV__: true, __API__: '', __PROJECT__: 'jest' },

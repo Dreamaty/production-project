@@ -4,14 +4,13 @@ import {
 import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { NotificationButton } from '@/features/NotificationButton'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 import { cx } from '@/shared/lib/classNames/cx'
 import {
 	useAppSelector
 } from '@/shared/lib/hooks/storeHooks/storeHooks'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
-import { Button } from '@/shared/ui/Button'
-import { ButtonTheme } from '@/shared/ui/Button'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { TextSize, TextTheme, UiText } from '@/shared/ui/Text'
 import { memo, useCallback, useState } from 'react'
@@ -43,7 +42,7 @@ export const Navbar = memo(({ className }: { className?: string }) => {
 					theme={TextTheme.INVERTED} 
 					size={TextSize.XL}
 				/>
-				<AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
+				<AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
 					{t('Create article')}
 				</AppLink>
 				<HStack gap='16' className={cls.actions}>

@@ -1,10 +1,9 @@
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleDetails } from '@/shared/const/router'
 import { cx } from '@/shared/lib/classNames/cx'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
-import { Button } from '@/shared/ui/Button'
-import { ButtonTheme } from '@/shared/ui/Button'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
 import { VStack } from '@/shared/ui/Stack'
@@ -20,7 +19,7 @@ import cls from './ArticleListItem.module.scss'
 
 export const ArticleListItem = memo(({ className, article, view, target }: {
 	className?: string
-	article?: Article
+	article: Article
 	view: ArticleView
 	target?: HTMLAttributeAnchorTarget
 }) => {
@@ -38,7 +37,7 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 		return (
 			<AppLink 
 				target={target}
-				to={RoutePath.article_details + article?.id} className={cx(cls.articleListItem, {},
+				to={getRouteArticleDetails(article.id)} className={cx(cls.articleListItem, {},
 					[className, cls[view]])}>
 				<Card>
 					<VStack gap='8'>
@@ -73,17 +72,17 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 						src={article?.user?.avatar} 
 						alt={article?.user?.username || ''} 
 					/>
-					<UiText text={article?.user?.username} className={cls.username} />
-					<UiText text={article?.createdAt} className={cls.date} />
+					<UiText text={article.user?.username} className={cls.username} />
+					<UiText text={article.createdAt} className={cls.date} />
 				</div>
-				<UiText title={article?.title} className={cls.title} />
+				<UiText title={article.title} className={cls.title} />
 				{types}
-				<img src={article?.img} className={cls.img} alt={article?.title}/>
+				<img src={article.img} className={cls.img} alt={article.title}/>
 				{textBlock && (
 					<ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
 				)}
 				<div className={cls.footer}>
-					<AppLink to={RoutePath.article_details + article?.id} target={target}>
+					<AppLink to={getRouteArticleDetails(article.id)} target={target}>
 						<Button theme={ButtonTheme.OUTLINE}>
 							{t('Read More')}
 						</Button>

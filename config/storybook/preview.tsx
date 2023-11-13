@@ -1,12 +1,11 @@
 import type { Preview } from '@storybook/react'
-
-import { Theme } from '../../src/app/providers/ThemeProvider'
 import '../../src/app/styles/index.scss'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator'
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator'
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '../../src/shared/const/theme'
 // eslint-disable-next-line max-len
+import { withThemeByClassName } from '@storybook/addon-themes'
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator'
 
 const preview: Preview = {
@@ -42,10 +41,18 @@ const preview: Preview = {
 
 	decorators: [
 		StyleDecorator,
-		ThemeDecorator(Theme.LIGHT),
+		//ThemeDecorator(Theme.LIGHT),
 		RouterDecorator,
 		TranslationDecorator,
-		SuspenseDecorator
+		SuspenseDecorator,
+		withThemeByClassName({
+			themes: {
+				light: Theme.LIGHT,
+				dark: Theme.DARK,
+				green: Theme.GREEN
+			},
+			defaultTheme: 'light',
+		}),
 	],
 }
 

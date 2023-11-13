@@ -3,7 +3,7 @@ import { Theme } from '@/shared/const/theme'
 import type { Meta, StoryObj } from '@storybook/react'
 import { CountrySelect } from './CountrySelect'
 const meta = {
-	title: 'ies/CountrySelect',
+	title: 'entities/CountrySelect',
 	component: CountrySelect,
 	parameters: {
 		layout: 'fullscreen',
