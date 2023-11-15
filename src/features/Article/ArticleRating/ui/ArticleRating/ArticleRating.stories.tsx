@@ -9,12 +9,13 @@ const meta = {
 		layout: 'fullscreen',
 	},
 	tags: ['autodocs'],
+	args: { articleId: '1' },
 	argTypes: {},
 } satisfies Meta<typeof ArticleRating>
 export default meta
 type Story = StoryObj<typeof meta>
 export const Light: Story = {
-	args: {},
+	args: { },
 }
 export const Dark: Story = {
 	args: {},

@@ -33,7 +33,7 @@ const ArticleDetailsPage = ({ className }: {className?: string}) => {
 				<VStack gap='16' max>
 					<ArticleDetailsPageHeader />
 					<ArticleDetails id={ id }/>
-					<ArticleRating articleId={id} />
+					<ArticleRating articleId={id || ''} />
 					<ArticleRecommendationsList />
 					<ArticleDetailsComments articleId={id}  />
 				</VStack>

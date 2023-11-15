@@ -1,5 +1,9 @@
 {
 	"compilerOptions": {
+		"target": "es5",
+		"module": "ESNext",
+		"jsx": "react-jsx",
+		"moduleResolution": "Node",
 		"baseUrl": ".",
 		"rootDir": ".",
 		"paths": {
@@ -7,15 +11,12 @@
 		},
 		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"module": "ESNext",
-		"target": "es5",
 		"strict": true,
-		"jsx": "react-jsx",
 		"allowJs": true,
-		"moduleResolution": "Node",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
-		"isolatedModules": true
+		"isolatedModules": true,
+		"resolveJsonModule": true,
 	},
 	"ts-node": {
 		"compilerOptions": {

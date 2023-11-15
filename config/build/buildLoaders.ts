@@ -31,5 +31,11 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 	//	exclude: /node_modules/,
 	//}
 
-	return [fileLoader,svgLoader, codeBabelLoader, tsxBabelLoader, cssLoader  ]
+	return [
+		fileLoader,
+		svgLoader, 
+		codeBabelLoader, 
+		tsxBabelLoader, 
+		cssLoader  
+	]
 }

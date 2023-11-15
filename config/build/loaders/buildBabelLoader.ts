@@ -13,9 +13,9 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps)  {
 		test: isTsx ? /\.(tsx|jsx)$/ : /\.(js|ts)$/,
 		exclude: /node_modules/,
 		use: {
-			cacheDirectory: true,
 			loader: 'babel-loader',
 			options: {
+				cacheDirectory: true,
 				presets: ['@babel/preset-env',
 					['@babel/preset-typescript', {
 						isTsx

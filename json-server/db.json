@@ -647,6 +647,15 @@
       ],
       "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
     }
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "role": [
+        "ADMIN","MANAGER"
+      ],
+      "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
+    }
   ],
   "profile": [
     {
@@ -669,6 +678,28 @@
       "country": "Ukraine",
       "city": "Kiev",
       "username": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPZKsahkuXnKI_yLXN7XvCZp2YRtvFwW-OQ&usqp=CAU"
+    },
+    {
+      "id": "3",
+      "firstName": "Idosan",
+      "lastName": "Palpi",
+      "age": 99,
+      "currency": "ILS",
+      "country": "Ukraine",
+      "city": "Kiev",
+      "username": "manager",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPZKsahkuXnKI_yLXN7XvCZp2YRtvFwW-OQ&usqp=CAU"
+    },
+    {
+      "id": "4",
+      "firstName": "Idosy",
+      "lastName": "Palpat",
+      "age": 99,
+      "currency": "RUB",
+      "country": "Ukraine",
+      "city": "Kiev",
+      "username": "testuser",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPZKsahkuXnKI_yLXN7XvCZp2YRtvFwW-OQ&usqp=CAU"
     }
   ],

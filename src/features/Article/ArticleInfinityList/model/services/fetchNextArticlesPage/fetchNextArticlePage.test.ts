@@ -8,7 +8,7 @@ describe('fetchNextArticlesPage',  () => {
 		
 	
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: {
+			articleInfiniteList: {
 				page: 2,
 				ids: [],
 				entities: {},
@@ -28,7 +28,7 @@ describe('fetchNextArticlesPage',  () => {
 
 	test('should fetchArticleList not to be called', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: {
+			articleInfiniteList: {
 				page: 2,
 				ids: [],
 				entities: {},

@@ -1,5 +1,5 @@
+import UserIcon from '@/shared/assets/icons/user-filled.svg'
 import { cx } from '@/shared/lib/classNames/cx'
-import UserIcon from '@/src/shared/assets/icons/user-filled.svg'
 import { CSSProperties, memo, useMemo } from 'react'
 import { AppImage } from '../../AppImage'
 import { BackgroundColor, Icon } from '../../Icon'

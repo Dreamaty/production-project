@@ -28,13 +28,7 @@ export function buildPlugins({
 			__PROJECT__: JSON.stringify(project)
 		}),
 	
-	]
-	if (isDev){
-		plugins.push(new ReactRefreshPlugin())
-		plugins.push(
-			new webpack.HotModuleReplacementPlugin())
-		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
-		plugins.push( new CircularDependencyPlugin({
+		new CircularDependencyPlugin({
 			// exclude detection of files based on a RegExp
 			exclude: /a\.js|node_modules/,
 			// include specific files based on a RegExp
@@ -46,15 +40,25 @@ export function buildPlugins({
 			//allowAsyncCycles: false,
 			// set the current working directory for displaying module paths
 			//cwd: process.cwd(),
-		}))
-		plugins.push(new ForkTsCheckerWebpackPlugin({
+		}),
+		new ForkTsCheckerWebpackPlugin({
 			typescript: {
 				diagnosticOptions: {
 					semantic: true,
 					syntactic: true,
 				},
+				mode: 'write-references',
 			},
-		}))
+		})
+	
+	]
+	if (isDev){
+		plugins.push(new ReactRefreshPlugin())
+		plugins.push(
+			new webpack.HotModuleReplacementPlugin())
+		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+
+
 	}
 
 	if(isProd) {
@@ -62,11 +66,12 @@ export function buildPlugins({
 			filename: 'css/[name].[contenthash:8].css',
 			chunkFilename: 'css/[name].[contenthash:8].css',
 		}))
-		plugins.push(	new CopyPlugin({
+		plugins.push(new CopyPlugin({
 			patterns: [
-				{ from: paths.locales, to: paths.buildLocales }
-			]
+				{ from: paths.locales, to: paths.buildLocales },
+			],
 		}))
+		
 	}
 
 
