@@ -9,7 +9,16 @@ import { MainPage } from '@/pages/MainPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { ProfilePage } from '@/pages/ProfilePage'
 import {
-	AppRoutes, getRouteAbout, getRouteAdminPanel, getRouteArticleCreate, getRouteArticleDetails, getRouteArticleEdit, getRouteArticles, getRouteForbidden, getRouteMain, getRouteProfile
+	AppRoutes,
+	getRouteAbout,
+	getRouteAdminPanel,
+	getRouteArticleCreate,
+	getRouteArticleDetails,
+	getRouteArticleEdit,
+	getRouteArticles,
+	getRouteForbidden,
+	getRouteMain,
+	getRouteProfile
 } from '@/shared/const/router'
 import { AppRoutesProps } from '@/shared/types/router'
 

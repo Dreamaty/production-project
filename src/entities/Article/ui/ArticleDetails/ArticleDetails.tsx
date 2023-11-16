@@ -1,5 +1,3 @@
-import { memo, useCallback, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
 import { cx } from '@/shared/lib/classNames/cx'
@@ -14,6 +12,8 @@ import {
 	TextSize,
 	TextTheme, UiText
 } from '@/shared/ui/Text'
+import { memo, useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ArticleBlockType } from '../../model/consts/consts'
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
@@ -97,7 +97,7 @@ export const ArticleDetails = memo(({ className, id }: {className?: string, id?:
 						alt='Article avatar' 
 						className={cls.avatar}/>
 				</HStack>
-				<VStack gap='4' max>
+				<VStack gap='4' max data-testid='ArticleDetails.Info'>
 					<UiText
 						title={article?.title}
 						text={article?.subtitle}

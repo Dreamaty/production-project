@@ -1,12 +1,11 @@
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { cx } from '@/shared/lib/classNames/cx'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { Button } from '@/shared/ui/Button'
-import { ButtonTheme } from '@/shared/ui/Button'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { UiInput } from '@/shared/ui/Input'
 import { HStack } from '@/shared/ui/Stack'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 import cls from './AddCommentForm.module.scss'
@@ -42,15 +41,20 @@ const AddCommentForm = memo(({ className, onSendComment }:AddCommentFormProps) =
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 			<HStack max className={cx(cls.addCommentForm, {},
-				[className])}>
+				[className])} data-testid='AddCommentForm' >
 				<UiInput 
+					data-testid='AddCommentForm.Input'
 					className={cls.input}
 					placeholder={t('Type your comment')} 
 					value={text} 
 					onChange={onCommentChangeHandler}
 				/>
 
-				<Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
+				<Button 
+					data-testid='AddCommentForm.Button'
+					theme={ButtonTheme.OUTLINE} 
+					onClick={onSendHandler}
+				>
 					{t('Send')}
 				</Button>
 			</HStack>

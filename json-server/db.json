@@ -646,13 +646,13 @@
         "MANAGER"
       ],
       "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
-    }
+    },
     {
       "id": "4",
       "username": "testuser",
       "password": "123",
       "role": [
-        "ADMIN","MANAGER"
+        "ADMIN"
       ],
       "avatar": "https://cdn0.iconfinder.com/data/icons/occupation-002/64/programmer-programming-occupation-avatar-1024.png"
     }

@@ -60,6 +60,7 @@ module.exports = {
 		semi: ['error', 'never'],
 		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unused-vars': 'warn',
+		'@typescript-eslint/no-namespace': 'warn',
 		'react/jsx-props-no-spreading': 'warn',
 		'react/display-name': 'off',
 		'no-undef': 'off',

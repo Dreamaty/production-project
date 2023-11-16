@@ -90,7 +90,9 @@ export const ArticleList = memo((
 	}
 		
 	return (
-		<div className={cx('', {}, [cls[view]])}>
+		<div className={cx('', {}, [cls[view]])}
+			data-testid="ArticleList"
+		>
 			{virtualized ? (
 				<VirtuosoGrid
 					style={{ height: '100%' }}

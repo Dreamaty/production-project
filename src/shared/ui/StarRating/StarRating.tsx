@@ -18,11 +18,11 @@ export const StarRating = memo(({
 	selectedStars?: number
  }) => {
 
-	const [currentStarsCount, setCurrentStarsCount] = useState<number>(selectedStars)
+	const [currentStarCount, setCurrentStarsCount] = useState<number>(selectedStars)
 	const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
 	const isStarSelected = (starsNumber: number) => {
-		if( starsNumber <= currentStarsCount) return true
+		if( starsNumber <= currentStarCount) return true
 		if( starsNumber <= selectedStars ) {
 			return true
 		}
@@ -67,6 +67,8 @@ export const StarRating = memo(({
 					backgroundColor={BackgroundColor.PRIMARY_COLOR}
 					className={cx('', {}, [])}
 					pointer={!isSelected}
+					data-testid={`StarRating.${starNumber}`}
+					data-selected={currentStarCount >= starNumber}
 				/>
 			))}
 		</div>

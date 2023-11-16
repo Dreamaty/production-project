@@ -37,7 +37,8 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 
 	if(view === ArticleView.BLOCKS ){
 		return (
-			<AppLink 
+			<AppLink
+				data-testid="ArticleListItem" 
 				target={target}
 				to={getRouteArticleDetails(article.id)} 
 				className={cx(cls.articleListItem, {},
@@ -78,7 +79,9 @@ export const ArticleListItem = memo(({ className, article, view, target }: {
 	
 	return (
 		<div className={cx(cls.articleListItem, {},
-			[className, cls[view]])}>
+			[className, cls[view]])}
+		data-testid="ArticleListItem" 
+		>
 			<Card >
 				<div className={cls.header}>
 					<Avatar 
