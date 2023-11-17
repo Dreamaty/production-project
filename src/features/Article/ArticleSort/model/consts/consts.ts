@@ -1,7 +1,5 @@
-
-
 export enum ArticleSortField {
-	VIEWS = 'views',
-	TITLE = 'title',
-	CREATED = 'createdAt'
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt',
 }

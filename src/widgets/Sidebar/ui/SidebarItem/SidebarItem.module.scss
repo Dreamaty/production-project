@@ -1,18 +1,18 @@
 .link {
-	display: flex;
-	align-items: center;
-	opacity: 1;
-	gap: 5px;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  gap: 5px;
 
-	.icon {
-		fill: var(--primary-color);
-	}
+  .icon {
+    fill: var(--primary-color);
+  }
 }
 
 .collapsed {
   > span {
-		opacity: 0;
-		transition: all 0.2s;
-		width: 0;
-	}
+    opacity: 0;
+    transition: all 0.2s;
+    width: 0;
+  }
 }

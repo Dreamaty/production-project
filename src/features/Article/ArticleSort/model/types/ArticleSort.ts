@@ -1,9 +1,9 @@
+import { SortOrder } from '@/shared/types/sort';
 
-import { SortOrder } from '@/shared/types/sort'
-import { ArticleSortField } from '../consts/consts'
+import { ArticleSortField } from '../consts/consts';
 
 export interface ArticleSortSchema {
-	sort: ArticleSortField
-	search: string
-	order: SortOrder;
+  sort: ArticleSortField;
+  search: string;
+  order: SortOrder;
 }

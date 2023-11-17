@@ -1,36 +1,36 @@
 .modal {
-	position: fixed;
-	inset: 0;
-	z-index: var(--modal-z-index);
-	opacity: 0;
-	pointer-events: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: var(--modal-z-index);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
-	padding: 20px;
-	border-radius: 12px;
-	background-color: var(--bg-color);
-	transition: 0.3s transform;
-	transform: scale(0.5);
-	max-width: 60%;
-	z-index: var(--modal-z-index);
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--bg-color);
+  transition: 0.3s transform;
+  transform: scale(0.5);
+  max-width: 60%;
+  z-index: var(--modal-z-index);
 }
 
 .opened {
-	pointer-events: auto;
-	opacity: 1;
-	z-index: var(--modal-z-index);
+  pointer-events: auto;
+  opacity: 1;
+  z-index: var(--modal-z-index);
 
-	.content {
-		transform: scale(1);
-	}
+  .content {
+    transform: scale(1);
+  }
 }
 
 .closing {
-	.content {
-		transform: scale(0.2);
-	}
+  .content {
+    transform: scale(0.2);
+  }
 }

@@ -1,56 +1,56 @@
 .inputWrapper {
-	display: inline-flex;
-	gap: 10px;
-	width: 100%;
+  display: inline-flex;
+  gap: 10px;
+  width: 100%;
 }
 
 .placeholder {
-	color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .input {
-	background: transparent;
-	border: none;
-	outline: none;
-	color: transparent;
-	font-family: 'Courier New', Courier, monospace;
-	text-shadow: 0 0 0 var(--primary-color);
-	width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: transparent;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0 0 0 var(--primary-color);
+  width: 100%;
 
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 }
 
 .caretWrapper {
-	flex-grow: 1;
-	position: relative;
+  flex-grow: 1;
+  position: relative;
 }
 
 .readonly {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 
 .caret {
-	position: absolute;
-	height: 3px;
-	width: 9px;
-	background: var(--primary-color);
-	bottom: 2px;
-	left: 0;
-	animation: blink 0.8s forwards infinite;
+  position: absolute;
+  height: 3px;
+  width: 9px;
+  background: var(--primary-color);
+  bottom: 2px;
+  left: 0;
+  animation: blink 0.8s forwards infinite;
 }
 
 @keyframes blink {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	50% {
-		opacity: 0.01;
-	}
+  50% {
+    opacity: 0.01;
+  }
 
-	100% {
-		opacity: 1;
-	}
+  100% {
+    opacity: 1;
+  }
 }

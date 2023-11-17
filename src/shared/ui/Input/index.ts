@@ -1,1 +1,1 @@
-export { UiInput } from './ui/UiInput'
+export { UiInput } from './ui/UiInput';

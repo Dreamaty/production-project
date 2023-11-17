@@ -1,70 +1,77 @@
-import { StateSchema } from '@/app/providers/StoreProvider'
-import { getSavedScrollByPath, scrollSaveActions } from '@/features/ScrollSave'
-import { cx } from '@/shared/lib/classNames/cx'
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
-import { TestProps } from '@/shared/types/tests'
 import {
-	MutableRefObject,
-	ReactNode,
-	UIEvent, memo, useRef
-} from 'react'
-import { useLocation } from 'react-router'
-import cls from './Page.module.scss'
+  MutableRefObject,
+  ReactNode,
+  UIEvent,
+  memo,
+  useRef,
+} from 'react';
+import { useLocation } from 'react-router';
 
-export const PAGE_ID = 'page_id' 
+import { cx } from '@/shared/lib/classNames/cx';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '@/shared/lib/hooks/storeHooks/storeHooks';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/tests';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
+import {
+  getSavedScrollByPath,
+  scrollSaveActions,
+} from '@/features/ScrollSave';
+
+import cls from './Page.module.scss';
+
+export const PAGE_ID = 'page_id';
 
 interface PageProps extends TestProps {
-	className?: string, 
-	children: ReactNode
-	onScrollEnd?: () => void
+  className?: string;
+  children: ReactNode;
+  onScrollEnd?: () => void;
 }
-export const Page = memo((props : PageProps) => {
+export const Page = memo((props: PageProps) => {
+  const { className, children, onScrollEnd } = props;
 
-	const { 
-		className, 
-		children, 
-		onScrollEnd 
-	} = props
+  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const dispatch = useAppDispatch();
+  const location = useLocation();
+  const scrollPosition = useAppSelector((state: StateSchema) =>
+    getSavedScrollByPath(state, location.pathname),
+  );
 
-	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
-	const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
-	const dispatch = useAppDispatch()
-	const location = useLocation()
-	const scrollPosition = useAppSelector(
-		(state: StateSchema) => getSavedScrollByPath(state, location.pathname)
-	)
-		
-	useInfiniteScroll({
-		triggerRef,
-		wrapperRef,
-		callback: onScrollEnd
-	})
+  useInfiniteScroll({
+    triggerRef,
+    wrapperRef,
+    callback: onScrollEnd,
+  });
 
-	const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-		dispatch(scrollSaveActions.setScrollPosition({
-			path: location.pathname,
-			position: e.currentTarget.scrollTop
-		}))
-	}, 500)
+  const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+    dispatch(
+      scrollSaveActions.setScrollPosition({
+        path: location.pathname,
+        position: e.currentTarget.scrollTop,
+      }),
+    );
+  }, 500);
 
-	useInitialEffect(() => {
-		wrapperRef.current.scrollTop = scrollPosition
-	})
+  useInitialEffect(() => {
+    wrapperRef.current.scrollTop = scrollPosition;
+  });
 
-	return (
-		<main 
-			ref={wrapperRef} 
-			className={cx(cls.page, {},
-				[className])}
-			onScroll={onScroll}
-			id={PAGE_ID}
-			data-testid={props['data-testid'] ?? 'Page'}
-		>
-			{children}
-			<div className={cls.trigger} ref={triggerRef} />
-		</main>
-	)
-})
+  return (
+    <main
+      ref={wrapperRef}
+      className={cx(cls.page, {}, [className])}
+      onScroll={onScroll}
+      id={PAGE_ID}
+      data-testid={props['data-testid'] ?? 'Page'}
+    >
+      {children}
+      <div className={cls.trigger} ref={triggerRef} />
+    </main>
+  );
+});

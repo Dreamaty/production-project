@@ -1,25 +1,25 @@
 .wrapper {
-	display: flex;
+  display: flex;
 }
 
 .label {
-	margin-right: 5px;
-	color: var(--secondary-color);
+  margin-right: 5px;
+  color: var(--secondary-color);
 }
 
 .select {
-	background: none;
-	outline: none;
-	color: var(--primary-color);
-	padding:2px 10 px 2px 2px;
-	border: 1px solid var(--primary-color);
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  padding: 2px 10 px 2px 2px;
+  border: 1px solid var(--primary-color);
 }
 
-.option { 
-	color: var(--inverted-primary-color);
-	background: var(--inverted-bg-color);
+.option {
+  color: var(--inverted-primary-color);
+  background: var(--inverted-bg-color);
 }
 
-.readonly { 
-	opacity: 0.7;
+.readonly {
+  opacity: 0.7;
 }

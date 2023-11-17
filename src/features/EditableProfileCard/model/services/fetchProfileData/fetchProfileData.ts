@@ -1,32 +1,32 @@
-import { ThunkConfig } from '@/app/providers/StoreProvider'
-import { Profile } from '@/entities/ProfileState'
-import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ValidateProfileError } from '../../consts/consts'
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { Profile } from '@/entities/ProfileState';
 
+import { ValidateProfileError } from '../../consts/consts';
 
 export const fetchProfileData = createAsyncThunk<
-	Profile, 
-	string | undefined, 
-	ThunkConfig<string>
->(
-	'profile/fetchProfileData',
-	async (profileId, thunkApi) => {
-		const { extra, rejectWithValue } = thunkApi
+  Profile,
+  string | undefined,
+  ThunkConfig<string>
+>('profile/fetchProfileData', async (profileId, thunkApi) => {
+  const { extra, rejectWithValue } = thunkApi;
 
-		if(!profileId) return rejectWithValue(ValidateProfileError.NO_ID)
+  if (!profileId)
+    return rejectWithValue(ValidateProfileError.NO_ID);
 
-		try {
-			const response = await extra.api.get<Profile>(`/profile/${profileId}`)
+  try {
+    const response = await extra.api.get<Profile>(
+      `/profile/${profileId}`,
+    );
 
-			if(!response.data) {
-				throw new Error()
-			}
+    if (!response.data) {
+      throw new Error();
+    }
 
-			return response.data
-		} catch (error) {
-			console.log(error)
-			return rejectWithValue(ValidateProfileError.SERVER_ERROR)
-		}
-	},
-)
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return rejectWithValue(ValidateProfileError.SERVER_ERROR);
+  }
+});

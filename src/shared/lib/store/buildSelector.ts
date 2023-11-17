@@ -1,13 +1,16 @@
-import { StateSchema } from '@/app/providers/StoreProvider'
-import { useAppSelector } from '../hooks/storeHooks/storeHooks'
+import { StateSchema } from '@/app/providers/StoreProvider';
 
-type Selector<T> = (state: StateSchema) => T
-type Result<T> = [() => T, Selector<T>]
+import { useAppSelector } from '../hooks/storeHooks/storeHooks';
 
-export function buildSelector<T>(selector : Selector<T>): Result<T> {
-	const useSelectorHook = () => {
-		return useAppSelector(selector)
-	}
+type Selector<T> = (state: StateSchema) => T;
+type Result<T> = [() => T, Selector<T>];
 
-	return [useSelectorHook, selector]
+export function buildSelector<T>(
+  selector: Selector<T>,
+): Result<T> {
+  const useSelectorHook = () => {
+    return useAppSelector(selector);
+  };
+
+  return [useSelectorHook, selector];
 }

@@ -1,23 +1,25 @@
-import { Theme } from '@/shared/const/theme'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Loader } from './Loader'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+
+import { Loader } from './Loader';
+
 const meta = {
-	title: 'shared/Loader',
-	component: Loader,
-	parameters: {
-		layout: 'fullscreen',
-	},
-	tags: ['autodocs'],
-	argTypes: {},
-} satisfies Meta<typeof Loader>
-export default meta
-type Story = StoryObj<typeof meta>
+  title: 'shared/Loader',
+  component: Loader,
+  parameters: {
+    layout: 'fullscreen',
+  },
+  tags: ['autodocs'],
+  argTypes: {},
+} satisfies Meta<typeof Loader>;
+export default meta;
+type Story = StoryObj<typeof meta>;
 export const Light: Story = {
-	args: {},
-}
+  args: {},
+};
 export const Dark: Story = {
-	args: {},
-	decorators: [ThemeDecorator(Theme.DARK)],
-}
+  args: {},
+  decorators: [ThemeDecorator(Theme.DARK)],
+};

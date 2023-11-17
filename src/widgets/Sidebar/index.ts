@@ -1,5 +1,5 @@
-export { getSidebarItems } from './model/selectors/getSidebarItems'
+export { getSidebarItems } from './model/selectors/getSidebarItems';
 
-export { Sidebar } from './ui/Sidebar/Sidebar'
+export { Sidebar } from './ui/Sidebar/Sidebar';
 
-export type { SidebarItemType } from './model/types/sidebar'
+export type { SidebarItemType } from './model/types/sidebar';

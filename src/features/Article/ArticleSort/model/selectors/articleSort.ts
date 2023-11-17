@@ -1,9 +1,12 @@
-import { StateSchema } from '@/app/providers/StoreProvider'
-import { ArticleSortField } from '../consts/consts'
+import { StateSchema } from '@/app/providers/StoreProvider';
 
-export const getArticleSortOrder = (state: StateSchema) => state.articleSort?.order || 'asc'
+import { ArticleSortField } from '../consts/consts';
 
-export const getArticleSortBy = 
-	(state: StateSchema) => state.articleSort?.sort ||ArticleSortField.CREATED
+export const getArticleSortOrder = (state: StateSchema) =>
+  state.articleSort?.order || 'asc';
 
-export const getArticleSortSearch = (state: StateSchema) => state.articleSort?.search ?? ''
+export const getArticleSortBy = (state: StateSchema) =>
+  state.articleSort?.sort || ArticleSortField.CREATED;
+
+export const getArticleSortSearch = (state: StateSchema) =>
+  state.articleSort?.search ?? '';

@@ -1,8 +1,9 @@
-import * as articleCommands from './commands/article'
-import * as commentsCommands from './commands/comments'
-import * as commonCommands from './commands/login'
-import * as profileCommands from './commands/profile'
-import * as ratingCommands from './commands/rating'
+import * as articleCommands from './commands/article';
+import * as commentsCommands from './commands/comments';
+import * as commonCommands from './commands/login';
+import * as profileCommands from './commands/profile';
+import * as ratingCommands from './commands/rating';
+
 /* eslint-disable @typescript-eslint/no-namespace */
 /// <reference types="cypress" />
 // ***********************************************
@@ -17,9 +18,8 @@ import * as ratingCommands from './commands/rating'
 //
 //
 // -- This is a parent command --
-Cypress.Commands.addAll(commonCommands)
-Cypress.Commands.addAll(ratingCommands)
-Cypress.Commands.addAll(profileCommands)
-Cypress.Commands.addAll(articleCommands)
-Cypress.Commands.addAll(commentsCommands)
-
+Cypress.Commands.addAll(commonCommands);
+Cypress.Commands.addAll(ratingCommands);
+Cypress.Commands.addAll(profileCommands);
+Cypress.Commands.addAll(articleCommands);
+Cypress.Commands.addAll(commentsCommands);

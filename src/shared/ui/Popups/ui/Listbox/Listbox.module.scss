@@ -1,17 +1,15 @@
 .options {
-	background: var(--listbox-bg);
-	position: absolute;
-	z-index: 10000;
-	border-radius: 12px;
-	box-shadow: 4px 4px 8px var(--listbox-bg);
+  background: var(--listbox-bg);
+  position: absolute;
+  z-index: 10000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--listbox-bg);
 }
 
 .option {
-	padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .label {
-	color: var(--secondary-color);
+  color: var(--secondary-color);
 }
-
-

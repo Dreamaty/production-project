@@ -1,15 +1,17 @@
-export { addCommentForArticle } from './model/services/addCommentForArticle/addCommentForArticle'
+export { addCommentForArticle } from './model/services/addCommentForArticle/addCommentForArticle';
 
 // eslint-disable-next-line max-len
-export { fetchCommentsByArticleId } from './model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-
-export { getArticleCommentsError, getArticleCommentsIsLoading } from './model/selectors/comments'
+export { fetchCommentsByArticleId } from './model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export {
-	articleDetailsCommentsActions,
-	articleDetailsCommentsReducer,
-	getArticleComments
-} from './model/slice/articleDetailsCommentsSlice'
+  getArticleCommentsError,
+  getArticleCommentsIsLoading,
+} from './model/selectors/comments';
 
-export type { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsComments'
+export {
+  articleDetailsCommentsActions,
+  articleDetailsCommentsReducer,
+  getArticleComments,
+} from './model/slice/articleDetailsCommentsSlice';
 
+export type { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsComments';

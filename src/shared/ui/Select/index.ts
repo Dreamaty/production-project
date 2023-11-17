@@ -1,4 +1,3 @@
-export { UiSelect } from './ui/UiSelect'
+export { UiSelect } from './ui/UiSelect';
 
-export type { SelectOption } from './ui/UiSelect'
-
+export type { SelectOption } from './ui/UiSelect';

@@ -1,19 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
-import { CommentSchema } from '../types/comment'
+import { CommentSchema } from '../types/comment';
 
 const initialState: CommentSchema = {
-	data: []
-}
+  data: [],
+};
 
 export const commentSlice = createSlice({
-	name: 'comment',
-	initialState,
-	reducers: {
-		
-	},
-})
+  name: 'comment',
+  initialState,
+  reducers: {},
+});
 
-export const { actions: commentActions } = commentSlice
+export const { actions: commentActions } = commentSlice;
 
-export const { reducer: commentReducer } = commentSlice
+export const { reducer: commentReducer } = commentSlice;

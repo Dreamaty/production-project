@@ -1,45 +1,59 @@
-import { getArticleDetailsData } from '@/entities/Article'
-import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router'
-import { cx } from '@/shared/lib/classNames/cx'
-import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { Button, ButtonTheme } from '@/shared/ui/Button'
-import { HStack } from '@/shared/ui/Stack'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router'
-import { getCanEditArticle } from '../../model/selectors/article'
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 
-export const ArticleDetailsPageHeader = memo(({ className }: {className?: string}) => {
-	const { t } = useTranslation('article')
+import {
+  getRouteArticleEdit,
+  getRouteArticles,
+} from '@/shared/const/router';
+import { cx } from '@/shared/lib/classNames/cx';
+import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
 
-	const article = useAppSelector(getArticleDetailsData)
+import { getArticleDetailsData } from '@/entities/Article';
 
-	const navigate = useNavigate()
-	const canEdit = useAppSelector(getCanEditArticle)
+import { getCanEditArticle } from '../../model/selectors/article';
 
-	const onBackToList = useCallback(() => {
-		navigate(getRouteArticles())
-	}, [navigate])
+export const ArticleDetailsPageHeader = memo(
+  ({ className }: { className?: string }) => {
+    const { t } = useTranslation('article');
 
-	const onEditArticle = useCallback(() => {
-		navigate(getRouteArticleEdit(article?.id || ''))
-	}, [article?.id, navigate])
-		
-	return (
-		<HStack justify='between' max className={cx('', {}, [className])} >
-			<Button 
-				theme={ButtonTheme.OUTLINE} 
-				onClick={onBackToList}
-			>
-				{t('Back to list')}
-			</Button>
+    const article = useAppSelector(getArticleDetailsData);
 
-			{canEdit && <Button 
-				theme={ButtonTheme.OUTLINE} 
-				onClick={onEditArticle}
-			>
-				{t('Edit')}
-			</Button>}
-		</HStack>
-	)
-})
+    const navigate = useNavigate();
+    const canEdit = useAppSelector(getCanEditArticle);
+
+    const onBackToList = useCallback(() => {
+      navigate(getRouteArticles());
+    }, [navigate]);
+
+    const onEditArticle = useCallback(() => {
+      navigate(getRouteArticleEdit(article?.id || ''));
+    }, [article?.id, navigate]);
+
+    return (
+      <HStack
+        justify='between'
+        max
+        className={cx('', {}, [className])}
+      >
+        <Button
+          theme={ButtonTheme.OUTLINE}
+          onClick={onBackToList}
+        >
+          {t('Back to list')}
+        </Button>
+
+        {canEdit && (
+          <Button
+            theme={ButtonTheme.OUTLINE}
+            onClick={onEditArticle}
+          >
+            {t('Edit')}
+          </Button>
+        )}
+      </HStack>
+    );
+  },
+);

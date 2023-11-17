@@ -1,51 +1,56 @@
-import { getUserAuthData } from '@/entities/User'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { EditButton } from '@/shared/ui/Button'
-import { HStack } from '@/shared/ui/Stack'
-import { UiText } from '@/shared/ui/Text'
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '@/shared/lib/hooks/storeHooks/storeHooks';
+import { EditButton } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { UiText } from '@/shared/ui/Text';
 
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
-import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
-import { profileStateActions } from '../../model/slice/profileStateSlice'
+import { getUserAuthData } from '@/entities/User';
 
-export const EditableProfileCardHeader = memo(({ className }: {className?: string}) => {
-	const { t } = useTranslation('profile')
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { profileStateActions } from '../../model/slice/profileStateSlice';
 
-	const readonly = useAppSelector(getProfileReadonly)
-	const dispatch = useAppDispatch()
+export const EditableProfileCardHeader = memo(
+  ({ className }: { className?: string }) => {
+    const { t } = useTranslation('profile');
 
-	const authData = useAppSelector(getUserAuthData)
-	const profileData = useAppSelector(getProfileData)
-	const canEdit = authData?.id === profileData?.id
+    const readonly = useAppSelector(getProfileReadonly);
+    const dispatch = useAppDispatch();
 
-	const onEdit = useCallback(() => {
-		dispatch(profileStateActions.changeReadonly(false))
-	}, [dispatch])
+    const authData = useAppSelector(getUserAuthData);
+    const profileData = useAppSelector(getProfileData);
+    const canEdit = authData?.id === profileData?.id;
 
-	const onCancelEdit = useCallback(() => {
-		dispatch(profileStateActions.cancelChanging())
-	}, [dispatch])
+    const onEdit = useCallback(() => {
+      dispatch(profileStateActions.changeReadonly(false));
+    }, [dispatch]);
 
-	const onSave = useCallback(() => {
-		dispatch(updateProfileData(profileData?.id))
-	}, [dispatch, profileData?.id])
+    const onCancelEdit = useCallback(() => {
+      dispatch(profileStateActions.cancelChanging());
+    }, [dispatch]);
 
-	return (
-		<HStack justify='between' align='start' max>
-			<UiText title={t('Profile')}/>
-			{canEdit && (
-				<EditButton 
-					readonly={readonly} 
-					onCancelEdit={onCancelEdit}
-					onEdit={onEdit}
-					onSave={onSave}
-				/>
-				
-			)}
-		</HStack>
-	)
-})
+    const onSave = useCallback(() => {
+      dispatch(updateProfileData(profileData?.id));
+    }, [dispatch, profileData?.id]);
+
+    return (
+      <HStack justify='between' align='start' max>
+        <UiText title={t('Profile')} />
+        {canEdit && (
+          <EditButton
+            readonly={readonly}
+            onCancelEdit={onCancelEdit}
+            onEdit={onEdit}
+            onSave={onSave}
+          />
+        )}
+      </HStack>
+    );
+  },
+);

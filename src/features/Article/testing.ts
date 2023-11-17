@@ -1,4 +1,3 @@
+export { articleDetailsCommentsReducer } from './ArticleDetailsComments';
 
-export { articleDetailsCommentsReducer } from './ArticleDetailsComments'
-
-export { articleInfinityListReducer } from './ArticleInfinityList'
+export { articleInfinityListReducer } from './ArticleInfinityList';

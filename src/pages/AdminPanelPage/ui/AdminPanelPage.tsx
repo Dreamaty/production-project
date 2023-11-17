@@ -1,14 +1,11 @@
-import { Page } from '@/widgets/Page'
-import { memo } from 'react'
+import { memo } from 'react';
 
+import { Page } from '@/widgets/Page';
 
-const AdminPanelPage = memo(({ className }: {className?: string}) => {
-		
-	return (
-		<Page data-testid='AdminPanelPage' >
+const AdminPanelPage = memo(
+  ({ className }: { className?: string }) => {
+    return <Page data-testid='AdminPanelPage'>{'Admin'}</Page>;
+  },
+);
 
-		</Page>
-	)
-})
-
-export default AdminPanelPage
+export default AdminPanelPage;

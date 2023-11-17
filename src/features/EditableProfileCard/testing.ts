@@ -1,1 +1,1 @@
-export { profileStateReducer } from './model/slice/profileStateSlice'
+export { profileStateReducer } from './model/slice/profileStateSlice';
