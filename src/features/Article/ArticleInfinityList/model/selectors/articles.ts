@@ -1,3 +1,5 @@
+import { buildSelector } from '@/shared/lib/store';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleView } from '@/entities/Article';
 
@@ -21,3 +23,8 @@ export const getArticlesHasMore = (state: StateSchema) =>
 
 export const getArticlesInited = (state: StateSchema) =>
   state.articleInfiniteList?._inited;
+
+export const [useArticleItemById] = buildSelector(
+  (state: StateSchema, id: string) =>
+    state.articleInfiniteList?.entities[id],
+);
