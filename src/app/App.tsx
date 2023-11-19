@@ -1,34 +1,42 @@
-import { cx } from '@/shared/lib/classNames/cx'
+import { Suspense, useEffect } from 'react';
 
-import { getUserInited, userActions } from '@/entities/User'
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks'
-import { Navbar } from '@/widgets/Navbar'
-import { Sidebar } from '@/widgets/Sidebar'
-import { Suspense, useEffect } from 'react'
-import { AppRouter } from './providers/router'
+import { cx } from '@/shared/lib/classNames/cx';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '@/shared/lib/hooks/storeHooks/storeHooks';
+
+import { getUserInited, initAuthData } from '@/entities/User';
+import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
+import { Sidebar } from '@/widgets/Sidebar';
+
+import { AppRouter } from './providers/router';
 
 const App = () => {
-	const dispatch = useAppDispatch()
-	const inited = useAppSelector(getUserInited)
+  const dispatch = useAppDispatch();
+  const inited = useAppSelector(getUserInited);
 
-	useEffect(() => {
-		dispatch(userActions.initAuthData())
+  useEffect(() => {
+    dispatch(initAuthData());
 
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [dispatch])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
-	return (
-		<div className={cx('app', {}, [])}>
-			<Suspense fallback="">
-				<Navbar />
+  if (inited) return <PageLoader />;
 
-				<div className="content-page">
-					<Sidebar />
-					{inited && <AppRouter />}
-				</div>
-			</Suspense>
-		</div>
-	)
-}
+  return (
+    <div className={cx('app', {}, [])}>
+      <Suspense fallback=''>
+        <Navbar />
 
-export default App
+        <div className='content-page'>
+          <Sidebar />
+          {inited && <AppRouter />}
+        </div>
+      </Suspense>
+    </div>
+  );
+};
+
+export default App;

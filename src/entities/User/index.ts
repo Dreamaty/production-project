@@ -1,3 +1,9 @@
+export { initAuthData } from './model/services/initAuthData';
+
+export { saveJsonSettings } from './model/services/saveJsonService';
+
+export { useJsonSettings } from './model/selectors/jsonSettings';
+
 export { getUserInited } from './model/selectors/getUserInited/getUserInited';
 
 export {

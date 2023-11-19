@@ -1,14 +1,17 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 
 import DarkIcon from '@/shared/assets/icons/theme-dark.svg';
 import GreenIcon from '@/shared/assets/icons/theme-green.svg';
 import LightIcon from '@/shared/assets/icons/theme-light.svg';
 import { Theme } from '@/shared/const/theme';
 import { cx } from '@/shared/lib/classNames/cx';
+import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 
-export const ThemeSwitcher = memo(
+import { saveJsonSettings } from '@/entities/User';
+
+const ThemeSwitcher = memo(
   ({ className }: { className?: string }) => {
     const { theme, toggleTheme } = useTheme();
     LightIcon;
@@ -25,10 +28,21 @@ export const ThemeSwitcher = memo(
           return <GreenIcon />;
       }
     };
+    const dispatch = useAppDispatch();
+
+    const onToggleHandler = useCallback(() => {
+      toggleTheme(newTheme => {
+        dispatch(
+          saveJsonSettings({
+            theme: newTheme,
+          }),
+        );
+      });
+    }, [dispatch, toggleTheme]);
     return (
       <Button
         className={cx('', {}, [className])}
-        onClick={toggleTheme}
+        onClick={onToggleHandler}
         theme={ButtonTheme.CLEAR}
       >
         {chooseTheme(theme)}

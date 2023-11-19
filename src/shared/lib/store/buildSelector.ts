@@ -5,7 +5,7 @@ import { useAppSelector } from '../hooks/storeHooks/storeHooks';
 
 type Selector<T, Args extends any[]> = (
   state: StateSchema,
-  ...args: Args[]
+  ...args: Args
 ) => T;
 
 type Hook<T, Args extends any[]> = (...args: Args) => T;
