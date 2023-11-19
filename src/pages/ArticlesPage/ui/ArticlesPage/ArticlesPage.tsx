@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks';
 
 import {
   ArticleFilter,
+  ArticlePageGreeting,
   articleInfinityListReducer,
   fetchNextArticlesPage,
 } from '@/features/Article';
@@ -40,6 +41,7 @@ const ArticlesPage = ({ className }: { className?: string }) => {
       >
         <ArticleFilter />
         <ArticleInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );

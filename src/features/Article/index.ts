@@ -1,3 +1,5 @@
+export { ArticlesPageGreeting as ArticlePageGreeting } from './ArticlesPageGreeting';
+
 export { articleDetailsCommentsReducer } from './ArticleDetailsComments';
 
 export type { ArticleDetailsCommentsSchema } from './ArticleDetailsComments';
