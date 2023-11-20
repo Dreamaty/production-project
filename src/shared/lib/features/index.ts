@@ -1,3 +1,5 @@
+export { ToggleFeatures } from './ToggleFeatures/ToggleFeatures';
+
 export {
   getFeatureFlags,
   setFeatureFlags,
