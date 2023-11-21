@@ -2,14 +2,18 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { Card } from '@/shared/ui/Card';
-import { Drawer } from '@/shared/ui/Drawer';
-import { UiInput } from '@/shared/ui/Input';
-import { Modal } from '@/shared/ui/Modal';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { StarRating } from '@/shared/ui/StarRating';
-import { UiText } from '@/shared/ui/Text';
+import {
+  Button,
+  ButtonSize,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { UiInput } from '@/shared/ui/deprecated/Input';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { StarRating } from '@/shared/ui/deprecated/StarRating';
+import { UiText } from '@/shared/ui/deprecated/Text';
 
 export const RatingCard = memo(
   ({
@@ -59,7 +63,7 @@ export const RatingCard = memo(
       <>
         <UiText title={feedbackTitle} />
         <UiInput
-          data-testid="RatingCard.Input"
+          data-testid='RatingCard.Input'
           placeholder={t('Your Feedback')}
           value={feedback}
           onChange={setFeedback}
@@ -69,24 +73,35 @@ export const RatingCard = memo(
     );
 
     return (
-      <Card className={className} max data-testid="RatingCard">
-        <VStack align="center" gap="8">
-          <UiText title={starsCount ? t('Thanks for your rating') : title} />
-          <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
+      <Card className={className} max data-testid='RatingCard'>
+        <VStack align='center' gap='8'>
+          <UiText
+            title={
+              starsCount ? t('Thanks for your rating') : title
+            }
+          />
+          <StarRating
+            size={40}
+            onSelect={onSelectStars}
+            selectedStars={starsCount}
+          />
         </VStack>
         <BrowserView>
           <Modal isOpen={isModalOpen} lazy>
-            <VStack gap="32" max>
+            <VStack gap='32' max>
               {modalContent}
-              <HStack max gap="16" justify="end">
+              <HStack max gap='16' justify='end'>
                 <Button
                   theme={ButtonTheme.OUTLINE_RED}
                   onClick={cancelHandle}
-                  data-testid="RatingCard.Close"
+                  data-testid='RatingCard.Close'
                 >
                   {t('Close')}
                 </Button>
-                <Button data-testid="RatingCard.Send" onClick={acceptHandle}>
+                <Button
+                  data-testid='RatingCard.Send'
+                  onClick={acceptHandle}
+                >
                   {t('Send')}
                 </Button>
               </HStack>
@@ -94,10 +109,17 @@ export const RatingCard = memo(
           </Modal>
         </BrowserView>
         <MobileView>
-          <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-            <VStack gap="32" max>
+          <Drawer
+            isOpen={isModalOpen}
+            lazy
+            onClose={cancelHandle}
+          >
+            <VStack gap='32' max>
               {modalContent}
-              <Button onClick={acceptHandle} size={ButtonSize.L} />
+              <Button
+                onClick={acceptHandle}
+                size={ButtonSize.L}
+              />
             </VStack>
           </Drawer>
         </MobileView>

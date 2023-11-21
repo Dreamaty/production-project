@@ -8,6 +8,7 @@ import {
 import { useLocation } from 'react-router';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 import {
   useAppDispatch,
   useAppSelector,
@@ -35,8 +36,10 @@ interface PageProps extends TestProps {
 export const Page = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
 
-  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const wrapperRef =
+    useRef() as MutableRefObject<HTMLDivElement>;
+  const triggerRef =
+    useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
   const location = useLocation();
   const scrollPosition = useAppSelector((state: StateSchema) =>
@@ -62,10 +65,24 @@ export const Page = memo((props: PageProps) => {
     wrapperRef.current.scrollTop = scrollPosition;
   });
 
+  toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.pageRedesigned,
+    off: () => cls.page,
+  });
+
   return (
     <main
       ref={wrapperRef}
-      className={cx(cls.page, {}, [className])}
+      className={cx(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => cls.pageRedesigned,
+          off: () => cls.page,
+        }),
+        {},
+        [className],
+      )}
       onScroll={onScroll}
       id={PAGE_ID}
       data-testid={props['data-testid'] ?? 'Page'}

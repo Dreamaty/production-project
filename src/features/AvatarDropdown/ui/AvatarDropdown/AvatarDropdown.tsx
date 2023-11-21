@@ -10,9 +10,9 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { Avatar } from '@/shared/ui/Avatar';
-import { BackgroundColor } from '@/shared/ui/Icon';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { BackgroundColor } from '@/shared/ui/deprecated/Icon';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 
 import {
   getUserAuthData,

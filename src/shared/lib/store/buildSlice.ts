@@ -22,8 +22,8 @@ export function buildSlice<
     const dispatch = useAppDispatch();
 
     // TODO: something wrong with the type of actionCreator
-    // @ts-ignore
     return useMemo(
+      // @ts-ignore
       () => bindActionCreators(slice.actions, dispatch),
       [dispatch],
     );

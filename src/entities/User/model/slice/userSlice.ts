@@ -5,7 +5,7 @@ import { setFeatureFlags } from '@/shared/lib/features';
 
 import { initAuthData } from '../services/initAuthData';
 import { saveJsonSettings } from '../services/saveJsonService';
-import { JsonSettings } from '../types/jsotSettings';
+import { JsonSettings } from '../types/jsonSettings';
 import { User, UserSchema } from '../types/user';
 
 // import type { RootState } from '../../app/store'
@@ -24,7 +24,7 @@ export const userSlice = createSlice({
     setAuthData: (state, action: PayloadAction<User>) => {
       localStorage.setItem(
         USER_LOCALSTORAGE_KEY,
-        JSON.stringify(action.payload.id),
+        action.payload.id,
       );
       state.authData = action.payload;
     },
@@ -45,8 +45,6 @@ export const userSlice = createSlice({
     builder.addCase(
       initAuthData.fulfilled,
       (state, action: PayloadAction<User>) => {
-        if (!state.authData) return;
-
         state.authData = action.payload;
         setFeatureFlags(action.payload.features);
         state._inited = true;

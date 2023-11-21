@@ -8,8 +8,11 @@ import {
 } from '@/shared/const/router';
 import { cx } from '@/shared/lib/classNames/cx';
 import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
+import {
+  Button,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 
 import { getArticleDetailsData } from '@/entities/Article';
 

@@ -5,9 +5,9 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { EditButton } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
-import { UiText } from '@/shared/ui/Text';
+import { EditButton } from '@/shared/ui/deprecated/Button';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { UiText } from '@/shared/ui/deprecated/Text';
 
 import { getUserAuthData } from '@/entities/User';
 

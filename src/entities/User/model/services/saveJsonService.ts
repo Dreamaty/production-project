@@ -5,7 +5,7 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { setJsonSettingsMutation } from '../../api/userApi';
 import { getUserAuthData } from '../selectors/getUserAuthData/getUserAuthData';
 import { getJsonSettings } from '../selectors/jsonSettings';
-import { JsonSettings } from '../types/jsotSettings';
+import { JsonSettings } from '../types/jsonSettings';
 
 export const saveJsonSettings = createAsyncThunk<
   JsonSettings,

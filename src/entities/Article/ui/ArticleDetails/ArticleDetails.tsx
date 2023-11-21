@@ -12,16 +12,16 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Icon } from '@/shared/ui/Icon';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import {
   TextAlign,
   TextSize,
   TextTheme,
   UiText,
-} from '@/shared/ui/Text';
+} from '@/shared/ui/deprecated/Text';
 
 import { ArticleBlockType } from '../../model/consts/consts';
 import {

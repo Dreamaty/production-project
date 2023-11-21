@@ -3,10 +3,16 @@ import { BrowserView, MobileView } from 'react-device-detect';
 
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { cx } from '@/shared/lib/classNames/cx';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { BackgroundColor, Icon } from '@/shared/ui/Icon';
-import { Popover } from '@/shared/ui/Popups';
+import {
+  Button,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import {
+  BackgroundColor,
+  Icon,
+} from '@/shared/ui/deprecated/Icon';
+import { Popover } from '@/shared/ui/deprecated/Popups';
 
 import { NotificationList } from '@/entities/Notification';
 

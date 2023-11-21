@@ -2,9 +2,11 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Button } from '@/shared/ui/redesigned/Button';
 
-import { Button } from '../../../shared/ui/Button';
-import { ButtonTheme } from '../../../shared/ui/Button/ui/Button';
+import { Button as ButtonDeprecated } from '../../../shared/ui/deprecated/Button';
+import { ButtonTheme } from '../../../shared/ui/deprecated/Button/ui/Button';
 
 export const LangSwitcher = memo(
   ({
@@ -17,17 +19,35 @@ export const LangSwitcher = memo(
     const { t, i18n } = useTranslation();
 
     return (
-      <Button
-        className={cx('', {}, [className])}
-        theme={ButtonTheme.CLEAR}
-        onClick={() => {
-          i18n.changeLanguage(
-            i18n.language === 'en' ? 'ru' : 'en',
-          );
-        }}
-      >
-        {t(short ? 'Lang' : 'Language')}
-      </Button>
+      <ToggleFeatures
+        feature={'isArticleRatingEnabled'}
+        on={
+          <Button
+            variant='clear'
+            className={cx('', {}, [className])}
+            onClick={() => {
+              i18n.changeLanguage(
+                i18n.language === 'en' ? 'ru' : 'en',
+              );
+            }}
+          >
+            {t(short ? 'Lang' : 'Language')}
+          </Button>
+        }
+        off={
+          <ButtonDeprecated
+            className={cx('', {}, [className])}
+            theme={ButtonTheme.CLEAR}
+            onClick={() => {
+              i18n.changeLanguage(
+                i18n.language === 'en' ? 'ru' : 'en',
+              );
+            }}
+          >
+            {t(short ? 'Lang' : 'Language')}
+          </ButtonDeprecated>
+        }
+      />
     );
   },
 );

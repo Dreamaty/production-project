@@ -1,0 +1,26 @@
+.link {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.collapsed {
+  padding: 0 8px;
+
+  > span {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+  }
+} 
+
+.active {
+  background: linear-gradient(
+    89.97deg,
+    rgb(29 89 255 / 30%) 1.15%,
+    rgb(94 211 243 / 0%) 99.97%
+  );
+  border-left: 1px solid var(--accent-redesigned);
+}

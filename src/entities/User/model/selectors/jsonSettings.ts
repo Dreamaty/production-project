@@ -1,6 +1,6 @@
 import { buildSelector } from '@/shared/lib/store';
 
-import { JsonSettings } from '../types/jsotSettings';
+import { JsonSettings } from '../types/jsonSettings';
 
 const defaultJsonSettings: JsonSettings = {};
 

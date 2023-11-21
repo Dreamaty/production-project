@@ -1,33 +1,27 @@
 import { memo, useCallback } from 'react';
 
-import DarkIcon from '@/shared/assets/icons/theme-dark.svg';
-import GreenIcon from '@/shared/assets/icons/theme-green.svg';
-import LightIcon from '@/shared/assets/icons/theme-light.svg';
-import { Theme } from '@/shared/const/theme';
+import ThemeIconDeprecated from '@/shared/assets/icons/theme-light.svg';
+import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import {
+  BackgroundColor,
+  Icon as IconDeprecated,
+} from '@/shared/ui/deprecated/Icon';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import { saveJsonSettings } from '@/entities/User';
 
-const ThemeSwitcher = memo(
+export const ThemeSwitcher = memo(
   ({ className }: { className?: string }) => {
     const { theme, toggleTheme } = useTheme();
-    LightIcon;
-    DarkIcon;
-    GreenIcon;
 
-    const chooseTheme = (theme: Theme) => {
-      switch (theme) {
-        case Theme.LIGHT:
-          return <LightIcon />;
-        case Theme.DARK:
-          return <DarkIcon />;
-        case Theme.GREEN:
-          return <GreenIcon />;
-      }
-    };
     const dispatch = useAppDispatch();
 
     const onToggleHandler = useCallback(() => {
@@ -40,13 +34,33 @@ const ThemeSwitcher = memo(
       });
     }, [dispatch, toggleTheme]);
     return (
-      <Button
-        className={cx('', {}, [className])}
-        onClick={onToggleHandler}
-        theme={ButtonTheme.CLEAR}
-      >
-        {chooseTheme(theme)}
-      </Button>
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <Icon
+            clickable
+            onClick={onToggleHandler}
+            width={40}
+            height={40}
+            Svg={ThemeIcon}
+            className={cx('', {}, [className])}
+          />
+        }
+        off={
+          <ButtonDeprecated
+            className={cx('', {}, [className])}
+            onClick={onToggleHandler}
+            theme={ButtonTheme.CLEAR}
+          >
+            <IconDeprecated
+              width={40}
+              height={40}
+              backgroundColor={BackgroundColor.SECONDARY_COLOR}
+              Svg={ThemeIconDeprecated}
+            />
+          </ButtonDeprecated>
+        }
+      />
     );
   },
 );

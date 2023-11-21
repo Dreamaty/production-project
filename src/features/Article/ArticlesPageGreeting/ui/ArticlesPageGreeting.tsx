@@ -3,9 +3,9 @@ import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Modal } from '@/shared/ui/Modal';
-import { UiText } from '@/shared/ui/Text';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { UiText } from '@/shared/ui/deprecated/Text';
 
 import {
   saveJsonSettings,

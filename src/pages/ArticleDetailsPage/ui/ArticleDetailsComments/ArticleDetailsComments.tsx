@@ -7,8 +7,8 @@ import {
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { VStack } from '@/shared/ui/Stack';
-import { TextSize, UiText } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { TextSize, UiText } from '@/shared/ui/deprecated/Text';
 
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/AddCommentForm';

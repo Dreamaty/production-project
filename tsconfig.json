@@ -1,31 +1,32 @@
 {
-	"compilerOptions": {
-		"target": "es5",
-		"module": "ESNext",
-		"jsx": "react-jsx",
-		"moduleResolution": "Node",
-		"baseUrl": ".",
-		"rootDir": ".",
-		"paths": {
-			"@/*": ["./src/*"]
-		},
-		"outDir": "./dist/",
-		"noImplicitAny": true,
-		"strict": true,
-		"allowJs": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"isolatedModules": true,
-		"resolveJsonModule": true,
-	},
-	"ts-node": {
-		"compilerOptions": {
-			"module": "CommonJS"
-		}
-	},
-	"include": [
-		"./config/jest/setupTests.ts",
-		"./src/**/*.ts",
-		"./src/**/*.tsx"
-	]
+  "compilerOptions": {
+    "target": "es5",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "src/widgets/Navbar/ui/NewNavbar"
+  ]
 }
