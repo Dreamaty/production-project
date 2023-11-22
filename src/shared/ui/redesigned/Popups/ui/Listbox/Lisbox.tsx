@@ -1,5 +1,6 @@
+/* eslint-disable i18next/no-literal-string */
 import { Listbox as HListbox } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 
 import { cx } from '@/shared/lib/classNames/cx';
 import { DropdownDirection } from '@/shared/types/ui';
@@ -10,24 +11,26 @@ import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './Listbox.module.scss';
 
-export interface ListboxItem {
-  value: string;
+export interface ListboxItem<T extends string> {
+  value: T;
   content: ReactNode;
   unavailable?: boolean;
 }
 
-interface ListboxProps {
-  items?: ListboxItem[];
+interface ListboxProps<T extends string> {
+  items?: ListboxItem<T>[];
   className?: string;
-  value?: string;
+  value?: T;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
   label?: string;
 }
 
-export function Listbox(props: ListboxProps) {
+export function Listbox<T extends string>(
+  props: ListboxProps<T>,
+) {
   const {
     className,
     items,
@@ -44,6 +47,11 @@ export function Listbox(props: ListboxProps) {
     mapDirectionClass[direction],
     popupCls.menu,
   ];
+
+  const selectedItem = useMemo(() => {
+    return items?.find(item => item.value === value);
+  }, [items, value]);
+
   // TODO: floating https://floating-ui.com/docs/react
   return (
     <HStack gap='4'>
@@ -64,8 +72,8 @@ export function Listbox(props: ListboxProps) {
         onChange={onChange}
       >
         <HListbox.Button className={popupCls.trigger}>
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
+          <Button disabled={readonly} variant='filled'>
+            {selectedItem?.content ?? defaultValue}▼
           </Button>
         </HListbox.Button>
         <HListbox.Options
@@ -85,11 +93,12 @@ export function Listbox(props: ListboxProps) {
                     {
                       [popupCls.active]: active,
                       [popupCls.unavailable]: item.unavailable,
+                      [cls.selected]: selected,
                     },
                     [],
                   )}
                 >
-                  {selected && '!!!'}
+                  {selected && '> '}
                   {item.content}
                 </li>
               )}

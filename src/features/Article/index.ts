@@ -1,38 +1,57 @@
+//Article View Switcher
+export { ArticleViewSwitcher } from './ArticleViewSwitcher';
+
+//Article Page Greeting
 export { ArticlesPageGreeting as ArticlePageGreeting } from './ArticlesPageGreeting';
 
-export { articleDetailsCommentsReducer } from './ArticleDetailsComments';
+// Article Sort
+export {
+  ArticleSortField,
+  ArticleSortSelector,
+  articleSortActions,
+  articleSortReducer,
+  getArticleSortBy,
+  getArticleSortOrder,
+  getArticleSortSearch,
+} from './ArticleSort';
 
-export type { ArticleDetailsCommentsSchema } from './ArticleDetailsComments';
 export type { ArticleSortSchema } from './ArticleSort';
 
+// Article Details Comments
 export {
   addCommentForArticle,
+  articleDetailsCommentsReducer,
   fetchCommentsByArticleId,
   getArticleComments,
   getArticleCommentsIsLoading,
 } from './ArticleDetailsComments';
 
+export type { ArticleDetailsCommentsSchema } from './ArticleDetailsComments';
+
+// Article Type Tabs
 export {
-  getArticleSortBy,
-  getArticleSortOrder,
-  getArticleSortSearch,
-} from './ArticleSort';
-export { getArticleTypeTabsSelectedType } from './ArticleTypeTabs';
+  ArticleTypeTabs,
+  articleTypeTabsActions,
+  articleTypeTabsReducer,
+  getArticleTypeTabsSelectedType,
+} from './ArticleTypeTabs';
 
-export { ArticleSortField } from './ArticleSort';
-export { articleSortActions } from './ArticleSort/model/slice/articleSortSlice';
-export { articleTypeTabsActions } from './ArticleTypeTabs/model/slice/articleTypeTabsSlice';
+export type { ArticleTypeTabsSchema } from './ArticleTypeTabs/';
 
-export { ArticleFilter } from './ArticleSort';
-
+//Article Rating
 export { ArticleRating } from './ArticleRating';
+
+//Article Recommendation List
 export { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
-export type { ArticleTypeTabsSchema } from './ArticleTypeTabs/model/types/ArticleTypeTabs';
-
+//Article Infinity List
 export {
   ArticleInfiniteList,
+  articleInfinityListActions,
   articleInfinityListReducer,
+  fetchArticlesList,
   fetchNextArticlesPage,
+  getArticlesView,
 } from './ArticleInfinityList';
+
 export type { ArticleInfinityListSchema } from './ArticleInfinityList';

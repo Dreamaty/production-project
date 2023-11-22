@@ -6,7 +6,7 @@
   "Read More": "Read More...",
   "Back to list": "Back to list",
   "Search": "Search",
-  "Sort by": "Sort by",
+  "Sort by:": "Sort by:",
   "By": "By",
   "increase": "ascending",
   "descending": "descending",
@@ -18,15 +18,13 @@
   "Economics": "Economics",
   "Science": "Science",
   "Articles doesnt found": "Articles doesn't found",
-  "Recomend": "Recomend",
+  "Recomend": "Recommend",
   "Edit": "Edit",
   "Article Edit": "Article edit",
   "Article Creation": "Article creation",
-  "article": {
-    "An error ocured after tring to load articles": "An error ocured after tring to load articles",
-    "Feedback this article": "Feedback this article",
-    "Feedback this article This can help upgrade quality": "Feedback this article. This can help upgrade quality",
-    "Welcome to the articles page": "Welcome to the articles page",
-    "Here you can watch articles on different topics": "Here you can watch articles on different topics"
-  }
+  "An error ocured after tring to load articles": "An error ocurred after trying to load articles",
+  "Feedback this article": "Feedback this article",
+  "Feedback this article This can help upgrade quality": "Feedback this article. This can help upgrade quality",
+  "Welcome to the articles page": "Welcome to the articles page",
+  "Here you can watch articles on different topics": "Here you can watch articles on different topics"
 }

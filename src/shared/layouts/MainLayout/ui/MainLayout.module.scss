@@ -1,5 +1,5 @@
 .mainLayout {
-  min-height: 100vh;
+  min-height: 100%;
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
   grid-template-columns: min-content 1fr 100px;
@@ -35,5 +35,5 @@
 .rightbar {
   position: sticky;
   top: 0;
-  height: 100%;
+  height: 100vh;
 }

@@ -2,14 +2,19 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { SortOrder } from '@/shared/types/sort';
 import {
   SelectOption,
   UiSelect,
 } from '@/shared/ui/deprecated/Select';
+import { Listbox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { UiText } from '@/shared/ui/redesigned/Text';
 
 import { ArticleSortField } from '../../model/consts/consts';
 import cls from './ArticleSortSelector.module.scss';
+import newCls from './ArticleSortSelector.new.module.scss';
 
 export const ArticleSortSelector = memo(
   ({
@@ -62,22 +67,50 @@ export const ArticleSortSelector = memo(
     );
 
     return (
-      <div
-        className={cx(cls.articleSortSelector, {}, [className])}
-      >
-        <UiSelect
-          options={sortFieldOptions}
-          label={t('Sort by')}
-          onChange={onChangeSort}
-          value={sort}
-        />
-        <UiSelect
-          options={orderOptions}
-          label={t('By')}
-          onChange={onChangeOrder}
-          value={order}
-        />
-      </div>
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <div
+            className={cx(newCls.articleSortSelector, {}, [
+              className,
+            ])}
+          >
+            <VStack gap='8'>
+              <UiText text={t('Sort by:')} />
+              <Listbox
+                items={sortFieldOptions}
+                onChange={onChangeSort}
+                value={sort}
+              />
+              <Listbox
+                items={orderOptions}
+                onChange={onChangeOrder}
+                value={order}
+              />
+            </VStack>
+          </div>
+        }
+        off={
+          <div
+            className={cx(cls.articleSortSelector, {}, [
+              className,
+            ])}
+          >
+            <UiSelect
+              options={sortFieldOptions}
+              label={t('Sort by')}
+              onChange={onChangeSort}
+              value={sort}
+            />
+            <UiSelect
+              options={orderOptions}
+              label={t('By')}
+              onChange={onChangeOrder}
+              value={order}
+            />
+          </div>
+        }
+      />
     );
   },
 );

@@ -29,6 +29,7 @@ export const Navbar = memo(
         feature={'isAppRedesigned'}
         on={
           <NewNavbar
+            isAuthModalOpen={isAuthModalOpen}
             authData={authData}
             onCloseModal={onCloseModal}
             onShowModal={onShowModal}
@@ -36,6 +37,7 @@ export const Navbar = memo(
         }
         off={
           <OldNavbar
+            isAuthModalOpen={isAuthModalOpen}
             authData={authData}
             onCloseModal={onCloseModal}
             onShowModal={onShowModal}

@@ -3,22 +3,22 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { ArticleType } from '@/entities/Article';
-
-import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { UiInput } from './UiInput';
 
 const meta = {
-  title: 'feature/article/ArticleTypeTabs',
-  component: ArticleTypeTabs,
+  title: 'shared/UiInput',
+  component: UiInput,
   parameters: {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {},
   args: {
-    value: ArticleType.ALL,
+    placeholder: 'Type text',
+    value: '123456qwerty',
+    autoFocus: true,
   },
-} satisfies Meta<typeof ArticleTypeTabs>;
+  argTypes: {},
+} satisfies Meta<typeof UiInput>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Light: Story = {

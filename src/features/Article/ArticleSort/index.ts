@@ -1,6 +1,9 @@
-export { articleSortActions } from './model/slice/articleSortSlice';
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 
-export { ArticleFilter } from './ui/ArticleFilter/ArticleFilter';
+export {
+  articleSortActions,
+  articleSortReducer,
+} from './model/slice/articleSortSlice';
 
 export type { ArticleSortSchema } from './model/types/ArticleSort';
 

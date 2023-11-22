@@ -18,12 +18,7 @@
   }
 }
 
-.clear {
-  padding: 0;
-  border: none;
-  background: none;
-  outline: none;
-}
+// Variants
 
 .clear {
   padding: 0;
@@ -39,6 +34,15 @@
   background: none;
 }
 
+.filled {
+  background: var(--light-bg-redesigned);
+  border: none;
+  border-radius: 34px;
+  outline: none;
+  padding: 8px 16px;
+}
+
+// Square sizes
 .square {
   padding: 0;
   border-radius: 0;
@@ -62,6 +66,7 @@
   font: var(--font-xl);
 }
 
+// sizes
 .m {
   font: var(--font-m);
 }

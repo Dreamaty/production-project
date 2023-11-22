@@ -3,22 +3,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { ArticleType } from '@/entities/Article';
-
-import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { ArticlesFilters } from './ArticlesFilters';
 
 const meta = {
-  title: 'feature/article/ArticleTypeTabs',
-  component: ArticleTypeTabs,
+  title: 'widget/ArticlesFilters',
+  component: ArticlesFilters,
   parameters: {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    value: ArticleType.ALL,
-  },
-} satisfies Meta<typeof ArticleTypeTabs>;
+} satisfies Meta<typeof ArticlesFilters>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Light: Story = {
