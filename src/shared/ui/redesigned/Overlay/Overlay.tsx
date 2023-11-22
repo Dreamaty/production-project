@@ -4,9 +4,6 @@ import { cx } from '@/shared/lib/classNames/cx';
 
 import cls from './Overlay.module.scss';
 
-/**
- *  @deprecated
- */
 export const Overlay = memo(
   ({
     className,

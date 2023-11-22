@@ -13,9 +13,6 @@ interface AppImageProps
   errorFallback?: ReactElement;
 }
 
-/**
- *  @deprecated
- */
 export const AppImage = memo(
   ({
     className,

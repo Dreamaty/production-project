@@ -4,12 +4,12 @@ import { Mods, cx } from '@/shared/lib/classNames/cx';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { UiInput } from '@/shared/ui/deprecated/Input';
 import { Loader } from '@/shared/ui/deprecated/Loader';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import {
   TextAlign,
   TextTheme,
   UiText,
 } from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';

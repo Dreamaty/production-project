@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { HStack } from '../../../Stack/HStack/HStack';
+import { HStack } from '../../../../redesigned/Stack/HStack/HStack';
 import { Button, ButtonTheme } from '../Button';
 
 /**

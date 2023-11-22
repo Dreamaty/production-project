@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
@@ -27,7 +27,12 @@ export const NotificationList = memo(
     }
 
     return (
-      <VStack gap='16' max className={cx('', {}, [className])}>
+      <VStack
+        gap='16'
+        max
+        className={cx('', {}, [className])}
+        align='center'
+      >
         {data?.map(item => (
           <NotificationItem key={item.id} notification={item} />
         ))}

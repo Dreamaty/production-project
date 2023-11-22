@@ -6,8 +6,8 @@ import {
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
 import { EditButton } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { UiText } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { getUserAuthData } from '@/entities/User';
 

@@ -2,8 +2,8 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { TextSize, UiText } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { ArticleList, ArticleView } from '@/entities/Article';
 

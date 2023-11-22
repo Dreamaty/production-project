@@ -10,9 +10,9 @@ import {
   ButtonSize,
   ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -118,10 +118,7 @@ export const Sidebar = memo(
             />
             <div className={newCls.switchers}>
               <ThemeSwitcher />
-              <LangSwitcher
-                short={collapsed}
-                className={cls.lang}
-              />
+              <LangSwitcher short={collapsed} />
             </div>
           </aside>
         }

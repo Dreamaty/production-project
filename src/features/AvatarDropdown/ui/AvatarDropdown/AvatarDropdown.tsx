@@ -6,13 +6,16 @@ import {
   getRouteProfile,
 } from '@/shared/const/router';
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
 import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { BackgroundColor } from '@/shared/ui/deprecated/Icon';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 import {
   getUserAuthData,
@@ -37,33 +40,55 @@ export const AvatarDropdown = memo(
 
     if (!authData) return null;
 
+    const items = [
+      ...(isAdminPanelAvailable
+        ? [
+            {
+              content: t('Administration'),
+              href: getRouteAdminPanel(),
+            },
+          ]
+        : []),
+      {
+        content: t('Profile'),
+        href: getRouteProfile(authData.id),
+      },
+      {
+        content: t('Sign Out'),
+        onClick: onLogOut,
+      },
+    ];
+
     return (
-      <Dropdown
-        className={cx('', {}, [className])}
-        items={[
-          ...(isAdminPanelAvailable
-            ? [
-                {
-                  content: t('Administration'),
-                  href: getRouteAdminPanel(),
-                },
-              ]
-            : []),
-          {
-            content: t('Profile'),
-            href: getRouteProfile(authData.id),
-          },
-          {
-            content: t('Sign Out'),
-            onClick: onLogOut,
-          },
-        ]}
-        trigger={
-          <Avatar
-            fallbackBackground={BackgroundColor.SECONDARY_COLOR}
-            src={authData.avatar}
-            size={30}
-            alt={'user avatar'}
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <Dropdown
+            className={cx('', {}, [className])}
+            items={items}
+            trigger={
+              <Avatar
+                src={authData.avatar}
+                size={40}
+                alt={'user avatar'}
+              />
+            }
+          />
+        }
+        off={
+          <DropdownDeprecated
+            className={cx('', {}, [className])}
+            items={items}
+            trigger={
+              <AvatarDeprecated
+                fallbackBackground={
+                  BackgroundColor.SECONDARY_COLOR
+                }
+                src={authData.avatar}
+                size={30}
+                alt={'user avatar'}
+              />
+            }
           />
         }
       />

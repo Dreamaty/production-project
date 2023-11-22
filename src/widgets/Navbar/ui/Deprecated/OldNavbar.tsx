@@ -11,12 +11,12 @@ import {
   Button,
   ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import {
   TextSize,
   TextTheme,
   UiText,
 } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { User } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';

@@ -4,8 +4,8 @@ import { Fragment, ReactNode } from 'react';
 import { cx } from '@/shared/lib/classNames/cx';
 import { DropdownDirection } from '@/shared/types/ui';
 
+import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../Button';
-import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './Listbox.module.scss';

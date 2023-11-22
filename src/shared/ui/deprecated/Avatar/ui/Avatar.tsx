@@ -3,7 +3,7 @@ import { CSSProperties, memo, useMemo } from 'react';
 import UserIcon from '@/shared/assets/icons/user-filled.svg';
 import { cx } from '@/shared/lib/classNames/cx';
 
-import { AppImage } from '../../AppImage';
+import { AppImage } from '../../../redesigned/AppImage';
 import { BackgroundColor, Icon } from '../../Icon';
 import { Skeleton } from '../../Skeleton';
 import cls from './Avatar.module.scss';
