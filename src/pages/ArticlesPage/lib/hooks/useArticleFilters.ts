@@ -52,7 +52,7 @@ export function useArticleFilters() {
   const onChangeSort = useCallback(
     (newSort: ArticleSortField) => {
       dispatch(articleSortActions.setSort(newSort));
-      updateList;
+      updateList();
     },
     [dispatch, updateList],
   );
@@ -60,13 +60,13 @@ export function useArticleFilters() {
   const onChangeOrder = useCallback(
     (newOrder: SortOrder) => {
       dispatch(articleSortActions.setOrder(newOrder));
-      updateList;
+      updateList();
     },
     [dispatch, updateList],
   );
 
   const onChangeType = useCallback(() => {
-    updateList;
+    updateList();
   }, [updateList]);
 
   const onChangeSearch = useCallback(

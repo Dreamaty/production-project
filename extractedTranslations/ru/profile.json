@@ -1,5 +1,9 @@
 {
+  "Age": "Age",
+  "City": "City",
   "Did not succeed to load profile": "Did not succeed to load profile",
+  "First Name": "First Name",
+  "Last Name": "Last Name",
   "Profile": "Profile",
   "Try to refresh the page": "Try to refresh the page",
   "Your Age": "Your Age",

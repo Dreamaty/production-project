@@ -3,9 +3,16 @@
   color: var(--text-redesigned);
   border-radius: 25%;
   padding: 6px 15px;
+  display: flex;
+  align-items: center;
 
   &:hover {
     opacity: var(--accent-redesigned);
+
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-redesigned);
+    }
   }
 }
 
@@ -16,6 +23,20 @@
   &:hover {
     opacity: 0.5;
   }
+}
+
+.withAddon {
+  padding: 0 16px;
+}
+
+.addonLeft svg,
+.addonRight svg {
+  color: var(--hint-redesigned);
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
 }
 
 // Variants
@@ -39,7 +60,6 @@
   border: none;
   border-radius: 34px;
   outline: none;
-  padding: 8px 16px;
 }
 
 // Square sizes

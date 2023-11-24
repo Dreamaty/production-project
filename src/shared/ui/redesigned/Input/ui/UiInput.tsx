@@ -1,5 +1,6 @@
 import React, {
   InputHTMLAttributes,
+  ReactElement,
   memo,
   useEffect,
   useRef,
@@ -8,12 +9,16 @@ import React, {
 
 import { Mods, cx } from '@/shared/lib/classNames/cx';
 
+import { HStack } from '../../Stack';
+import { UiText } from '../../Text';
 import cls from './UiInput.module.scss';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange' | 'readOnly'
+  'value' | 'onChange' | 'readOnly' | 'size'
 >;
+
+type InputSize = 'small' | 'medium' | 'large';
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -21,8 +26,12 @@ interface InputProps extends HTMLInputProps {
   placeholder?: string;
   onChange?: (value: string) => void;
   type?: string;
+  size?: InputSize;
   autoFocus?: boolean;
   readonly?: boolean;
+  addonLeft?: ReactElement;
+  addonRight?: ReactElement;
+  label?: string;
 }
 
 export const UiInput = memo(
@@ -32,15 +41,16 @@ export const UiInput = memo(
     placeholder,
     onChange,
     type = 'text',
+    size = 'medium',
     autoFocus,
     readonly = false,
+    addonLeft,
+    addonRight,
+    label,
     ...otherProps
   }: InputProps) => {
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
-    const [caretPosition, setCaretPosition] = useState(0);
-
-    const isCaretVisible = isFocused && !readonly;
 
     useEffect(() => {
       if (autoFocus) {
@@ -53,7 +63,6 @@ export const UiInput = memo(
       e: React.ChangeEvent<HTMLInputElement>,
     ) => {
       onChange?.(e.target.value);
-      setCaretPosition(e.target.value.length);
     };
 
     const onBlur = () => {
@@ -63,43 +72,46 @@ export const UiInput = memo(
     const onFocus = () => {
       setIsFocused(true);
     };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const onSelect = (e: any) => {
-      setCaretPosition(e?.target.selectionStart || 0);
-    };
 
     const mods: Mods = {
       [cls.readonly]: readonly,
+      [cls.focused]: isFocused,
+      [cls.withAddonLeft]: Boolean(addonLeft),
+      [cls.withAddonRight]: Boolean(addonRight),
     };
 
-    return (
-      <div className={cx(cls.inputWrapper, mods, [className])}>
-        {placeholder && (
-          <div
-            className={cls.placeholder}
-          >{`${placeholder}>`}</div>
-        )}
-        <div className={cls.caretWrapper}>
-          <input
-            ref={ref}
-            type={type}
-            className={cx(cls.input, {}, [className])}
-            value={value}
-            readOnly={readonly}
-            onChange={onChangeHandler}
-            onBlur={onBlur}
-            onFocus={onFocus}
-            onSelect={onSelect}
-            {...otherProps}
-          />
-          {isCaretVisible && (
-            <span
-              className={cls.caret}
-              style={{ left: `${caretPosition * 9.6}px` }}
-            />
-          )}
-        </div>
+    const input = (
+      <div
+        className={cx(cls.inputWrapper, mods, [
+          className,
+          cls[size],
+        ])}
+      >
+        <div className={cls.addonLeft}>{addonLeft}</div>
+        <input
+          ref={ref}
+          type={type}
+          className={cx(cls.input, {}, [className])}
+          value={value}
+          readOnly={readonly}
+          onChange={onChangeHandler}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          placeholder={placeholder}
+          {...otherProps}
+        />
+        <div className={cls.addonRight}>{addonRight}</div>
       </div>
     );
+    if (label) {
+      return (
+        <HStack max gap='8'>
+          <UiText text={label} />
+          {input}
+        </HStack>
+      );
+    }
+
+    return input;
   },
 );

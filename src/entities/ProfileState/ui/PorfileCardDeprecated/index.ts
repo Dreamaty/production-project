@@ -1,0 +1,1 @@
+export { PorfileCardDeprecated } from './ProfileCardDeprecated';

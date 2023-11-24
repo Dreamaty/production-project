@@ -1,7 +1,11 @@
 {
+  "Age": "Age",
   "Cancel": "",
+  "City": "City",
   "Did not succeed to load profile": "",
   "Edit": "",
+  "First Name": "First Name",
+  "Last Name": "Last Name",
   "Profile": "",
   "Save": "",
   "Try to refresh the page": "",

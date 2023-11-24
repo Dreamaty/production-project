@@ -1,8 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { cx } from '@/shared/lib/classNames/cx';
-import { Listbox } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Listbox as ListboxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Listbox } from '@/shared/ui/redesigned/Popups';
 
 import { Country } from '../../model/types/country';
 
@@ -32,17 +33,22 @@ export const CountrySelect = memo(
       },
       [onChange],
     );
+    const props = {
+      className,
+      items: options,
+      defaultValue: t('Choose a Country'),
+      value,
+      onChange: onChangeHandler,
+      readonly: readonly,
+      direction: 'top left' as const,
+      label: t('Your Country'),
+    };
 
     return (
-      <Listbox
-        className={cx('', {}, [className])}
-        items={options}
-        defaultValue={t('Choose a Country')}
-        value={value}
-        onChange={onChangeHandler}
-        readonly={readonly}
-        direction='top left'
-        label={t('Your Country')}
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={<Listbox {...props} />}
+        off={<ListboxDeprecated {...props} />}
       />
     );
   },

@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import SearchIcon from '@/shared/assets/icons/search.svg';
 import { cx } from '@/shared/lib/classNames/cx';
 import {
   DynamicModuleLoader,
@@ -8,6 +9,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import { UiInput } from '@/shared/ui/redesigned/Input';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
@@ -58,8 +60,10 @@ export const ArticlesFilters = memo(
         >
           <VStack gap='32'>
             <UiInput
+              addonLeft={<Icon Svg={SearchIcon} />}
               placeholder={t('Search')}
               value={search}
+              size='small'
               onChange={onChangeSearch}
             />
             <ArticleTypeTabs

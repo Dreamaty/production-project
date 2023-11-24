@@ -1,4 +1,9 @@
-import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
+import {
+  ButtonHTMLAttributes,
+  ReactElement,
+  ReactNode,
+  memo,
+} from 'react';
 
 import { Mods, cx } from '@/shared/lib/classNames/cx';
 
@@ -16,6 +21,8 @@ interface ButtonProps
   size?: ButtonSize;
   disabled?: boolean;
   children?: ReactNode;
+  addonLeft?: ReactElement;
+  addonRight?: ReactElement;
 }
 
 export const Button = memo(
@@ -26,11 +33,14 @@ export const Button = memo(
     square,
     size = 'm',
     disabled,
+    addonLeft,
+    addonRight,
     ...otherProps
   }: ButtonProps) => {
     const mods: Mods = {
       [cls.square]: square,
       [cls.disabled]: disabled,
+      [cls.withAddon]: Boolean(addonRight) || Boolean(addonLeft),
     };
     return (
       <button
@@ -43,7 +53,9 @@ export const Button = memo(
         disabled={disabled}
         {...otherProps}
       >
+        <div className={cls.addonLeft}>{addonLeft}</div>
         {children}
+        <div className={cls.addonRight}>{addonRight}</div>
       </button>
     );
   },

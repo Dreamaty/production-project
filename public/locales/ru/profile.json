@@ -11,6 +11,10 @@
     "INCORRECT_AGE": "Этот возраст не существует",
     "SERVER_ERROR_LOADING_PROFILE": "Не удалось загрузить профиль",
     "NO_DATA": "Нету Данных!",
-    "Did not succeed to load profile": "Не удалось загрузить профиль"
+    "Did not succeed to load profile": "Не удалось загрузить профиль",
+    "First Name": "Имя",
+    "Last Name": "Фамилия",
+    "Age": "Возраст",
+    "City": "Город"
   }
 }

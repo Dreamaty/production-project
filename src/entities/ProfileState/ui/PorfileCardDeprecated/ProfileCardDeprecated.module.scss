@@ -1,0 +1,14 @@
+.profileCardDeprecated {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+  column-gap: 10px;
+}
+
+.editing {
+  border: 2px solid var(--inverted-primary-color);
+}
+
+.loading,
+.error {
+  height: 300px;
+}
