@@ -35,7 +35,7 @@ export const ProfileCardRedesignedSkeleton = () => {
         <HStack max justify='center'>
           <Skeleton border='100%' width={128} height={128} />
         </HStack>
-        [
+
         <HStack gap='32' max>
           <VStack gap='16' max>
             <Skeleton width={'100%'} height={38} />
@@ -50,7 +50,6 @@ export const ProfileCardRedesignedSkeleton = () => {
             <Skeleton width={'100%'} height={38} />
           </VStack>
         </HStack>
-        ]
       </VStack>
     </Card>
   );
