@@ -52,6 +52,7 @@ export {
   fetchArticlesList,
   fetchNextArticlesPage,
   getArticlesView,
+  initArticlesPage,
 } from './ArticleInfinityList';
 
 export type { ArticleInfinityListSchema } from './ArticleInfinityList';

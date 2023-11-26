@@ -27,7 +27,7 @@ export const articleInfinityListSlice = createSlice({
   name: 'articleInfinityList',
   initialState:
     articlesAdapter.getInitialState<ArticleInfinityListSchema>({
-      view: ArticleView.BLOCKS,
+      view: ArticleView.LIST,
       ids: [],
       entities: {},
       isLoading: false,

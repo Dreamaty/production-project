@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { Card, CardTheme } from './Card';
+import { Card } from './Card';
 
 const meta = {
   title: 'shared/Card',
@@ -25,7 +25,7 @@ export const Light: Story = {
 
 export const LightOutlined: Story = {
   args: {
-    theme: CardTheme.OUTLINED,
+    variant: 'outlined',
   },
 };
 
@@ -36,7 +36,7 @@ export const Dark: Story = {
 
 export const DarkOutlined: Story = {
   args: {
-    theme: CardTheme.OUTLINED,
+    variant: 'outlined',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

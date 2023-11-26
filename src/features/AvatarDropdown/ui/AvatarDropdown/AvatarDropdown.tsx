@@ -1,9 +1,10 @@
-import { t } from 'i18next';
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import {
   getRouteAdminPanel,
   getRouteProfile,
+  getRouteSettings,
 } from '@/shared/const/router';
 import { cx } from '@/shared/lib/classNames/cx';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -26,6 +27,7 @@ import {
 
 export const AvatarDropdown = memo(
   ({ className }: { className?: string }) => {
+    const { t } = useTranslation();
     const isAdmin = useAppSelector(isUserAdmin);
     const isManager = useAppSelector(isUserManager);
     const authData = useAppSelector(getUserAuthData);
@@ -49,6 +51,10 @@ export const AvatarDropdown = memo(
             },
           ]
         : []),
+      {
+        content: t('Settings'),
+        href: getRouteSettings(),
+      },
       {
         content: t('Profile'),
         href: getRouteProfile(authData.id),

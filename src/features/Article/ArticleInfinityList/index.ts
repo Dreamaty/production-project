@@ -1,3 +1,5 @@
+export { initArticlesPage } from './model/services/initArticlesPage/initArticlesPage';
+
 export { fetchNextArticlesPage } from './model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 export { getArticlesView } from './model/selectors/articles';

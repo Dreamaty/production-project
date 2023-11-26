@@ -58,6 +58,14 @@
   gap: 32px;
 }
 
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 .max {
   width: 100%;
 }

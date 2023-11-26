@@ -6,7 +6,7 @@ import TileIcon from '@/shared/assets/icons/tile.svg';
 import TileIconDeprecated from '@/shared/assets/icons/tiled-24-24.svg';
 import { cx } from '@/shared/lib/classNames/cx';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import {
   Button as ButtonDeprecated,
   ButtonTheme,

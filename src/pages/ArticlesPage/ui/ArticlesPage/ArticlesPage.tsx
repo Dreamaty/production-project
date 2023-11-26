@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import { memo, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { cx } from '@/shared/lib/classNames/cx';
@@ -9,12 +10,14 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 import {
   ArticlePageGreeting,
   articleInfinityListReducer,
   fetchNextArticlesPage,
 } from '@/features/Article';
+import { initArticlesPage } from '@/features/Article';
 import { Page } from '@/widgets/Page';
 
 import { ArticleInfiniteList } from '../../../../features/Article/ArticleInfinityList/ui/ArticleInfiniteList/ArticleInfiniteList';
@@ -30,18 +33,25 @@ const reducers: ReducersList = {
 
 const ArticlesPage = ({ className }: { className?: string }) => {
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(initArticlesPage(searchParams));
+  });
+
   const content = (
     <ToggleFeatures
       feature={'isAppRedesigned'}
       on={
         <StickyContentLayout
           left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
           content={
             <Page
+              data-testid='ArticlesPage'
               className={cx(newCls.articlesPage, {}, [
                 className,
               ])}
@@ -51,11 +61,11 @@ const ArticlesPage = ({ className }: { className?: string }) => {
               <ArticlePageGreeting />
             </Page>
           }
-          right={<FiltersContainer />}
         />
       }
       off={
         <Page
+          data-testid='ArticlesPage'
           className={cx(cls.articlesPage, {}, [className])}
           onScrollEnd={onLoadNextPart}
         >

@@ -1,8 +1,11 @@
 import { memo } from 'react';
 
 import { cx } from '@/shared/lib/classNames/cx';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 
 import { ArticleView } from '../../model/consts/consts';
 import cls from './ArticleListItem.module.scss';
@@ -15,14 +18,26 @@ export const ArticleListItemSkeleton = memo(
     className?: string;
     view: ArticleView;
   }) => {
+    const mainClass = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => cls.articleListItemRedesigned,
+      off: () => cls.articleListItem,
+    });
+    const Skeleton = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => SkeletonRedesigned,
+      off: () => SkeletonDeprecated,
+    });
+    const Card = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => CardRedesigned,
+      off: () => CardDeprecated,
+    });
     if (view === ArticleView.BLOCKS) {
       return (
         // eslint-disable-next-line react/jsx-props-no-spreading
         <div
-          className={cx(cls.articleListItem, {}, [
-            className,
-            cls[view],
-          ])}
+          className={cx(mainClass, {}, [className, cls[view]])}
         >
           <Card>
             <div className={cls.imageWrapper}>
@@ -46,12 +61,7 @@ export const ArticleListItemSkeleton = memo(
     }
 
     return (
-      <div
-        className={cx(cls.articleListItem, {}, [
-          className,
-          cls[view],
-        ])}
-      >
+      <div className={cx(mainClass, {}, [className, cls[view]])}>
         <Card>
           <div className={cls.header}>
             <Skeleton width={30} height={30} border='50%' />

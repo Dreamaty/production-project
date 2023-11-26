@@ -2,7 +2,9 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useNotifications } from '../../api/notificationApi';
@@ -16,6 +18,11 @@ export const NotificationList = memo(
       pollingInterval: 5000,
     });
 
+    const Skeleton = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => SkeletonRedesigned,
+      off: () => SkeletonDeprecated,
+    });
     if (isLoading) {
       return (
         <VStack gap='16' max className={cx('', {}, [className])}>

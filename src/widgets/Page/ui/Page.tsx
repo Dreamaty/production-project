@@ -8,7 +8,7 @@ import {
 import { useLocation } from 'react-router';
 
 import { cx } from '@/shared/lib/classNames/cx';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import {
   useAppDispatch,
   useAppSelector,

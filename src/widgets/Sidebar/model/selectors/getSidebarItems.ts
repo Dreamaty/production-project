@@ -14,7 +14,7 @@ import {
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/router';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 import { getUserAuthData } from '@/entities/User';
 

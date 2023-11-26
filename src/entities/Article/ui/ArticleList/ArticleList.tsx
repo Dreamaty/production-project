@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { VirtuosoGrid } from 'react-virtuoso';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { UiText } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 // eslint-disable-next-line dreamatty-path-checker-plugin/layer-imports
 import { PAGE_ID } from '@/widgets/Page';
@@ -29,10 +31,10 @@ export const ArticleList = memo(
   ({
     className,
     articles,
-    view = ArticleView.BLOCKS,
+    view = ArticleView.LIST,
     isLoading,
     target,
-    virtualized = false,
+    virtualized,
   }: {
     className?: string;
     articles?: Article[];
@@ -90,32 +92,59 @@ export const ArticleList = memo(
     }
 
     return (
-      <div
-        className={cx('', {}, [cls[view]])}
-        data-testid='ArticleList'
-      >
-        {virtualized ? (
-          <VirtuosoGrid
-            style={{ height: '100%' }}
-            totalCount={articles?.length || 0}
-            data={articles}
-            customScrollParent={
-              document.getElementById(PAGE_ID) as HTMLElement
-            }
-            itemContent={renderArticlesVirtualized}
-          ></VirtuosoGrid>
-        ) : (
-          articles?.map(item => (
-            <ArticleListItem
-              className={cls.card}
-              target={target}
-              article={item}
-              key={item.id}
-              view={view}
-            />
-          ))
-        )}
-      </div>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={
+          <HStack
+            wrap='wrap'
+            gap='16'
+            className={cx(cls.ArticleListRedesign, {}, [
+              className,
+            ])}
+            data-testid='ArticleList'
+          >
+            {virtualized ? (
+              <VirtuosoGrid
+                style={{ height: '100%' }}
+                totalCount={articles?.length || 0}
+                data={articles}
+                customScrollParent={
+                  document.getElementById(PAGE_ID) as HTMLElement
+                }
+                itemContent={renderArticlesVirtualized}
+              ></VirtuosoGrid>
+            ) : (
+              articles?.map(item => (
+                <ArticleListItem
+                  className={cls.card}
+                  target={target}
+                  article={item}
+                  key={item.id}
+                  view={view}
+                />
+              ))
+            )}
+            {isLoading && getSkeletons(view)}
+          </HStack>
+        }
+        off={
+          <div
+            className={cx('', {}, [cls[view]])}
+            data-testid='ArticleList'
+          >
+            {articles?.map(item => (
+              <ArticleListItem
+                className={cls.card}
+                target={target}
+                article={item}
+                key={item.id}
+                view={view}
+              />
+            ))}
+            {isLoading && getSkeletons(view)}
+          </div>
+        }
+      />
 
       // TODO: List virtualization with virtuoza
 

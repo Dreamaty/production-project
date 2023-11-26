@@ -6,11 +6,18 @@ import {
   useState,
 } from 'react';
 
+import { cx } from '@/shared/lib/classNames/cx';
+
+import cls from './AppImage.module.scss';
+
+type ObjectFit = 'cover' | 'fill' | 'contain' | 'none';
+
 interface AppImageProps
   extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
   fallback?: ReactElement;
   errorFallback?: ReactElement;
+  objectFit?: ObjectFit;
 }
 
 export const AppImage = memo(
@@ -20,6 +27,7 @@ export const AppImage = memo(
     alt = 'image',
     fallback,
     errorFallback,
+    objectFit = 'cover',
     ...otherProps
   }: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +54,7 @@ export const AppImage = memo(
 
     return (
       <img
-        className={className}
+        className={cx('', {}, [className, cls[objectFit]])}
         alt={alt}
         src={src}
         {...otherProps}

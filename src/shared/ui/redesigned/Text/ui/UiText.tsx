@@ -33,6 +33,7 @@ export const UiText = memo(
     align = 'left',
     variant = 'primary',
     size = 'medium',
+    bold,
   }: {
     className?: string;
     title?: string;
@@ -40,6 +41,7 @@ export const UiText = memo(
     align?: TextAlign;
     variant?: TextVariant;
     size?: TextSize;
+    bold?: boolean;
   }) => {
     const HeaderTag = mapSizeToHeaderTag[size];
 
@@ -53,7 +55,13 @@ export const UiText = memo(
     ];
 
     return (
-      <div className={cx(cls.textWrapper, {}, classes)}>
+      <div
+        className={cx(
+          cls.textWrapper,
+          { [cls.bold]: bold },
+          classes,
+        )}
+      >
         {title && (
           <HeaderTag className={cls.title}>{title}</HeaderTag>
         )}

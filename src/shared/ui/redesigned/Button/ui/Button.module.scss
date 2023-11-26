@@ -49,16 +49,20 @@
 }
 
 .outline {
-  font-weight: 500;
-  padding: 10px 15px;
-  border: 2px solid var(--primary-color);
   background: none;
+  font-weight: 700;
+  padding: 10px 15px;
+  border: 2px solid var(--icon-redesigned);
+  border-radius: 34px;
+
+  &:hover {
+    border: 2px solid var(--accent-redesigned);
+  }
 }
 
 .filled {
   background: var(--light-bg-redesigned);
   border: none;
-  border-radius: 34px;
   outline: none;
 }
 

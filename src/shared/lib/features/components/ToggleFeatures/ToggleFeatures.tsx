@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 
 import { FeatureFlags } from '@/shared/types/featureFlags';
 
-import { getFeatureFlags } from '../setGetFeatures';
+import { getFeatureFlag } from '../../lib/setGetFeatures';
 
 export const ToggleFeatures = ({
   feature,
@@ -13,7 +13,7 @@ export const ToggleFeatures = ({
   on: ReactElement;
   off: ReactElement;
 }) => {
-  if (getFeatureFlags(feature)) {
+  if (getFeatureFlag(feature)) {
     return on;
   }
 

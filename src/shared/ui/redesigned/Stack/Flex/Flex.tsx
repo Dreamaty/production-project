@@ -10,6 +10,7 @@ import { Mods, cx } from '@/shared/lib/classNames/cx';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexWrap = 'nowrap' | 'wrap';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '24' | '32';
@@ -50,6 +51,7 @@ export interface FlexProps extends DivProps {
   children: ReactNode;
   justify?: FlexJustify;
   align?: FlexAlign;
+  wrap?: FlexWrap;
   direction?: FlexDirection;
   gap?: FlexGap;
   max?: boolean;
@@ -64,6 +66,7 @@ export const Flex = memo(
     direction = 'row',
     gap,
     max,
+    wrap = 'nowrap',
     ...otherProps
   }: FlexProps) => {
     const classes = [
@@ -72,6 +75,7 @@ export const Flex = memo(
       alignClasses[align],
       directionClasses[direction],
       gap && gapClasses[gap],
+      cls[wrap],
     ];
 
     const mods: Mods = {
