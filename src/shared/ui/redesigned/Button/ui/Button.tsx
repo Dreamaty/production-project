@@ -11,12 +11,15 @@ import cls from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
+export type ButtonColor = 'normal' | 'success' | 'error';
+
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: ButtonVariant;
+  color?: ButtonColor;
   square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;
@@ -29,6 +32,7 @@ export const Button = memo(
   ({
     className,
     children,
+    color = 'normal',
     variant = 'outline',
     square,
     size = 'm',
@@ -49,6 +53,7 @@ export const Button = memo(
           className,
           cls[variant],
           cls[size],
+          cls[color],
         ])}
         disabled={disabled}
         {...otherProps}

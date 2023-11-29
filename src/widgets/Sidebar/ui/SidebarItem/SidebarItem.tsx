@@ -33,7 +33,7 @@ export const SidebarItem = memo(
 
     return (
       <ToggleFeatures
-        feature={'isArticleRatingEnabled'}
+        feature={'isAppRedesigned'}
         on={
           <AppLink
             to={item.path}

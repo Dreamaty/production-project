@@ -1,13 +1,16 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ToggleFeatures } from '@/shared/lib/features';
 import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
-import { EditButton } from '@/shared/ui/deprecated/Button';
-import { UiText } from '@/shared/ui/deprecated/Text';
+import { EditButton as EditButtonDeprecated } from '@/shared/ui/deprecated/Button';
+import { UiText as UiTextDeprecated } from '@/shared/ui/deprecated/Text';
+import { EditButton } from '@/shared/ui/redesigned/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
+import { UiText } from '@/shared/ui/redesigned/Text';
 
 import { getUserAuthData } from '@/entities/User';
 
@@ -40,17 +43,35 @@ export const EditableProfileCardHeader = memo(
     }, [dispatch, profileData?.id]);
 
     return (
-      <HStack justify='between' align='start' max>
-        <UiText title={t('Profile')} />
-        {canEdit && (
-          <EditButton
-            readonly={readonly}
-            onCancelEdit={onCancelEdit}
-            onEdit={onEdit}
-            onSave={onSave}
-          />
-        )}
-      </HStack>
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <HStack justify='between' align='start' max>
+            <UiText title={t('Profile')} />
+            {canEdit && (
+              <EditButton
+                readonly={readonly}
+                onCancelEdit={onCancelEdit}
+                onEdit={onEdit}
+                onSave={onSave}
+              />
+            )}
+          </HStack>
+        }
+        off={
+          <HStack justify='between' align='start' max>
+            <UiTextDeprecated title={t('Profile')} />
+            {canEdit && (
+              <EditButtonDeprecated
+                readonly={readonly}
+                onCancelEdit={onCancelEdit}
+                onEdit={onEdit}
+                onSave={onSave}
+              />
+            )}
+          </HStack>
+        }
+      />
     );
   },
 );

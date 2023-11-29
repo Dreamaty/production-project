@@ -22,5 +22,11 @@
   "descending": "descending",
   "increase": "increase",
   "title": "title",
-  "views": "views"
+  "views": "views",
+  "{{count}} views_0": "{{count}} views_0",
+  "{{count}} views_1": "{{count}} views_1",
+  "{{count}} views_2": "{{count}} views_2",
+  "{{}} views_0": "{{}} views_0",
+  "{{}} views_1": "{{}} views_1",
+  "{{}} views_2": "{{}} views_2"
 }

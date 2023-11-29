@@ -2,12 +2,14 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
 import {
   TextAlign,
   TextSize,
-  UiText,
+  UiText as UiTextDeprecated,
 } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { UiText } from '@/shared/ui/redesigned/Text';
 
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
@@ -45,10 +47,22 @@ export const CommentList = memo(
             />
           ))
         ) : (
-          <UiText
-            align={TextAlign.CENTER}
-            size={TextSize.L}
-            text={t('There is no comments')}
+          <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+              <UiText
+                align='center'
+                size='large'
+                text={t('There is no comments')}
+              />
+            }
+            off={
+              <UiTextDeprecated
+                align={TextAlign.CENTER}
+                size={TextSize.L}
+                text={t('There is no comments')}
+              />
+            }
           />
         )}
       </VStack>

@@ -2,13 +2,18 @@ import { t } from 'i18next';
 import { Suspense, memo, useCallback } from 'react';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { ToggleFeatures } from '@/shared/lib/features';
 import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { TextSize, UiText } from '@/shared/ui/deprecated/Text';
+import {
+  TextSize,
+  UiText as UiTextDeprecated,
+} from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { UiText } from '@/shared/ui/redesigned/Text';
 
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/AddCommentForm';
@@ -49,7 +54,19 @@ export const ArticleDetailsComments = memo(
 
     return (
       <VStack max gap='16' className={cx('', {}, [className])}>
-        <UiText size={TextSize.L} title={t('Comments')} />
+        <ToggleFeatures
+          feature={'isAppRedesigned'}
+          on={
+            <UiText size={'large'} title={t('Comments')} bold />
+          }
+          off={
+            <UiTextDeprecated
+              size={TextSize.L}
+              title={t('Comments')}
+            />
+          }
+        />
+
         <Suspense fallback={<div>...</div>}>
           <AddCommentForm onSendComment={onSendComment} />
         </Suspense>

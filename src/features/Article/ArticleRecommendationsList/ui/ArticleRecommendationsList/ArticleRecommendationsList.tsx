@@ -2,8 +2,13 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { cx } from '@/shared/lib/classNames/cx';
-import { TextSize, UiText } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import {
+  TextSize,
+  UiText as UiTextDeprecated,
+} from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { UiText } from '@/shared/ui/redesigned/Text';
 
 import { ArticleList, ArticleView } from '@/entities/Article';
 
@@ -32,7 +37,17 @@ export const ArticleRecommendationsList = memo(
         gap='8'
         className={cx('', {}, [className])}
       >
-        <UiText size={TextSize.L} title={t('Recomend')} />
+        <ToggleFeatures
+          feature={'isAppRedesigned'}
+          on={<UiText size='large' title={t('Recomend')} />}
+          off={
+            <UiTextDeprecated
+              size={TextSize.L}
+              title={t('Recomend')}
+            />
+          }
+        />
+
         <ArticleList
           articles={articles}
           isLoading={isLoading}

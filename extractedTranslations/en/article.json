@@ -24,5 +24,9 @@
   "descending": "",
   "increase": "",
   "title": "",
-  "views": ""
+  "views": "",
+  "{{count}} views": "{{count}} views",
+  "{{count}} views_plural": "{{count}} views_plural",
+  "{{}} views": "{{}} views",
+  "{{}} views_plural": "{{}} views_plural"
 }

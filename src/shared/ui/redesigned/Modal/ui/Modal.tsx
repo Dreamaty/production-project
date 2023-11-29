@@ -1,17 +1,15 @@
 import { ReactNode } from 'react';
 
 import { Mods, cx } from '@/shared/lib/classNames/cx';
+import { toggleFeatures } from '@/shared/lib/features';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 
-import { Overlay } from '../../../redesigned/Overlay/Overlay';
-import { Portal } from '../../../redesigned/Portal/Portal';
+import { Overlay } from '../../Overlay/Overlay';
+import { Portal } from '../../Portal/Portal';
 import cls from './Modal.module.scss';
 
 const ANIMATION_DELAY = 300;
 
-/**
- *  @deprecated
- */
 export const Modal = ({
   className,
   children,
@@ -37,11 +35,19 @@ export const Modal = ({
   };
   if (lazy && !isMounted) return null;
 
+  const modalCls = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => cls.modalOld,
+    on: () => cls.modalNew,
+  });
+
   return (
-    <Portal>
+    <Portal
+      element={document.getElementById('app') ?? document.body}
+    >
       <div
         data-testid='modal'
-        className={cx(cls.modal, mods, [className])}
+        className={cx(cls.modal, mods, [className, modalCls])}
       >
         <Overlay onClick={close} />
         <div className={cls.content}>{children}</div>

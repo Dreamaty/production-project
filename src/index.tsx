@@ -9,6 +9,8 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 
+import { ForceUpdateProvider } from './shared/lib/render/forceUpdate';
+
 const container = document.getElementById('root');
 
 if (!container) {
@@ -21,9 +23,11 @@ root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBoundary>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <ForceUpdateProvider>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ForceUpdateProvider>
       </ErrorBoundary>
     </StoreProvider>
   </BrowserRouter>,

@@ -1,4 +1,4 @@
-export { getSidebarItems } from './model/selectors/getSidebarItems';
+export { useSidebarItems as getSidebarItems } from './model/selectors/getSidebarItems';
 
 export { Sidebar } from './ui/Sidebar/Sidebar';
 

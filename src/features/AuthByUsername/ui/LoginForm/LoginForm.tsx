@@ -7,13 +7,22 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/storeHooks/storeHooks';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import {
-  Button,
+  Button as ButtonDeprecated,
   ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { UiInput } from '@/shared/ui/deprecated/Input';
-import { TextTheme, UiText } from '@/shared/ui/deprecated/Text';
+import { UiInput as UiInputDeprecated } from '@/shared/ui/deprecated/Input';
+import {
+  TextTheme,
+  UiText as UiTextDeprecated,
+} from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { UiInput } from '@/shared/ui/redesigned/Input';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { UiText } from '@/shared/ui/redesigned/Text';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -48,6 +57,8 @@ const LoginForm = memo(function LoginForm({
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
+  const forceUpdate = useForceUpdate();
+
   const onChangeUsername = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value));
@@ -68,43 +79,87 @@ const LoginForm = memo(function LoginForm({
     );
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      forceUpdate();
     }
-  }, [onSuccess, dispatch, username, password]);
+  }, [dispatch, username, password, onSuccess, forceUpdate]);
 
   return (
     <DynamicModuleLoader
       reducers={initialReducers}
       removeAfterUnmount
     >
-      <div className={cx(cls.loginForm, {}, [className])}>
-        <UiText title={t('Authorization form')} />
-        {error && (
-          <UiText theme={TextTheme.ERROR} text={t(error)} />
-        )}
-        <UiInput
-          type='text'
-          placeholder={t('Login')}
-          value={username}
-          autoFocus
-          onChange={onChangeUsername}
-        />
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <VStack
+            gap='8'
+            className={cx(cls.loginFormRedesigned, {}, [
+              className,
+            ])}
+          >
+            <UiText title={t('Authorization form')} />
+            {error && <UiText variant='error' text={t(error)} />}
 
-        <UiInput
-          type='text'
-          placeholder={t('Password')}
-          value={password}
-          onChange={onChangePassword}
-        />
+            <UiInput
+              type='text'
+              placeholder={t('Login')}
+              value={username}
+              autoFocus
+              onChange={onChangeUsername}
+            />
 
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          className={cls.loginBtn}
-          onClick={onLoginClick}
-          disabled={isLoading}
-        >
-          {t('Sign In')}
-        </Button>
-      </div>
+            <UiInput
+              type='text'
+              placeholder={t('Password')}
+              value={password}
+              onChange={onChangePassword}
+            />
+
+            <Button
+              variant='outline'
+              className={cls.loginBtn}
+              onClick={onLoginClick}
+              disabled={isLoading}
+            >
+              {t('Sign In')}
+            </Button>
+          </VStack>
+        }
+        off={
+          <div className={cx(cls.loginForm, {}, [className])}>
+            <UiTextDeprecated title={t('Authorization form')} />
+            {error && (
+              <UiTextDeprecated
+                theme={TextTheme.ERROR}
+                text={t(error)}
+              />
+            )}
+            <UiInputDeprecated
+              type='text'
+              placeholder={t('Login')}
+              value={username}
+              autoFocus
+              onChange={onChangeUsername}
+            />
+
+            <UiInputDeprecated
+              type='text'
+              placeholder={t('Password')}
+              value={password}
+              onChange={onChangePassword}
+            />
+
+            <ButtonDeprecated
+              theme={ButtonTheme.OUTLINE}
+              className={cls.loginBtn}
+              onClick={onLoginClick}
+              disabled={isLoading}
+            >
+              {t('Sign In')}
+            </ButtonDeprecated>
+          </div>
+        }
+      />
     </DynamicModuleLoader>
   );
 });

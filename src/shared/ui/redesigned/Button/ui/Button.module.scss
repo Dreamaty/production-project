@@ -52,11 +52,26 @@
   background: none;
   font-weight: 700;
   padding: 10px 15px;
-  border: 2px solid var(--icon-redesigned);
   border-radius: 34px;
 
   &:hover {
     border: 2px solid var(--accent-redesigned);
+  }
+
+  &.normal {
+    border: 2px solid var(--icon-redesigned);
+
+    &:hover {
+      border: 2px solid var(--accent-redesigned);
+    }
+  }
+
+  &.error {
+    border: 2px solid var(--cancel-redesigned);
+  }
+
+  &.success {
+    border: 2px solid var(--save-redesigned);
   }
 }
 
@@ -64,6 +79,18 @@
   background: var(--light-bg-redesigned);
   border: none;
   outline: none;
+
+  &.normal {
+    background: var(--light-bg-redesigned);
+  }
+
+  &.error {
+    background: var(--cancel-redesigned);
+  }
+
+  &.success {
+    background: var(--save-redesigned);
+  }
 }
 
 // Square sizes

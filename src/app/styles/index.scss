@@ -4,24 +4,18 @@
 @import 'themes/dark';
 @import 'themes/green';
 
-body {
+.app {
+  background: var(--bg-color);
+  min-height: 100svh;
   font: var(--font-m);
   color: var(--primary-color);
 }
 
-.app {
-  background: var(--bg-color);
-  min-height: 100vh;
-}
-
 .app_redesigned {
   background: var(--bg-redesigned);
-  min-height: 100vh;
-
-  body {
-    font: var(--font-m);
-    color: var(--text-redesigned);
-  }
+  min-height: 100svh;
+  font: var(--font-m);
+  color: var(--text-redesigned);
 }
 
 .content-page {
@@ -29,15 +23,30 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
   height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
+  background-color: var(--icon-redesigned);
+  border-radius: 20px;
+  border: 2px solid var(--accent-redesigned);
+}
+
+.app *::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+.app *::-webkit-scrollbar-thumb {
   background-color: var(--secondary-color);
   border-radius: 20px;
   border: 2px solid var(--primary-color);

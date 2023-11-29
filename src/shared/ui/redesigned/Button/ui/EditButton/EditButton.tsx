@@ -4,9 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { HStack } from '../../../Stack/HStack/HStack';
 import { Button } from '../Button';
 
-/**
- *  @deprecated
- */
 export const EditButton = memo(
   ({
     className,

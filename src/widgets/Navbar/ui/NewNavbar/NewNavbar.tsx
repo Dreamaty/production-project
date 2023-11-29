@@ -40,7 +40,7 @@ export const NewNavbar = memo(
     return (
       <header className={cx(cls.navbar, {}, [className])}>
         <Button
-          variant='outline'
+          variant='clear'
           className={cls.links}
           onClick={onShowModal}
         >

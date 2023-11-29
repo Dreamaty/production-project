@@ -36,6 +36,7 @@ export const ArticleListItemRedesigned = memo(
         <Avatar
           size={32}
           src={article?.user?.avatar}
+          className={cls.avatar}
           alt={article?.user?.username || ''}
         />
         <UiText text={article.user?.username} bold />
@@ -68,7 +69,7 @@ export const ArticleListItemRedesigned = memo(
         >
           <Card border='round' className={cls.card}>
             <AppImage
-              fallback={<Skeleton width={200} height={200} />}
+              fallback={<Skeleton width={'100%'} height={250} />}
               objectFit='cover'
               src={article?.img}
               className={cls.img}

@@ -4,12 +4,15 @@ import { cx } from '@/shared/lib/classNames/cx';
 
 import cls from './Icon.module.scss';
 
-type BackgroundType = 'stroke' | 'fill';
-type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
+type SvgProps = Omit<
+  React.SVGProps<SVGSVGElement>,
+  'onClick' | 'fill'
+>;
 
 interface IconBaseProps extends SvgProps {
   className?: string;
   Svg: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  fill?: boolean;
 }
 
 interface ImageIconProps extends IconBaseProps {
@@ -29,12 +32,13 @@ export const Icon = memo((props: IconProps) => {
     width = 32,
     height = 32,
     clickable,
+    fill,
     ...otherProps
   } = props;
 
   const icon = (
     <Svg
-      className={cx(cls.icon, {}, [className])}
+      className={cx(cls.icon, { [cls.fill]: fill }, [className])}
       width={width}
       height={height}
       {...otherProps}

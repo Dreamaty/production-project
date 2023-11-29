@@ -26,5 +26,7 @@
   "Feedback this article": "Feedback this article",
   "Feedback this article This can help upgrade quality": "Feedback this article. This can help upgrade quality",
   "Welcome to the articles page": "Welcome to the articles page",
-  "Here you can watch articles on different topics": "Here you can watch articles on different topics"
+  "Here you can watch articles on different topics": "Here you can watch articles on different topics",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

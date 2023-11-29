@@ -9,6 +9,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '@/shared/lib/hooks/storeHooks/storeHooks';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import { Listbox } from '@/shared/ui/redesigned/Popups';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
@@ -23,6 +24,8 @@ export const UiDesignSwitcher = memo(
     const [isLoading, setIsLoading] = useState(false);
 
     const authData = useAppSelector(getUserAuthData);
+
+    const forceUpdate = useForceUpdate();
 
     const dispatch = useAppDispatch();
 
@@ -49,6 +52,7 @@ export const UiDesignSwitcher = memo(
         }),
       ).unwrap();
       setIsLoading(false);
+      forceUpdate();
     };
     return (
       <HStack>

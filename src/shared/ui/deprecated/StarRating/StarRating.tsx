@@ -2,11 +2,16 @@ import { memo, useState } from 'react';
 
 import StarIcon from '@/shared/assets/icons/star.svg';
 import { cx } from '@/shared/lib/classNames/cx';
+import {
+  ToggleFeatures,
+  toggleFeatures,
+} from '@/shared/lib/features';
 
+import { Icon } from '../../redesigned/Icon';
 import {
   BackgroundColor,
   BackgroundType,
-  Icon,
+  Icon as IconDeprecated,
 } from '../Icon/Icon';
 import cls from './StarRating.module.scss';
 
@@ -57,29 +62,53 @@ export const StarRating = memo(
       onSelect?.(starsCount);
     };
 
+    const defaultCls = toggleFeatures({
+      name: 'isAppRedesigned',
+      off: () => cls.starRating,
+      on: () => cls.starRatingRedesigned,
+    });
+
     return (
-      <div className={cx(cls.starRating, {}, [className])}>
-        {stars.map(starNumber => (
-          <Icon
-            onMouseEnter={onHover(starNumber)}
-            onMouseLeave={onLeave}
-            onClick={onClick(starNumber)}
-            width={size}
-            height={size}
-            Svg={StarIcon}
-            key={starNumber}
-            backgroundType={
-              isStarSelected(starNumber)
-                ? BackgroundType.FILL
-                : BackgroundType.STROKE
-            }
-            backgroundColor={BackgroundColor.PRIMARY_COLOR}
-            className={cx('', {}, [])}
-            pointer={!isSelected}
-            data-testid={`StarRating.${starNumber}`}
-            data-selected={currentStarCount >= starNumber}
-          />
-        ))}
+      <div className={cx(defaultCls, {}, [className])}>
+        {stars.map(starNumber => {
+          const commonProps = {
+            onMouseEnter: onHover(starNumber),
+            onMouseLeave: onLeave,
+            onClick: onClick(starNumber),
+            width: size,
+            height: size,
+            Svg: StarIcon,
+            key: starNumber,
+            className: cx('', {}, []),
+            'data-testid': `StarRating.${starNumber}`,
+            'data-selected': currentStarCount >= starNumber,
+          };
+          return (
+            <ToggleFeatures
+              key={starNumber}
+              feature={'isAppRedesigned'}
+              on={
+                <Icon
+                  {...commonProps}
+                  clickable={!isSelected}
+                  fill={isStarSelected(starNumber)}
+                />
+              }
+              off={
+                <IconDeprecated
+                  {...commonProps}
+                  backgroundType={
+                    isStarSelected(starNumber)
+                      ? BackgroundType.FILL
+                      : BackgroundType.STROKE
+                  }
+                  backgroundColor={BackgroundColor.PRIMARY_COLOR}
+                  pointer={!isSelected}
+                />
+              }
+            />
+          );
+        })}
       </div>
     );
   },

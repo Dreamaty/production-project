@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { cx } from '@/shared/lib/classNames/cx';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks';
 import {
   Button,
   ButtonSize,
@@ -17,7 +16,7 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 import newCls from './Sidebar.new.module.scss';
@@ -27,7 +26,7 @@ export const Sidebar = memo(
     const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
-    const sidebarItemsList = useAppSelector(getSidebarItems);
+    const sidebarItemsList = useSidebarItems();
 
     const onToggle = () => {
       setCollapsed(prev => !prev);
