@@ -45,6 +45,8 @@ export function useArticleFilters() {
   const debouncedFetchData = useDebounce(fetchData, 500);
 
   const updateList = useCallback(() => {
+    console.log('this is update list');
+
     dispatch(articleInfinityListActions.setPage(1));
     fetchData();
   }, [dispatch, fetchData]);

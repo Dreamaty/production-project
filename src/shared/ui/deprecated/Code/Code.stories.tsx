@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Code } from './Code';
 
 const meta = {
-  title: 'shared/Code',
+  title: 'shared/deprecated/Code',
   component: Code,
   parameters: {
     layout: 'fullscreen',

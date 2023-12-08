@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Listbox } from './Lisbox';
 
 const meta = {
-  title: 'shared/ListBox',
+  title: 'shared/deprecated/ListBox',
   component: Listbox,
   parameters: {
     layout: 'fullscreen',

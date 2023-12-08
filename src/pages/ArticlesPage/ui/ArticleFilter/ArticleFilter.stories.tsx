@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { ArticleFilter } from './ArticleFilter';
 
 const meta = {
-  title: 'feature/article/ArticleFilter',
+  title: 'pages/article/ArticlePage/ArticleFilter',
   component: ArticleFilter,
   parameters: {
     layout: 'fullscreen',

@@ -9,8 +9,6 @@ import {
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 import { Theme } from '@/shared/const/theme';
 
-import { useJsonSettings } from '@/entities/User';
-
 import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 
 interface ThemeProviderProps {
@@ -25,8 +23,6 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   initialTheme,
 }) => {
-  const { theme: savedTheme } = useJsonSettings();
-
   const [isInitedTheme, setIsInitedTheme] = useState(false);
 
   const [theme, setTheme] = useState<Theme>(
@@ -34,11 +30,11 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   );
 
   useEffect(() => {
-    if (!isInitedTheme && savedTheme) {
-      setTheme(savedTheme);
+    if (!isInitedTheme && initialTheme) {
+      setTheme(initialTheme);
       setIsInitedTheme(true);
     }
-  }, [isInitedTheme, savedTheme]);
+  }, [isInitedTheme, initialTheme]);
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
   }, [theme]);

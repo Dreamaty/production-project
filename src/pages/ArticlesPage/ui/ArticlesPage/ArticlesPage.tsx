@@ -16,8 +16,8 @@ import {
   ArticlePageGreeting,
   articleInfinityListReducer,
   fetchNextArticlesPage,
+  initArticlesPage,
 } from '@/features/Article';
-import { initArticlesPage } from '@/features/Article';
 import { Page } from '@/widgets/Page';
 
 import { ArticleInfiniteList } from '../../../../features/Article/ArticleInfinityList/ui/ArticleInfiniteList/ArticleInfiniteList';
@@ -36,8 +36,11 @@ const ArticlesPage = ({ className }: { className?: string }) => {
   const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
+    console.log('onLoadNextPart');
+
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
+
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));
   });
@@ -57,8 +60,8 @@ const ArticlesPage = ({ className }: { className?: string }) => {
               ])}
               onScrollEnd={onLoadNextPart}
             >
-              <ArticleInfiniteList className={newCls.list} />
               <ArticlePageGreeting />
+              <ArticleInfiniteList className={newCls.list} />
             </Page>
           }
         />

@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Listbox } from './Lisbox';
 
 const meta = {
-  title: 'shared/ListBox',
+  title: 'shared/redesigned/ListBox',
   component: Listbox,
   parameters: {
     layout: 'fullscreen',
@@ -38,7 +38,7 @@ export const Dark: Story = {
 };
 export const DirectionTop: Story = {
   args: {
-    direction: 'top left',
+    direction: 'left-start',
   },
   decorators: [ThemeDecorator(Theme.GREEN)],
 };

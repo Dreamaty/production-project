@@ -8,8 +8,13 @@
 
 .option {
   padding: 10px 20px;
+  white-space: nowrap;
 }
 
 .selected {
   background-color: var(--light-bg-redesigned);
+}
+
+.label {
+  color: var(--icon-redesigned);
 }

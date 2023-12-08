@@ -33,9 +33,18 @@ export const AppImage = memo(
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
+    const getSrc = (src?: string) => {
+      if (src?.startsWith('/images')) {
+        return __API__ + src;
+      }
+      return src;
+    };
+
     useLayoutEffect(() => {
       const img = new Image();
-      img.src = src ?? '';
+
+      img.src = getSrc(src) ?? '';
+
       img.onload = () => {
         setIsLoading(false);
       };
@@ -56,7 +65,7 @@ export const AppImage = memo(
       <img
         className={cx('', {}, [className, cls[objectFit]])}
         alt={alt}
-        src={src}
+        src={getSrc(src)}
         {...otherProps}
       />
     );

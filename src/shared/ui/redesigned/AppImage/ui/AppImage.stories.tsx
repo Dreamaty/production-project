@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppImage } from './AppImage';
 
 const meta = {
-  title: 'widget/AppImage',
+  title: 'shared/redesigned/AppImage',
   component: AppImage,
   parameters: {
     layout: 'fullscreen',

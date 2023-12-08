@@ -1,8 +1,9 @@
 import {
   ButtonHTMLAttributes,
+  ForwardedRef,
   ReactElement,
   ReactNode,
-  memo,
+  forwardRef,
 } from 'react';
 
 import { Mods, cx } from '@/shared/lib/classNames/cx';
@@ -11,7 +12,11 @@ import cls from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
-export type ButtonColor = 'normal' | 'success' | 'error';
+export type ButtonColor =
+  | 'normal'
+  | 'success'
+  | 'error'
+  | 'accent';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
@@ -22,25 +27,28 @@ interface ButtonProps
   color?: ButtonColor;
   square?: boolean;
   size?: ButtonSize;
-  disabled?: boolean;
+  inactive?: boolean;
   children?: ReactNode;
   addonLeft?: ReactElement;
   addonRight?: ReactElement;
 }
 
-export const Button = memo(
-  ({
-    className,
-    children,
-    color = 'normal',
-    variant = 'outline',
-    square,
-    size = 'm',
-    disabled,
-    addonLeft,
-    addonRight,
-    ...otherProps
-  }: ButtonProps) => {
+export const Button = forwardRef(
+  (
+    {
+      className,
+      children,
+      color = 'normal',
+      variant = 'outline',
+      square,
+      size = 'm',
+      inactive: disabled,
+      addonLeft,
+      addonRight,
+      ...otherProps
+    }: ButtonProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => {
     const mods: Mods = {
       [cls.square]: square,
       [cls.disabled]: disabled,
@@ -57,6 +65,7 @@ export const Button = memo(
         ])}
         disabled={disabled}
         {...otherProps}
+        ref={ref}
       >
         <div className={cls.addonLeft}>{addonLeft}</div>
         {children}

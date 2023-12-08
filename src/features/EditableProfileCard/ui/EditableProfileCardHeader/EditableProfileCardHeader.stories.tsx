@@ -6,7 +6,8 @@ import { Theme } from '@/shared/const/theme';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 const meta = {
-  title: 'features/EditableProfileCardHeader',
+  title:
+    'features/EditableProfileCard/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
   parameters: {
     layout: 'fullscreen',

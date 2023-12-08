@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppLoaderLayout } from './AppLoaderLayout';
 
 const meta = {
-  title: 'widget/AppLoaderLayout',
+  title: 'shared/layouts/AppLoaderLayout',
   component: AppLoaderLayout,
   parameters: {
     layout: 'fullscreen',

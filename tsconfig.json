@@ -27,6 +27,6 @@
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "src/widgets/Navbar/ui/NewNavbar"
+    "src/widgets/Navbar/ui/NavbarRedesigned"
   ]
 }

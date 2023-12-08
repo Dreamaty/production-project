@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Drawer } from './Drawer';
 
 const meta = {
-  title: 'shared/Drawer',
+  title: 'shared/redesigned/Drawer',
   component: Drawer,
   parameters: {
     layout: 'fullscreen',

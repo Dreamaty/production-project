@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { ArticleAdditionalInfo } from './ArticleAdditionalInfo';
 
 const meta = {
-  title: 'widget/ArticleAdditionalInfo',
+  title: 'widgets/article/ArticleAdditionalInfo',
   component: ArticleAdditionalInfo,
   parameters: {
     layout: 'fullscreen',

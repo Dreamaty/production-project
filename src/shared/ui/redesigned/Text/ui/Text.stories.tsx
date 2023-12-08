@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { UiText } from './UiText';
 
 const meta = {
-  title: 'shared/Text',
+  title: 'shared/redesigned/Text',
   component: UiText,
   parameters: {
     layout: 'fullscreen',

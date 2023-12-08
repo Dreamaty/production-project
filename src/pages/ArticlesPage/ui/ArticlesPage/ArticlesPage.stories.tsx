@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import ArticlesPage from './ArticlesPage';
 
 const meta = {
-  title: 'pages/ArticlesPage',
+  title: 'pages/article/ArticlePage/ArticlesPage',
   component: ArticlesPage,
   parameters: {
     layout: 'fullscreen',

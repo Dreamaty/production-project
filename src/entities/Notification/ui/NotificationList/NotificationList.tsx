@@ -9,6 +9,7 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
+import cls from './NotificationList.module.scss';
 
 export const NotificationList = memo(
   ({ className }: { className?: string }) => {
@@ -37,7 +38,7 @@ export const NotificationList = memo(
       <VStack
         gap='16'
         max
-        className={cx('', {}, [className])}
+        className={cx(cls.notificationList, {}, [className])}
         align='center'
       >
         {data?.map(item => (

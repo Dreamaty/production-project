@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppLink } from './AppLink';
 
 const meta = {
-  title: 'shared/AppLink',
+  title: 'shared/redesigned/AppLink',
   component: AppLink,
   parameters: {
     layout: 'fullscreen',

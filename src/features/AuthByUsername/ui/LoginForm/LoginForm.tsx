@@ -119,7 +119,7 @@ const LoginForm = memo(function LoginForm({
               variant='outline'
               className={cls.loginBtn}
               onClick={onLoginClick}
-              disabled={isLoading}
+              inactive={isLoading}
             >
               {t('Sign In')}
             </Button>
@@ -153,7 +153,7 @@ const LoginForm = memo(function LoginForm({
               theme={ButtonTheme.OUTLINE}
               className={cls.loginBtn}
               onClick={onLoginClick}
-              disabled={isLoading}
+              inactive={isLoading}
             >
               {t('Sign In')}
             </ButtonDeprecated>

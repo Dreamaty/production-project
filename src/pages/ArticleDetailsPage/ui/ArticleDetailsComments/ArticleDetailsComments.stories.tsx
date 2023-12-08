@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 const meta = {
-  title: 'pages/ArticleDetailsComments',
+  title: 'pages/article/ArticleDetails/ArticleDetailsComments',
   component: ArticleDetailsComments,
   parameters: {
     layout: 'fullscreen',

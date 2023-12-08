@@ -25,7 +25,7 @@ interface ButtonProps
   theme?: ButtonTheme;
   square?: boolean;
   size?: ButtonSize;
-  disabled?: boolean;
+  inactive?: boolean;
   children?: ReactNode;
 }
 
@@ -39,7 +39,7 @@ export const Button = memo(
     theme = ButtonTheme.OUTLINE,
     square,
     size = ButtonSize.M,
-    disabled,
+    inactive: disabled,
     ...otherProps
   }: ButtonProps) => {
     const mods: Mods = {

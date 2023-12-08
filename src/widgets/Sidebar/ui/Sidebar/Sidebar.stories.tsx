@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Sidebar } from './Sidebar';
 
 const meta = {
-  title: 'widgets/Sidebar',
+  title: 'widgets/Sidebar/Sidebar',
   component: Sidebar,
   parameters: {
     layout: 'fullscreen',

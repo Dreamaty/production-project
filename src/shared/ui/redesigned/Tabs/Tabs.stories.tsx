@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Tabs } from './Tabs';
 
 const meta = {
-  title: 'shared/Tabs',
+  title: 'shared/redesigned/Tabs',
   component: Tabs,
   parameters: {
     layout: 'fullscreen',

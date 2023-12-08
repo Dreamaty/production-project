@@ -9,7 +9,7 @@ import { ArticleSortField } from '@/features/Article';
 import { ArticlesFilters } from './ArticlesFilters';
 
 const meta = {
-  title: 'widget/ArticlesFilters',
+  title: 'widgets/article/ArticlesFilters',
   component: ArticlesFilters,
   parameters: {
     layout: 'fullscreen',

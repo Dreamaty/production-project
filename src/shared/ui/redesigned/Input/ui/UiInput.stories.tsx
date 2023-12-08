@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { UiInput } from './UiInput';
 
 const meta = {
-  title: 'shared/UiInput',
+  title: 'shared/redesigned/UiInput',
   component: UiInput,
   parameters: {
     layout: 'fullscreen',

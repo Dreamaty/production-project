@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { CommentList } from './CommentList';
 
 const meta = {
-  title: 'entities/CommentList',
+  title: 'entities/comment/CommentList',
   component: CommentList,
   parameters: {
     layout: 'fullscreen',

@@ -7,7 +7,7 @@ import { Button } from '../../../Button';
 import { Popover } from './Popover';
 
 const meta = {
-  title: 'shared/Popover',
+  title: 'shared/deprecated/Popover',
   component: Popover,
   parameters: {
     layout: 'fullscreen',

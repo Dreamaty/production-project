@@ -11,7 +11,7 @@ import {
 } from './UiText';
 
 const meta = {
-  title: 'shared/Text',
+  title: 'shared/deprecated/Text',
   component: UiText,
   parameters: {
     layout: 'fullscreen',

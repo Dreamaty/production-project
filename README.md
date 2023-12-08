@@ -210,20 +210,20 @@ It accepts an object with the following options:
        // This function will execute after the feature is Disabled
    }
 }
+```
 
-To automatically remove a feature, use the remove-feature.ts script, which takes 2 arguments:
+To automatically remove a feature, use the remove-feature.ts
+script, which takes 2 arguments:
 
-1)The name of the feature flag to be removed
-2)The state ('on'/'off')
+1. The name of the feature flag to be removed
+2. The state ('on'/'off')
 
-----
-
+---
 
 ## Entities
 
 - [Article](/src/entities/Article)
 - [Comment](/src/entities/Comment)
-- [Counter](/src/entities/Counter)
 - [Country](/src/entities/Country)
 - [Currency](/src/entities/Currency)
 - [Notification](/src/entities/Notification)
@@ -233,16 +233,25 @@ To automatically remove a feature, use the remove-feature.ts script, which takes
 
 ## Features
 
-- [addCommentForm](/src/features/addCommentForm)
-- [articleEditForm](/src/features/articleEditForm)
-- [articleRating](/src/features/articleRating)
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
+- [AddCommentForm](/src/features/AddCommentForm)
+- [Article](src/features/Article):
+  - [ArticleDetailsComments](src/features/Article/ArticleDetailsComments)
+  - [ArticleInfinityList](src/features/Article/ArticleInfinityList)
+  - [ArticleEditForm](/src/features/ArticleEditForm)
+  - [ArticleRating](/src/features/Article/ArticleRating)
+  - [ArticleRecommendationsList](/src/features/Article/ArticleRecommendationsList)
+  - [ArticleSort](/src/features/Article/ArticleSort)
+  - [ArticlesPageGreeting](/src/features/Article/ArticlesPageGreeting)
+  - [ArticleTypeTabs](/src/features/Article/ArticleTypeTabs)
+  - [ArticleViewSwitcher](/src/features/Article/ArticleViewSwitcher)
 - [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/avatarDropdown)
-- [editableProfileCard](/src/features/editableProfileCard)
+- [AvatarDropdown](/src/features/AvatarDropdown)
+- [EditableProfileCard](/src/features/EditableProfileCard)
+- [GithubLink](/src/features/GithubLink)
 - [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/notificationButton)
-- [profileRating](/src/features/profileRating)
+- [LinkedinLink](/src/features/LinkedinLink)
+- [NotificationButton](/src/features/NotificationButton)
+- [ScrollSave](/src/features/ScrollSave)
+- [ScrollToTopButton](/src/features/ThemeSwScrollToTopButtonitcher)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)
-```
+- [UiDesignSwitcher](/src/features/UiDesignSwitcher)

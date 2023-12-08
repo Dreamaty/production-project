@@ -110,7 +110,9 @@ export const ArticleDetails = memo(
     const error = useAppSelector(getArticleDetailsError);
 
     useEffect(() => {
-      dispatch(fetchArticleById(id));
+      if (__PROJECT__ !== 'storybook') {
+        dispatch(fetchArticleById(id));
+      }
     }, [dispatch, id]);
 
     let content;

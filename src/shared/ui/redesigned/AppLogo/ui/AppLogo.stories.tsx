@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppLogo } from './AppLogo';
 
 const meta = {
-  title: 'shared/AppLogo',
+  title: 'shared/redesigned/AppLogo',
   component: AppLogo,
   parameters: {
     layout: 'fullscreen',

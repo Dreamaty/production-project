@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Card } from './Card';
 
 const meta = {
-  title: 'shared/Card',
+  title: 'shared/redesigned/Card',
   component: Card,
   parameters: {
     layout: 'fullscreen',

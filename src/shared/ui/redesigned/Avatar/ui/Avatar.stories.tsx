@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Avatar } from './Avatar';
 
 const meta = {
-  title: 'shared/Avatar',
+  title: 'shared/redesigned/Avatar',
   component: Avatar,
   parameters: {
     layout: 'fullscreen',

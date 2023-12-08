@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const meta = {
-  title: 'pages/ArticleInfiniteList',
+  title: 'features/article/ArticleInfiniteList',
   component: ArticleInfiniteList,
   parameters: {
     layout: 'fullscreen',

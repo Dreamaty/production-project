@@ -8,7 +8,7 @@ import { ArticleType } from '@/entities/Article';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta = {
-  title: 'feature/article/ArticleTypeTabs',
+  title: 'features/article/ArticleTypeTabs',
   component: ArticleTypeTabs,
   parameters: {
     layout: 'fullscreen',

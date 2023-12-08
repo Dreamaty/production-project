@@ -1,1 +1,1 @@
-export { ArticleListItemDeprecated } from './ui/ArticleListItemDeprecated';
+export { ArticleListItemDeprecated } from './ArticleListItemDeprecated';

@@ -6,8 +6,8 @@ import { useAppSelector } from '@/shared/lib/hooks/storeHooks/storeHooks';
 
 import { getUserAuthData } from '@/entities/User';
 
-import { OldNavbar } from './Deprecated/OldNavbar';
-import { NewNavbar } from './NewNavbar/NewNavbar';
+import { NavbarDeprecated } from './NavbarDeprecated/NavbarDeprecated';
+import { NavbarRedesigned } from './NavbarRedesigned/NavbarRedesigned';
 
 export const Navbar = memo(
   ({ className }: { className?: string }) => {
@@ -28,7 +28,7 @@ export const Navbar = memo(
       <ToggleFeatures
         feature={'isAppRedesigned'}
         on={
-          <NewNavbar
+          <NavbarRedesigned
             isAuthModalOpen={isAuthModalOpen}
             authData={authData}
             onCloseModal={onCloseModal}
@@ -36,7 +36,7 @@ export const Navbar = memo(
           />
         }
         off={
-          <OldNavbar
+          <NavbarDeprecated
             isAuthModalOpen={isAuthModalOpen}
             authData={authData}
             onCloseModal={onCloseModal}

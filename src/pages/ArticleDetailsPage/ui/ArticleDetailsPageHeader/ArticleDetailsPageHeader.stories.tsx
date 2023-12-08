@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 const meta = {
-  title: 'page/ArticleDetailsPageHeader',
+  title: 'pages/article/ArticleDetails/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   parameters: {
     layout: 'fullscreen',

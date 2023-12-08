@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { EditButton } from './EditButton';
 
 const meta = {
-  title: 'shared/EditButton',
+  title: 'shared/deprecated/EditButton',
   component: EditButton,
   parameters: {
     layout: 'fullscreen',

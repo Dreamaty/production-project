@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Modal } from './Modal';
 
 const meta = {
-  title: 'shared/Modal',
+  title: 'shared/redesigned/Modal',
   component: Modal,
   parameters: {
     layout: 'fullscreen',

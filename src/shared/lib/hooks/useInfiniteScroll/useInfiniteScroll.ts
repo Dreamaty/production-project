@@ -24,8 +24,8 @@ export function useInfiniteScroll({
         threshold: 1.0,
       };
 
-      observer.current = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
+      observer.current = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
           callback();
         }
       }, options);

@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { NotificationButton } from './NotificationButton';
 
 const meta = {
-  title: 'features/NotificationButton',
+  title: 'features/notification/NotificationButton',
   component: NotificationButton,
   parameters: {
     layout: 'fullscreen',

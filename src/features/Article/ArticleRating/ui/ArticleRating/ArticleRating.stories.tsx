@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import ArticleRating from './ArticleRating';
 
 const meta = {
-  title: 'features/ArticleRating',
+  title: 'features/article/ArticleRating',
   component: ArticleRating,
   parameters: {
     layout: 'fullscreen',

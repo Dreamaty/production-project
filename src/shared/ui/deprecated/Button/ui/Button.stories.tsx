@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta = {
-  title: 'shared/Button',
+  title: 'shared/deprecated/Button',
   component: Button,
   parameters: {
     layout: 'fullscreen',
@@ -108,6 +108,6 @@ export const Disabled: Story = {
   args: {
     children: 'Text',
     theme: ButtonTheme.OUTLINE,
-    disabled: true,
+    inactive: true,
   },
 };

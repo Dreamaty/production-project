@@ -129,7 +129,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.23.2",
-    "@floating-ui/react": "^0.26.1",
+    "@floating-ui/react": "^0.26.3",
+    "@headlessui-float/react": "^0.13.0",
     "@headlessui/react": "^1.7.17",
     "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.6",

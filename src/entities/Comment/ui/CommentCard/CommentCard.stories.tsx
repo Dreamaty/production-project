@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { CommentCard } from './CommentCard';
 
 const meta = {
-  title: 'entities/CommentCard',
+  title: 'entities/comment/CommentCard',
   component: CommentCard,
   parameters: {
     layout: 'fullscreen',

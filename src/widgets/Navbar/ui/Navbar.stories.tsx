@@ -7,7 +7,7 @@ import { Theme } from '@/shared/const/theme';
 import { Navbar } from './Navbar';
 
 const meta = {
-  title: 'widgets/Navbar',
+  title: 'widgets/Navbar/Navbar',
   component: Navbar,
   parameters: {
     layout: 'fullscreen',

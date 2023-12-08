@@ -8,7 +8,8 @@ import { articleForTesting } from '../../../test/exampleData';
 import { ArticleListItemRedesigned } from './ArticleListItemRedesigned';
 
 const meta = {
-  title: 'widget/ArticleListItemRedesigned',
+  title:
+    'entities/article/ArticleListItem/ArticleListItemRedesigned',
   component: ArticleListItemRedesigned,
   parameters: {
     layout: 'fullscreen',

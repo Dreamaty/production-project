@@ -13,7 +13,7 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { ProfileCard } from '@/entities/ProfileState';
+import { ProfileCard } from '@/entities/Profile';
 
 import { useProfile } from '../../hooks/useProfile';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';

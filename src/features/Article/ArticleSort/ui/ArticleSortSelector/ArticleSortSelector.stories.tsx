@@ -7,7 +7,7 @@ import { ArticleSortField } from '../../model/consts/consts';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta = {
-  title: 'feature/article/ArticleSortSelector',
+  title: 'features/article/ArticleSortSelector',
   component: ArticleSortSelector,
   parameters: {
     layout: 'fullscreen',

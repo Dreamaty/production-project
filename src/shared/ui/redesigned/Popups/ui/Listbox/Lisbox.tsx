@@ -1,15 +1,15 @@
 /* eslint-disable i18next/no-literal-string */
+import { Placement } from '@floating-ui/react';
+import { Float } from '@headlessui-float/react';
 import { Listbox as HListbox } from '@headlessui/react';
 import { Fragment, ReactNode, useMemo } from 'react';
 
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { cx } from '@/shared/lib/classNames/cx';
-import { DropdownDirection } from '@/shared/types/ui';
 
 import { Button } from '../../../Button';
 import { Icon } from '../../../Icon';
 import { HStack } from '../../../Stack';
-import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './Listbox.module.scss';
 
@@ -26,7 +26,7 @@ interface ListboxProps<T extends string> {
   defaultValue?: string;
   onChange: (value: T) => void;
   readonly?: boolean;
-  direction?: DropdownDirection;
+  direction?: Placement;
   label?: string;
 }
 
@@ -40,21 +40,16 @@ export function Listbox<T extends string>(
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom left',
+    direction = 'left-end',
     label,
   } = props;
 
-  const optionsClasses = [
-    cls.options,
-    mapDirectionClass[direction],
-    popupCls.menu,
-  ];
+  const optionsClasses = [cls.options, popupCls.menu];
 
   const selectedItem = useMemo(() => {
     return items?.find(item => item.value === value);
   }, [items, value]);
 
-  // TODO: floating https://floating-ui.com/docs/react
   return (
     <HStack gap='4'>
       {label && (
@@ -73,44 +68,50 @@ export function Listbox<T extends string>(
         disabled={readonly}
         onChange={onChange}
       >
-        <HListbox.Button as='div' className={popupCls.trigger}>
-          <Button
-            disabled={readonly}
+        <Float shift flip placement={direction}>
+          <HListbox.Button
+            as={Button}
+            inactive={readonly}
             variant='filled'
-            addonRight={<Icon Svg={ArrowIcon} />}
+            addonRight={
+              <Icon
+                Svg={ArrowIcon}
+                className={popupCls.trigger}
+              />
+            }
           >
             {selectedItem?.content ?? defaultValue}
-          </Button>
-        </HListbox.Button>
-        <HListbox.Options
-          className={cx(cls.options, {}, optionsClasses)}
-        >
-          {items?.map(item => (
-            <HListbox.Option
-              key={item.value}
-              value={item.value}
-              disabled={item.unavailable}
-              as={Fragment}
-            >
-              {({ active, selected }) => (
-                <li
-                  className={cx(
-                    cls.option,
-                    {
-                      [popupCls.active]: active,
-                      [popupCls.unavailable]: item.unavailable,
-                      [cls.selected]: selected,
-                    },
-                    [],
-                  )}
-                >
-                  {selected && '> '}
-                  {item.content}
-                </li>
-              )}
-            </HListbox.Option>
-          ))}
-        </HListbox.Options>
+          </HListbox.Button>
+          <HListbox.Options
+            className={cx(cls.options, {}, optionsClasses)}
+          >
+            {items?.map(item => (
+              <HListbox.Option
+                key={item.value}
+                value={item.value}
+                disabled={item.unavailable}
+                as={Fragment}
+              >
+                {({ active, selected }) => (
+                  <li
+                    className={cx(
+                      cls.option,
+                      {
+                        [popupCls.active]: active,
+                        [popupCls.unavailable]: item.unavailable,
+                        [cls.selected]: selected,
+                      },
+                      [],
+                    )}
+                  >
+                    {selected && '> '}
+                    {item.content}
+                  </li>
+                )}
+              </HListbox.Option>
+            ))}
+          </HListbox.Options>
+        </Float>
       </HListbox>
     </HStack>
   );
