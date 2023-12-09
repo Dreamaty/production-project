@@ -1,7 +1,11 @@
 /* eslint-disable max-len */
+// eslint-disable-next-line dreamatty-path-checker-plugin/public-api-imports
+import { userForTesting1 } from '@/entities/User/testing';
+
 import { Article } from '../model/types/article';
 
 export const articleForTesting = {
+  user: userForTesting1,
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -70,3 +74,9 @@ export const articleForTesting = {
     },
   ],
 } as Article;
+
+export const articlesForTesting = [
+  articleForTesting,
+  articleForTesting,
+  articleForTesting,
+] as Article[];

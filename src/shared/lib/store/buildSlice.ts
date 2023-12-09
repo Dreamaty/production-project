@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
+  ActionCreatorsMapObject,
   bindActionCreators,
   createSlice,
 } from '@reduxjs/toolkit';
@@ -21,10 +24,12 @@ export function buildSlice<
   const useActions = () => {
     const dispatch = useAppDispatch();
 
-    // TODO: something wrong with the type of actionCreator
     return useMemo(
-      // @ts-ignore
-      () => bindActionCreators(slice.actions, dispatch),
+      () =>
+        bindActionCreators(
+          slice.actions as ActionCreatorsMapObject<any>,
+          dispatch,
+        ),
       [dispatch],
     );
   };

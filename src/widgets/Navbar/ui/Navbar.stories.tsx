@@ -27,6 +27,7 @@ export const Light: Story = {
 };
 export const LightAuth: Story = {
   args: {},
+  decorators: [StoreDecorator({ user: { authData: {} } })],
 };
 export const Dark: Story = {
   args: {},

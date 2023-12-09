@@ -46,7 +46,7 @@ export function Listbox(props: ListboxProps) {
     cls.options,
     mapDirectionClass[direction],
   ];
-  // TODO: floating https://floating-ui.com/docs/react
+
   return (
     <HStack gap='4'>
       {label && (

@@ -8,12 +8,13 @@
   background: var(--bg-color);
   min-height: 100svh;
   font: var(--font-m);
-  color: var(--primary-color);
+  color: var(--text-redesigned);
 }
 
 .app_redesigned {
   background: var(--bg-redesigned);
   min-height: 100svh;
+  max-width: 100%;
   font: var(--font-m);
   color: var(--text-redesigned);
 }

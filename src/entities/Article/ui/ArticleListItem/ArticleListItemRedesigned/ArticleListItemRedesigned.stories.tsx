@@ -20,6 +20,7 @@ const meta = {
     view: ArticleView.LIST,
     article: articleForTesting,
   },
+  decorators: [ThemeDecorator(Theme.LIGHT)],
 } satisfies Meta<typeof ArticleListItemRedesigned>;
 export default meta;
 type Story = StoryObj<typeof meta>;

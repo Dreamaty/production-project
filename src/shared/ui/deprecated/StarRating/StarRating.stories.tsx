@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { StarRating } from './StarRating';
 
 const meta = {
-  title: 'shared/StarRating',
+  title: 'shared/deprecated/StarRating',
   component: StarRating,
   parameters: {
     layout: 'fullscreen',

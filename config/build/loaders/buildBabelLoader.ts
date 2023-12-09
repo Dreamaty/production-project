@@ -1,7 +1,6 @@
 import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin';
 import { BuildOptions } from '../types/config';
 
-//TODO: if you have the problem with tsx ts files maybe this because we don't have ts-loader and you need to setup it
 interface BuildBabelLoaderProps extends BuildOptions {
   isTsx: boolean;
 }

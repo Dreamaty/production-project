@@ -7,7 +7,7 @@ import { Article } from '@/entities/Article';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
-const aritcle: Article = {
+const article: Article = {
   id: '1',
   img: '',
   createdAt: '',
@@ -25,14 +25,14 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
     mockData: {
-      url: `${__API__}/article?_limit=3`,
+      url: `${__API__}/articles?_limit=3&_expand=user`,
       method: 'GET',
       status: 200,
       response: {
         data: [
-          { ...aritcle, id: '1' },
-          { ...aritcle, id: '2' },
-          { ...aritcle, id: '3' },
+          { ...article, id: '1' },
+          { ...article, id: '2' },
+          { ...article, id: '3' },
         ],
       },
     },

@@ -21,7 +21,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { children: 'Text' },
+  args: { children: 'Text', variant: 'filled' },
+};
+
+export const PrimaryDark: Story = {
+  args: { children: 'Text', variant: 'filled' },
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Clear: Story = {
@@ -29,9 +34,6 @@ export const Clear: Story = {
 };
 
 export const Outline: Story = {
-  args: { children: 'Text', variant: 'outline' },
-};
-export const OutlineRed: Story = {
   args: { children: 'Text', variant: 'outline' },
 };
 

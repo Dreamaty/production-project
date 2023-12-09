@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { UiSelect } from './UiSelect';
 
 const meta = {
-  title: 'shared/UiSelect',
+  title: 'shared/deprecated/UiSelect',
   component: UiSelect,
   parameters: {
     layout: 'fullscreen',

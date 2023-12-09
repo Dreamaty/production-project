@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { Loader } from './Loader';
 
 const meta = {
-  title: 'shared/Loader',
+  title: 'shared/deprecated/Loader',
   component: Loader,
   parameters: {
     layout: 'fullscreen',

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { FeatureFlagDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
@@ -103,6 +104,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 export const Light: Story = {
   decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    FeatureFlagDecorator({ isAppRedesigned: false }),
     StoreDecorator({
       articleDetails: {
         data: article,
@@ -112,6 +115,7 @@ export const Light: Story = {
 };
 export const Dark: Story = {
   decorators: [
+    FeatureFlagDecorator({ isAppRedesigned: false }),
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
       articleDetails: {
@@ -122,6 +126,8 @@ export const Dark: Story = {
 };
 export const Loading: Story = {
   decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    FeatureFlagDecorator({ isAppRedesigned: false }),
     StoreDecorator({
       articleDetails: {
         isLoading: true,
@@ -132,6 +138,8 @@ export const Loading: Story = {
 
 export const Error: Story = {
   decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    FeatureFlagDecorator({ isAppRedesigned: false }),
     StoreDecorator({
       articleDetails: {
         error: 'Error occurred',
@@ -142,6 +150,8 @@ export const Error: Story = {
 
 export const LightRedesigned: Story = {
   decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    FeatureFlagDecorator({ isAppRedesigned: true }),
     StoreDecorator({
       articleDetails: {
         data: article,
@@ -158,6 +168,7 @@ export const LightRedesigned: Story = {
 };
 export const DarkRedesigned: Story = {
   decorators: [
+    FeatureFlagDecorator({ isAppRedesigned: true }),
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
       articleDetails: {
@@ -175,16 +186,11 @@ export const DarkRedesigned: Story = {
 };
 export const LoadingRedesigned: Story = {
   decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    FeatureFlagDecorator({ isAppRedesigned: true }),
     StoreDecorator({
       articleDetails: {
         isLoading: true,
-      },
-      user: {
-        authData: {
-          features: {
-            isAppRedesigned: true,
-          },
-        },
       },
     }),
   ],
@@ -192,16 +198,11 @@ export const LoadingRedesigned: Story = {
 
 export const ErrorRedesigned: Story = {
   decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    FeatureFlagDecorator({ isAppRedesigned: true }),
     StoreDecorator({
       articleDetails: {
         error: 'Error occurred',
-      },
-      user: {
-        authData: {
-          features: {
-            isAppRedesigned: true,
-          },
-        },
       },
     }),
   ],
