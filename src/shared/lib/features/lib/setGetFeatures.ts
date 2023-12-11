@@ -3,8 +3,8 @@ import { FeatureFlags } from '@/shared/types/featureFlags';
 
 let featureFlags: FeatureFlags = {
   isAppRedesigned:
-    localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) ===
-    'new ',
+    localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) !==
+    'old',
 };
 
 export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
@@ -14,7 +14,7 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
 }
 
 export function getFeatureFlag(flag: keyof FeatureFlags) {
-  return featureFlags?.[flag] ?? true;
+  return featureFlags?.[flag];
 }
 
 export function getFeatureFlags() {
