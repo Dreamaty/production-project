@@ -33,6 +33,7 @@ export default (env: BuildEnv) => {
   const PORT = env.port || 3000;
   const isDev = mode === 'development';
   const apiUrl = getApiUrl(mode, env?.apiUrl);
+  const fileCloudUrl = env?.fileCloudUrl || apiUrl;
 
   const config: webpack.Configuration = buildWebpackConfig({
     mode,
@@ -40,6 +41,7 @@ export default (env: BuildEnv) => {
     isDev,
     port: PORT,
     apiUrl,
+    fileCloudUrl,
     project: 'frontend',
   });
 

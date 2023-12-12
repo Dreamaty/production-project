@@ -15,8 +15,9 @@ export const GithubLink = memo(
     return (
       <WebsiteLink
         href={
-          `https:/github.com/${href}` ||
-          'https:/github.com/Dreamaty'
+          href
+            ? `https:/github.com/${href}`
+            : 'https:/github.com/Dreamaty'
         }
         src={GitHubLogo}
       />

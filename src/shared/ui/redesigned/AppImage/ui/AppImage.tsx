@@ -35,7 +35,7 @@ export const AppImage = memo(
 
     const getSrc = (src?: string) => {
       if (src?.startsWith('/images')) {
-        return __API__ + src;
+        return __FILE_CLOUD__ + src;
       }
       return src;
     };

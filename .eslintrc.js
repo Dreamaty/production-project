@@ -108,6 +108,7 @@ module.exports = {
     __IS_DEV__: true,
     __dirname: true,
     __API__: true,
+    __FILE_CLOUD__: true,
     __PROJECT__: true,
   },
 };
