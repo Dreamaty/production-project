@@ -9,7 +9,7 @@
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\" ",
     "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:dev:server\" ",
     "start:dev:server": "node ./json-server/index.js",
-    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-wbng-michaels-projects-1ee9a16c.vercel.app fileCloudUrl=https://storage.cloud.google.com/production-proj",
+    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-wbng-michaels-projects-1ee9a16c.vercel.app fileCloudUrl=https://console.cloud.google.com/storage/browser/production-proj",
     "build:dev": "webpack --env mode=development",
     "prettier": "npx prettier --write **/*.{ts,tsx,json,js,jsx}",
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
