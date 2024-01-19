@@ -16,10 +16,11 @@ export const GithubLink = memo(
       <WebsiteLink
         href={
           href
-            ? `https:/github.com/${href}`
-            : 'https:/github.com/Dreamaty'
+            ? `https:/github.com/${href}/`
+            : 'https://github.com/Dreamaty/production-project/'
         }
         src={GitHubLogo}
+        className={className}
       />
     );
   },

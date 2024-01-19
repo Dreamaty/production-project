@@ -10,6 +10,7 @@ export const LinkedinLink = memo(
       <WebsiteLink
         href='https://www.linkedin.com/in/michael-nakhimson/'
         src={LinkedInLogo}
+        className={className}
       />
     );
   },

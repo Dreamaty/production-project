@@ -1,4 +1,4 @@
-## Запуск проекта
+## Run Project
 
 ```
 npm install - download dependencies
@@ -7,7 +7,7 @@ npm run start:dev or npm run start:dev:vite - run server and fronted in dev mode
 
 ---
 
-## Скрипты
+## Scripts
 
 - `npm run start` - Run frontend on webpack dev server
 - `npm run start:vite` - Run frontend on Vite
