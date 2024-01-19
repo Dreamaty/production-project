@@ -48,9 +48,7 @@ The project uses the i18next library for handling translations.
 Translation files are stored in the public/locales directory.
 
 For a more comfortable workflow, we recommend installing a plugin
-for WebStorm/VSCode.
-
-i18next Documentation -
+for WebStorm/VSCode. husky i18next Documentation -
 [https://react.i18next.com/](https://react.i18next.com/)
 
 ---

@@ -129,6 +129,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.23.2",
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.14.0",
     "@floating-ui/react": "^0.26.3",
     "@headlessui-float/react": "^0.13.0",
     "@headlessui/react": "^1.7.17",
@@ -139,6 +141,8 @@
     "@types/node": "^20.6.2",
     "@use-gesture/react": "^10.3.0",
     "axios": "^1.5.0",
+    "cloudinary": "^1.41.0",
+    "cloudinary-react": "^1.8.1",
     "concurrently": "^8.2.1",
     "copy-webpack-plugin": "^11.0.0",
     "i18next": "^23.5.1",

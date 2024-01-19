@@ -1,7 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { User, userActions } from '@/entities/User';
+import {
+  User,
+  saveJsonSettings,
+  userActions,
+} from '@/entities/User';
 
 interface LoginByUsernameProps {
   username: string;
@@ -26,6 +30,9 @@ export const loginByUsername = createAsyncThunk<
     }
 
     dispatch(userActions.setAuthData(response.data));
+    dispatch(
+      saveJsonSettings({ isArticlesPageWasViewed: true }),
+    );
 
     return response.data;
   } catch (error) {

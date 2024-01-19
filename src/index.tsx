@@ -9,6 +9,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 
+import CloudinaryProvider from './app/providers/CloudinaryProvider/CloudinaryProvider';
 import { ForceUpdateProvider } from './shared/lib/render/forceUpdate';
 
 const container = document.getElementById('root');
@@ -25,7 +26,9 @@ root.render(
       <ErrorBoundary>
         <ForceUpdateProvider>
           <ThemeProvider>
-            <App />
+            <CloudinaryProvider>
+              <App />
+            </CloudinaryProvider>
           </ThemeProvider>
         </ForceUpdateProvider>
       </ErrorBoundary>

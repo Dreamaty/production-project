@@ -1,3 +1,5 @@
+import { AdvancedImage } from '@cloudinary/react';
+import { thumbnail } from '@cloudinary/url-gen/actions/resize';
 import {
   ImgHTMLAttributes,
   ReactElement,
@@ -7,17 +9,24 @@ import {
 } from 'react';
 
 import { cx } from '@/shared/lib/classNames/cx';
+import { useCloudinary } from '@/shared/lib/hooks/useCloudinary/useCloudinary';
 
 import cls from './AppImage.module.scss';
 
 type ObjectFit = 'cover' | 'fill' | 'contain' | 'none';
 
-interface AppImageProps
-  extends ImgHTMLAttributes<HTMLImageElement> {
+type HTMLImageAttributes = Omit<
+  ImgHTMLAttributes<HTMLImageElement>,
+  'width' | 'height'
+>;
+
+interface AppImageProps extends HTMLImageAttributes {
   className?: string;
   fallback?: ReactElement;
   errorFallback?: ReactElement;
   objectFit?: ObjectFit;
+  width?: number | string;
+  height?: number | string;
 }
 
 export const AppImage = memo(
@@ -28,22 +37,18 @@ export const AppImage = memo(
     fallback,
     errorFallback,
     objectFit = 'cover',
+    width = 200,
+    height = 200,
     ...otherProps
   }: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
-
-    const getSrc = (src?: string) => {
-      if (src?.startsWith('/images')) {
-        return __FILE_CLOUD__ + src;
-      }
-      return src;
-    };
+    const cloud = useCloudinary();
 
     useLayoutEffect(() => {
       const img = new Image();
 
-      img.src = getSrc(src) ?? '';
+      img.src = src ?? '';
 
       img.onload = () => {
         setIsLoading(false);
@@ -52,6 +57,25 @@ export const AppImage = memo(
         setHasError(true);
       };
     }, [src]);
+
+    //if image needs to load from cloudinary
+    if (src?.startsWith('images/')) {
+      const img = cloud?.image(src);
+
+      img?.resize(thumbnail().height(height));
+
+      if (img)
+        return (
+          <AdvancedImage
+            cldImg={img}
+            alt={alt}
+            className={cx(cls.cloudImage, {}, [
+              className,
+              cls[objectFit],
+            ])}
+          />
+        );
+    }
 
     if (isLoading && fallback) {
       return fallback;
@@ -65,7 +89,9 @@ export const AppImage = memo(
       <img
         className={cx('', {}, [className, cls[objectFit]])}
         alt={alt}
-        src={getSrc(src)}
+        src={src}
+        width={width}
+        height={height}
         {...otherProps}
       />
     );

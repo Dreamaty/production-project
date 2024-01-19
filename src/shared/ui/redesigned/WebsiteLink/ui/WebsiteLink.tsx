@@ -31,7 +31,12 @@ export const WebsiteLink = memo(
         style={styles}
       >
         <a href={href} target={target} rel='noreferrer'>
-          <AppImage src={src} alt='logo' width={70} />
+          <AppImage
+            src={src}
+            alt='logo'
+            width={70}
+            objectFit='contain'
+          />
         </a>
       </Button>
     );

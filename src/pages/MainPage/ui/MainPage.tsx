@@ -15,7 +15,9 @@ const MainPage = () => {
   return (
     <Page data-testid='MainPage'>
       <HStack align='start' justify='start' gap='32'>
-        <AppImage src='/images/profilePic.jpg' width={300} />
+        <div className='profileImageWrapper'>
+          <AppImage src='images/profilePic.jpg' height={1080} />
+        </div>
         <Card padding='24'>
           <VStack gap='16'>
             <UiText

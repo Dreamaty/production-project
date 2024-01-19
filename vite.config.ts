@@ -9,7 +9,7 @@ export default defineConfig({
   },
   define: {
     __IS_DEV__: JSON.stringify(true),
-    __API__: JSON.stringify('http://localhost:8000'),
+    __API__: JSON.stringify('http://localhost:3005'),
     __FILE_CLOUD__: JSON.stringify(
       'https://storage.cloud.google.com/production-proj/',
     ),

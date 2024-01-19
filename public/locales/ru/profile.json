@@ -1,20 +1,18 @@
 {
-  "profile": {
-    "Profile": "Профиль",
-    "Your Name": "Ваше имя",
-    "Your Last Name": "Ваша фамилия",
-    "Try to refresh the page": "Попробуйте обновить страницу",
-    "Your Country": "Твоя страна",
-    "Your City": "Ваш город",
-    "Your Currency": "Ваша валюта",
-    "INCORRECT_USER_DATA": "Неправильные данные пользователя",
-    "INCORRECT_AGE": "Этот возраст не существует",
-    "SERVER_ERROR_LOADING_PROFILE": "Не удалось загрузить профиль",
-    "NO_DATA": "Нету Данных!",
-    "Did not succeed to load profile": "Не удалось загрузить профиль",
-    "First Name": "Имя",
-    "Last Name": "Фамилия",
-    "Age": "Возраст",
-    "City": "Город"
-  }
+  "Profile": "Профиль",
+  "Your Name": "Ваше имя",
+  "Your Last Name": "Ваша фамилия",
+  "Try to refresh the page": "Попробуйте обновить страницу",
+  "Your Country": "Твоя страна",
+  "Your City": "Ваш город",
+  "Your Currency": "Ваша валюта",
+  "INCORRECT_USER_DATA": "Неправильные данные пользователя",
+  "INCORRECT_AGE": "Этот возраст не существует",
+  "SERVER_ERROR_LOADING_PROFILE": "Не удалось загрузить профиль",
+  "NO_DATA": "Нету Данных!",
+  "Did not succeed to load profile": "Не удалось загрузить профиль",
+  "First Name": "Имя",
+  "Last Name": "Фамилия",
+  "Age": "Возраст",
+  "City": "Город"
 }
