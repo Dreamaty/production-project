@@ -1,1 +1,9 @@
-{ "about site": "О сайте" }
+{
+  "about site": "О сайте",
+  "All information about project in my github": "Вся информация о проекте у меня на github:",
+  "In this project as architecture I used FSD. Core mods for this project is": "В этом проекте в качестве архитектуры я использовал FSD. \nОсновные модификации для этого проекта:",
+
+  "This project is made for my portfolio": "Этот проект сделан для моего портфолио.",
+
+  "About this project": "Об этом проекте"
+}

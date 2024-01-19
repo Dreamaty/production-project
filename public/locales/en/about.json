@@ -1,1 +1,10 @@
-{ "about site": "About site" }
+{
+  "about site": "About site",
+  "All information about project in my github": "All information about project in my github:",
+  "In this project as architecture I used FSD. Core mods for this project is": "In this project as architecture I used FSD. Core mods for this project is: ",
+
+  "This project is made for my portfolio": {
+    " ": "This project is made for my portfolio."
+  },
+  "About this project": "About this project"
+}

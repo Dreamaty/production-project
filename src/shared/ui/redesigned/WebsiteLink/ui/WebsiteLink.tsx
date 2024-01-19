@@ -35,6 +35,7 @@ export const WebsiteLink = memo(
             src={src}
             alt='logo'
             width={70}
+            height={50}
             objectFit='contain'
           />
         </a>
